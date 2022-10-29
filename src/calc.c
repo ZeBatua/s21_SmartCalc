@@ -1,22 +1,10 @@
 #include "calc.h"
 
 int main() {
-    // Stack *head = NULL;
     const char *start_string[256] = {0};
-    char *result_string[256] = {0};
     double result = 0.0;
     result = calc_string(start_string);
-
-
-    // for (int i = 0; i < 10; i++) {
-    //     push(&head, i);
-    // }
-
-    // printf("size = %d\n", getSize(head));
-
-    // while (head) {
-    //     printf("%d ", pop2(&head));
-    // }
+    printf("result = %F\n", result);
 
     return 0;
 }
@@ -29,10 +17,9 @@ double calc_string(start_string) {
     int priority_status = 0;
     int string_position = 0;
     while (string_position < strlen(start_string)) {
-        string_position++;
-        if (start_string[i] == is_num(start_string, &current_num) {
+        if (get_num(start_string, &current_num, &string_position) {
             push_num(&n_head, current_num);
-        } else if (start_string[i] == is_function(start_string, &current_num) {
+        } else if (get_function(start_string, &current_num, &string_position) {
             priority_status = push_function(&f_head, current_function);
         } else {
             exit(INVALID_VALUE);
@@ -40,12 +27,13 @@ double calc_string(start_string) {
         double first_value = 0.0;
         double second_value = 0.0;
         if (priority_status) {
-            first_value = pop_num();
-            second_value = pop_num();
-            pop_function();
+            first_value = pop_num(&n_head);
+            second_value = pop_num(&n_head);
+            pop_function(&f_head);
             calc_current_values(first_value, second_value, current_function);
             priority_status = 0;
         }
+        string_position++;
     }
 }
 
@@ -59,54 +47,95 @@ void push_num(num_stack **head, double value) {
     *head = tmp;
 }
 
-int push_function(op_stack **head, char current_operation) {
+int push_function(func_stack **head, char current_function) {
     char previous_function = '\0';
     previous_function = peek_function(*head);
-    get_execution_priority(previ);
-    op_stack *tmp = malloc(sizeof(op_stack));
+    int priority = 0;
+    priority = get_execution_priority(previous_function, current_function);
+
+    func_stack *tmp = malloc(sizeof(func_stack));
     if (tmp == NULL) {
         exit(STACK_OVERFLOW);
     }
     tmp->next = *head;
     tmp->value = value;
     *head = tmp;
+
+    return priority;
 }
 
-T pop2(Stack **head) {
-    Stack *out;
-    T value;
+double pop_num(num_stack **head) {
+    num_stack *out;
+    double value = 0.0;
     if (*head == NULL) {
         exit(STACK_UNDERFLOW);
     }
     out = *head;
-    *head = (*head)->next; // ?
+    *head = (*head)->next;
     value = out->value;
     free(out);
     return value;
 }
 
+double pop_function(func_stack **head) {
+    func_stack *out;
+    char value = '\0';
+    if (*head == NULL) {
+        exit(STACK_UNDERFLOW);
+    }
+    out = *head;
+    *head = (*head)->next;
+    value = out->value;
+    free(out);
+    return value;
+}
 
-T peek(const Stack* head) {
+double peek_num(const num_stack *head) {
     if (head == NULL) {
         exit(STACK_UNDERFLOW);
     }
     return head->value;
 }
 
-void printStack(const Stack* head) {
+char peek_function(const func_stack *head) {
+    if (head == NULL) {
+        exit(STACK_UNDERFLOW);
+    }
+    return head->value;
+}
+
+void print_num_stack(const num_stack *head) {
     printf("stack >");
     while (head) {
-        printf("%d ", head->value);
+        printf("%F ", head->value);
         head = head->next;
     }
+    putchar('\n');
 }
 
-
-size_t getSize(const Stack *head) {
-    size_t size = 0;
+void print_func_stack(const func_stack *head) {
+    printf("stack >");
     while (head) {
-        size++;
+        printf("%F ", head->value);
         head = head->next;
     }
-    return size;
+    putchar('\n');
 }
+
+int get_num(char *part_string, double *value, int string_position) {
+    int status = 0;
+    if (part_string[string_position]) {
+        
+    }
+
+    return status;
+}
+
+// size_t getSize(const Stack *head) {
+//     size_t size = 0;
+//     while (head) {
+//         size++;
+//         head = head->next;
+//     }
+//     return size;
+// }
