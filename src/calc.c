@@ -122,13 +122,18 @@ void print_func_stack(const func_stack *head) {
     putchar('\n');
 }
 
-int get_num(char *part_string, double *value, int string_position) {
+int get_num(char *part_string, int *string_position, double *value,) {
     int status = 0;
-    if (part_string[string_position]) {
-        
-    }
+    char str_num[11] = "0123456789.";
+
+
+    while(strbrk(str_num, part_string[*string_position]) != NULL) {
+        *string_position += 1;
+    } // КАРОЧЕ сначала strbrk только для того чтобы отследить смещение string_position, если там все оки то делаешь atof и запихувываешь это в стек :)
 
     return status;
+    // обработка первой точки
+    // обработка нескольких точек, хотя
 }
 
 // size_t getSize(const Stack *head) {
