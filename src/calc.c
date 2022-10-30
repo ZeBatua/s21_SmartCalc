@@ -13,29 +13,38 @@ double calc_string(start_string) {
     num_stack *n_head = NULL;
     num_stack *f_head = NULL;
     double current_num = 0.0;
-    char current_function = '\0';
+    char *current_function[4] = {'\0'};
     int priority_status = 0;
     int string_position = 0;
     while (string_position < strlen(start_string)) {
-        if (get_num(start_string, &current_num, &string_position) {
+        if (get_num(start_string, &string_position, &current_num) {
             push_num(&n_head, current_num);
-        } else if (get_function(start_string, &current_num, &string_position) {
-            priority_status = push_function(&f_head, current_function);
+        } else if (get_function(start_string, &string_position, current_function) {
+            priority_status = push_function(&f_head, *current_function);
         } else {
             exit(INVALID_VALUE);
         }
-        double first_value = 0.0;
-        double second_value = 0.0;
-        if (priority_status) {
-            first_value = pop_num(&n_head);
-            second_value = pop_num(&n_head);
-            pop_function(&f_head);
-            calc_current_values(first_value, second_value, current_function);
-            priority_status = 0;
+        if (priority_status) { // это надо функцией реализовать а не ифом, тк может быть необходимо сразу несколько операций.
+            calc_current_values(&n_head, &f_head);
         }
         string_position++;
     }
 }
+
+void calc_current_values(num_stack **num_head, op_stack **function_head) {
+    double first_value = 0.0;
+    double second_value = 0.0;
+    char current_function[4] = {'\0'};
+    first_value = pop_num(&n_head);
+    second_value = pop_num(&n_head);
+    current_function = pop_function(&f_head);
+    if (current_function == open_bracket) {
+        // sosi
+    } (strcmp(current_function, op_stack.open_bracket))
+
+
+}
+
 
 void push_num(num_stack **head, double value) {
     num_stack *tmp = malloc(sizeof(num_stack));
@@ -77,7 +86,7 @@ double pop_num(num_stack **head) {
     return value;
 }
 
-double pop_function(func_stack **head) {
+char pop_function(func_stack **head) {
     func_stack *out;
     char value = '\0';
     if (*head == NULL) {
@@ -122,18 +131,43 @@ void print_func_stack(const func_stack *head) {
     putchar('\n');
 }
 
-int get_num(char *part_string, int *string_position, double *value,) {
+int get_num(char *part_string, int *string_position, double *value) {
     int status = 0;
     char str_num[11] = "0123456789.";
 
-
+    *value  = atof(part_string[*string_position]);
     while(strbrk(str_num, part_string[*string_position]) != NULL) {
         *string_position += 1;
-    } // КАРОЧЕ сначала strbrk только для того чтобы отследить смещение string_position, если там все оки то делаешь atof и запихувываешь это в стек :)
+        status = 1;
+    }
 
     return status;
+
     // обработка первой точки
     // обработка нескольких точек, хотя
+}
+
+int get_function(char *part_string, int *string_position, char *function) { // нет обработки прохода по строке
+    int status = 1;
+    find_string_function(function);
+    if (function[0] == '\0') status = 0;
+    return status;
+
+    // обработка первой точки
+    // обработка нескольких точек, хотя
+}
+
+void find_string_function(char *string) {
+    const char str_functions[41] = "(|)|cos|sin|tan|acos|asin|atan|sqrt|ln|log";
+    char p_str[4] = {'\0'};
+    p_str = strstr(str_functions, p_str); // ловим укзатель на первое полное совпадение
+    if (p_str == NULL) {
+        p_str[0] = {'\0'};
+    } else {
+        for (int i = 0; p_str[i] != '|'; i++) {
+            string[i] = p_str[i];
+        }
+    }
 }
 
 // size_t getSize(const Stack *head) {
