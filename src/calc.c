@@ -31,20 +31,39 @@ double calc_string(start_string) {
     }
 }
 
-void calc_current_values(num_stack **num_head, op_stack **function_head) {
+void calc_current_values(num_stack **num_head, op_stack **function_head) { //  МЫ СЮДА ЗАХОДИМ ТОЛЬКО ТОГДА КОГДА УЖЕ ЕСТЬ ТРЕБОВАНИЕ ЧТО ТО ВЫЧИСЛЯТЬ !!!!!!
     double first_value = 0.0;
     double second_value = 0.0;
     char current_function[4] = {'\0'};
     first_value = pop_num(&n_head);
     second_value = pop_num(&n_head);
     current_function = pop_function(&f_head);
-    if (current_function == open_bracket) {
+    if (strcmp(current_function, op_struct.open_bracket)) {
         // sosi
-    } (strcmp(current_function, op_stack.open_bracket))
+    } else if (strcmp(current_function, op_struct.closing_bracket)) {
+        // escho razok
+    } else if strcmp(current_function, op_struct.cosine)) {
+        push(num_head, cos(first_value, second_value));
+    } else if (strcmp(current_function, op_struct.sinus)) {
+        push(num_head, );
+    } else if (strcmp(current_function, op_struct.tangent)) {
+        push(num_head, );
+    } else if (strcmp(current_function, op_struct.arccosine)) {
+        push(num_head, );
+    } else if (strcmp(current_function, op_struct.arcsine)) {
+        push(num_head, );
+    } else if (strcmp(current_function, op_struct.arc_tangent)) {
+        push(num_head, );
+    } else if (strcmp(current_function, op_struct.square_root)) {
+        push(num_head, );
+    } else if (strcmp(current_function, op_struct.natural_logarithm)) {
+        push(num_head, );
+    } else if (strcmp(current_function, op_struct.decimal_logarithm)) {
+        push(num_head, );
+    }
 
 
 }
-
 
 void push_num(num_stack **head, double value) {
     num_stack *tmp = malloc(sizeof(num_stack));
@@ -158,7 +177,7 @@ int get_function(char *part_string, int *string_position, char *function) { // �
 }
 
 void find_string_function(char *string) {
-    const char str_functions[41] = "(|)|cos|sin|tan|acos|asin|atan|sqrt|ln|log";
+    const char str_functions[41] = "(|)|+|-|*|/|^|%|u+|u-|cos|sin|tan|acos|asin|atan|sqrt|ln|log";
     char p_str[4] = {'\0'};
     p_str = strstr(str_functions, p_str); // ловим укзатель на первое полное совпадение
     if (p_str == NULL) {
@@ -169,12 +188,3 @@ void find_string_function(char *string) {
         }
     }
 }
-
-// size_t getSize(const Stack *head) {
-//     size_t size = 0;
-//     while (head) {
-//         size++;
-//         head = head->next;
-//     }
-//     return size;
-// }

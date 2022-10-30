@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 #define STACK_OVERFLOW -100
 #define STACK_UNDERFLOW -101
@@ -22,6 +23,14 @@ typedef struct Num_Struct {
 
 typedef struct operations {
     char open_bracket[1] = '(';
+    char addition[1] = '+';
+    char subtraction[1] = '-';
+    char multiplication[1] = '*';
+    char division[1] = '/';
+    char power[1] = '^';
+    char modulus[1] = '%';
+    char unary_plus[2] = "u+";
+    char unary_minus[2] = "u-"; 
     char closing_bracket[1] = ')';
     char cosine[3] = "cos";
     char sinus[3] = "sin";
