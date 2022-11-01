@@ -17,39 +17,52 @@ typedef struct OP_Struct {
 } num_stack;
 
 typedef struct Num_Struct {
-    char fuction;
+    char *function;
     struct Num_Struct *next;
-} op_stack;
+} func_stack;
 
 typedef struct operations {
-    char open_bracket[1] = '(';
-    char addition[1] = '+';
-    char subtraction[1] = '-';
-    char multiplication[1] = '*';
-    char division[1] = '/';
-    char power[1] = '^';
-    char modulus[1] = '%';
-    char unary_plus[2] = "u+";
-    char unary_minus[2] = "u-"; 
-    char closing_bracket[1] = ')';
-    char cosine[3] = "cos";
-    char sinus[3] = "sin";
-    char tangent[3] = "tan";
-    char arccosine[4] = "acos";
-    char arcsine[4] = "asin";
-    char arc_tangent[4] = "atan";
-    char square_root[4] = "sqrt";
-    char natural_logarithm[2] = "ln";
-    char decimal_logarithm[2] = "lg";
-} op_struct;
+    char *open_bracket; // nothing
+    char *closing_bracket; // nothing
+    char *addition; // 2
+    char *subtraction; // 2
+    char *multiplication; // 2
+    char *division; // 2
+    char *power; //   1
+    char *modulus; // 2
+    char *unary_plus; // 1
+    char *unary_minus;  // 1
+    char *cosine; // 1
+    char *sinus; // 1
+    char *tangent; // 1
+    char *arccosine;
+    char *arcsine;
+    char *arc_tangent; // 1
+    char *square_root; // 1
+    char *natural_logarithm; // 1
+    char *decimal_logarithm;
+} OPS;
 
+#define OPERATIONS_DEFAULTS { "(", ")", "+", "-", "*", "/", "^", "%", "u+", "u-", "cos", "sin", "tan", "acos", "asin", "atan", "sqrt", "ln", "lg" }
+#define struct operations op_struct = OPERATIONS_DEFAULTS;
 
+double calc_string(char *start_string);
+int calc_current_values(num_stack **num_head, func_stack **function_head); 
 
-void push(Stack **head, T value);
-Stack* pop1(Stack **head);
-T pop2(Stack **head);
-T peek(const Stack* head);
-void printStack(const Stack* head);
-size_t getSize(const Stack *head);
+void push_num(num_stack **head, double value);
+int push_function(func_stack **head, char *current_function);
+
+double pop_num(num_stack **head);
+char *pop_function(func_stack **head);
+
+double peek_num(const num_stack *head);
+char *peek_function(const func_stack *head);
+void print_num_stack(const num_stack *head);
+void print_func_stack(const func_stack *head);
+
+int get_num(char *part_string, int *string_position, double *value);
+int get_function(char *part_string, int *string_position, char *function);
+
+void find_string_function(char *string);
 
 #endif // SRC_SOURCE_CALC_H_
