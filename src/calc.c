@@ -1,7 +1,7 @@
 #include "calc.h"
 
 int main() {
-    char start_string[256] = {'1', '+', '2'};
+    char start_string[256] = {'6', '+', '5'};
     double result = 0.0;
     result = calc_string(start_string);
     printf("result = %F\n", result);
@@ -174,10 +174,31 @@ int get_num(char *part_string, int *string_position, double *value) {
     int status = 0;
     char str_num[11] = "0123456789.";
     *value  = atof(&part_string[*string_position]);
-    while(strpbrk(str_num, &part_string[*string_position]) != NULL) {
+    char *debug = '\0';
+    printf("privet\n");
+    // printf("%s\n123\n", &part_string[*string_position+2]);
+
+    // for (; part_string[*string_position] != NULL; *string_position += 1) {
+    //     printf("pos = %d\n",*string_position);
+    //     printf("%c\n", part_string[*string_position]);
+    // }
+    // putchar('\n');
+
+    // exit(0);
+    int count = 0;
+
+    while(strchr(str_num, (int)part_string[*string_position]) != NULL) {
+        count++;
+        printf("count = %d\n", count);
+        printf("current string: %s\n", &part_string[*string_position]);
+        // char a = part_string[*string_position];
+        printf("%c\n", part_string[*string_position]);
         *string_position += 1;
+        // char b = part_string[*string_position];
+        // printf("%c\n", b);
         status = 1;
     }
+    exit(0);
     return status;
     // обработка первой точки
     // обработка нескольких точек, хотя
