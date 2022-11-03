@@ -1,7 +1,7 @@
 #include "calc.h"
 
 int main() {
-    char start_string[256] = {'6', '+', '5'};
+    char start_string[20] = {'6', '+', '5'};
     double result = 0.0;
     result = calc_string(start_string);
     printf("result = %F\n", result);
@@ -10,25 +10,37 @@ int main() {
 }
 
 double calc_string(char *start_string) {
+    double result = 0.0;
     num_stack *n_head = NULL;
     func_stack *f_head = NULL;
     double current_num = 0.0;
     char current_function[4] = {'\0'};
     int priority_status = 0;
     int string_position = 0;
-    while (string_position < strlen(start_string)) {
+    
+    int bugstop = 0;
+
+    while (string_position < strlen(start_string) || bugstop == 5) {
+        printf("lovim segu6\n");
         if (get_num(start_string, &string_position, &current_num)) {
+            printf("lovim segu1\n");
             push_num(&n_head, current_num);
+            printf("lovim segu4\n");
         } else if (get_function(start_string, &string_position, current_function)) {
+            printf("lovim segu2\n");
             priority_status = push_function(&f_head, current_function);
         } else {
             exit(INVALID_VALUE);
         }
+        printf("lovim segu5\n");
         if (priority_status) { // это надо функцией реализовать а не ифом, тк может быть необходимо сразу несколько операций.
+            printf("lovim segu3\n");
             calc_current_values(&n_head, &f_head);
         }
-        string_position++;
+        bugstop++;
+        // string_position++;
     }
+    return result;
 }
 
 int calc_current_values(num_stack **num_head, func_stack **function_head) { //  МЫ СЮДА ЗАХОДИМ ТОЛЬКО ТОГДА КОГДА УЖЕ ЕСТЬ ТРЕБОВАНИЕ ЧТО ТО ВЫЧИСЛЯТЬ !!!!!!git
@@ -97,7 +109,7 @@ void push_num(num_stack **head, double num) {
 
 int push_function(func_stack **head, char *current_function) {
     char *previous_function = '\0';
-    previous_function = peek_function(*head);
+    // previous_function = peek_function(*head);
     int priority = 0;
     // priority = get_execution_priority(previous_function, current_function);
 
@@ -147,6 +159,7 @@ double peek_num(const num_stack *head) {
 
 char *peek_function(const func_stack *head) {
     if (head == NULL) {
+        printf("STACK_UNDERFLOW\n");
         exit(STACK_UNDERFLOW);
     }
     return head->function;
@@ -172,33 +185,30 @@ void print_func_stack(const func_stack *head) {
 
 int get_num(char *part_string, int *string_position, double *value) {
     int status = 0;
+
+    static int debug_exit = 0;
+    debug_exit++;
+    if (debug_exit == 8) {
+        printf("debug_exit\n");
+        exit(0);
+    }
+
     char str_num[11] = "0123456789.";
+    printf("char = %c\n", part_string[*string_position]);
     *value  = atof(&part_string[*string_position]);
     char *debug = '\0';
-    printf("privet\n");
-    // printf("%s\n123\n", &part_string[*string_position+2]);
+    printf("lovim segu8\n");
 
-    // for (; part_string[*string_position] != NULL; *string_position += 1) {
-    //     printf("pos = %d\n",*string_position);
-    //     printf("%c\n", part_string[*string_position]);
-    // }
-    // putchar('\n');
-
-    // exit(0);
     int count = 0;
 
-    while(strchr(str_num, (int)part_string[*string_position]) != NULL) {
+    while(strchr(str_num, part_string[*string_position]) != NULL) {
+        printf("lovim segu9\n");
         count++;
         printf("count = %d\n", count);
-        printf("current string: %s\n", &part_string[*string_position]);
-        // char a = part_string[*string_position];
-        printf("%c\n", part_string[*string_position]);
         *string_position += 1;
-        // char b = part_string[*string_position];
-        // printf("%c\n", b);
         status = 1;
     }
-    exit(0);
+
     return status;
     // обработка первой точки
     // обработка нескольких точек, хотя
@@ -206,23 +216,23 @@ int get_num(char *part_string, int *string_position, double *value) {
 
 int get_function(char *part_string, int *string_position, char *function) { // нет обработки прохода по строке
     int status = 1;
-    find_string_function(function);
-    if (function[0] == '\0') status = 0;
+    // find_string_function(part_string, , function);
+
+    const char str_functions[60] = "(|)|+|-|*|/|^|%|U|u|c|s|t|C|S|T|q|l|L"; // может все таки буковы....
+    printf("current string: %s\n", &part_string[*string_position]);
+    function = strchr(str_functions, &part_string[*string_position]); // ловим укзатель на первое полное совпадение
+    if (function == NULL) {
+        status = 0;
+    } else {
+        for (int i = 0; i < 4; i++) {
+            if (function[i] == '|') function[i] = '\0';
+        }
+    }
+
     return status;
 
     // обработка первой точки
     // обработка нескольких точек, хотя
 }
 
-void find_string_function(char *string) {
-    const char str_functions[60] = "(|)|+|-|*|/|^|%|u+|u-|cos|sin|tan|acos|asin|atan|sqrt|ln|log";
-    char *p_str = '\0';
-    p_str = strstr(str_functions, p_str); // ловим укзатель на первое полное совпадение
-    if (p_str == NULL) {
-        p_str[0] = '\0';
-    } else {
-        for (int i = 0; p_str[i] != '|'; i++) {
-            string[i] = p_str[i];
-        }
-    }
-}
+// const char str_functions[60] = "(|)|+|-|*|/|^|%|u+|u-|cos|sin|tan|acos|asin|atan|sqrt|ln|log"; // может все таки буковы....
