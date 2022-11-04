@@ -47,7 +47,7 @@ typedef struct operations {
 #define struct operations op_struct = OPERATIONS_DEFAULTS;
 
 double calc_string(char *start_string);
-int calc_current_values(num_stack **num_head, func_stack **function_head); 
+double calc_current_values(num_stack **num_head, func_stack **function_head); 
 
 void push_num(num_stack **head, double value);
 int push_function(func_stack **head, char *current_function);
@@ -64,5 +64,8 @@ int get_num(char *part_string, int *string_position, double *value);
 int get_function(char *part_string, int *string_position, char *function);
 
 void find_string_function(char *string);
+
+char *s21_strchr(char *string, char symbol);
+int s21_strcmp(char *current_function, char *struct_function);
 
 #endif // SRC_SOURCE_CALC_H_
