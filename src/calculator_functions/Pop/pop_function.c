@@ -1,10 +1,10 @@
-#include "../calc.h"
+#include "../../calc.h"
 
 char pop_function(func_stack **head) {
   func_stack *out;
   char value = '\0';
   if (*head == NULL) {
-    exit(STACK_UNDERFLOW);
+    return value;
   }
   out = *head;
   *head = (*head)->next;

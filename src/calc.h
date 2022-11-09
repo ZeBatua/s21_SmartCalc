@@ -47,9 +47,9 @@ typedef struct operations {
   {"(",   ")",   "+",   "-",    "*",    "/",    "^",    "%",  "u+", "u-", \
    "cos", "sin", "tan", "acos", "asin", "atan", "sqrt", "ln", "lg"};
 
-double calc_string(char *start_string, int break_status);
-double calc_current_values(num_stack **num_head, func_stack **function_head,
-                           int end_string);
+double read_string(char *start_string, int *break_status);
+void calc_current_values(num_stack **num_head, func_stack **function_head,
+                           int end_string, int *priority_status);
 
 void push_num(num_stack **head, double value);
 int push_function(func_stack **head, char current_function);
@@ -70,7 +70,11 @@ int s21_strcmp(char current_function, char *struct_function);
 void printNumStack(num_stack *head);
 void printFuncStack(func_stack *head);
 
-double exec_expression_with_minus(char *current_string, int *string_position);
+double exec_expression_with_minus(char *curent_string, int *string_position);
 double exec_expression_with_division(char *curent_string, int *string_position);
+
+
+int is_unary_minus(char *curent_string, int string_position);
+
 
 #endif  // SRC_SOURCE_CALC_H_

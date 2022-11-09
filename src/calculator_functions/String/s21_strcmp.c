@@ -1,4 +1,4 @@
-#include "../calc.h"
+#include "../../calc.h"
 
 int s21_strcmp(char current_function, char *struct_function) {
   int status = 0;

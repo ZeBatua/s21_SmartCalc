@@ -1,4 +1,4 @@
-#include "../calc.h"
+#include "../../calc.h"
 
 char peek_function(const func_stack *head) {
   if (head == NULL) {

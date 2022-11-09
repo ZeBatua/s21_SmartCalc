@@ -1,4 +1,4 @@
-#include "../calc.h"
+#include "../../calc.h"
 
 double pop_num(num_stack **head) {
   num_stack *out;

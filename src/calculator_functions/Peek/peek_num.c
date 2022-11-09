@@ -1,4 +1,4 @@
-#include "../calc.h"
+#include "../../calc.h"
 
 double peek_num(const num_stack *head) {
   if (head == NULL) {

@@ -1,4 +1,4 @@
-#include "../calc.h"
+#include "../../calc.h"
 
 void printNumStack(num_stack *head) {
   printf("stack > ");

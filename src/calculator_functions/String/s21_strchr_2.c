@@ -1,4 +1,4 @@
-#include "../calc.h"
+#include "../../calc.h"
 
 char s21_strchr_2(char *string, char symbol) {
   int check = 0;

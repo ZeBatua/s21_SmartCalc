@@ -1,4 +1,4 @@
-#include "../calc.h"
+#include "../../calc.h"
 
 void push_num(num_stack **head, double num) {
   num_stack *tmp = malloc(sizeof(num_stack));

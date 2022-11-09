@@ -7,7 +7,7 @@ LDLIBS = -lgcov
 TFLAGS = -lcheck
 ARFLAGS := rcs
 OBJECTS = *.o
-SOURCES := ./calculator_functions/*.c
+SOURCES := ./calculator_functions/*/*.c
 # VAR = $(shell pkg-config --cflags --libs check)
 
 all: clean s21_calc.a
@@ -16,6 +16,7 @@ s21_calc.a: clean
 	@$(CC) $(CFLAGS) $(CPPFLAGS) $(SOURCES) $(ASAN) -c
 	@ar rcs s21_calc.a $(OBJECTS)
 	@rm *.o
+# nm s21_calc.a | grep "\.o"
 
 test: s21_calc.a
 	$(CC) s21_calc.a test.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
