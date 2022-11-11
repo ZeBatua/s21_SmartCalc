@@ -2,7 +2,12 @@
 
 double exec_expression_with_division(char *curent_string, int *string_position) {
   double result = 0.0;
-  int extra_position = 3;
+  int extra_position = 4;
+
+  while (curent_string[*string_position] == ' ') {
+    *string_position += 1;
+  } 
+
   if (get_num(curent_string, string_position, &result)) {
     result = 1.0 / result;
   } else {

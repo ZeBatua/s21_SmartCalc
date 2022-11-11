@@ -15,7 +15,7 @@ int get_num(char *part_string, int *string_position, double *value) {
   while (s21_strchr_2(str_num, part_string[*string_position]) != '\0') {
     *string_position += 1;
     status = 1;
-    if (*string_position == 25) {
+    if (*string_position == 100) {
       printf("loh\n");
       exit(0);
     }

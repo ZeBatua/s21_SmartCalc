@@ -284,6 +284,112 @@ START_TEST(cosine_5) {
 }
 END_TEST
 
+START_TEST(mix_1) {
+  char start_string[256] = {"(1+2)*3+5*4"};  
+  double result = 0.0;
+  int stop = 0;
+  result = read_string(start_string, &stop);
+  ck_assert_double_eq_tol(result, 29.0, 7);
+}
+END_TEST
+
+START_TEST(mix_2) {
+  char start_string[256] = {"(((1+2)))*3"};  
+  double result = 0.0;
+  int stop = 0;
+  result = read_string(start_string, &stop);
+  ck_assert_double_eq_tol(result, 9.0, 7);
+}
+END_TEST
+
+START_TEST(mix_3) {
+  char start_string[256] = {"(((1+2)))*3"};  
+  double result = 0.0;
+  int stop = 0;
+  result = read_string(start_string, &stop);
+  ck_assert_double_eq_tol(result, 9.0, 7);
+}
+END_TEST
+
+START_TEST(mix_4) {
+  char start_string[256] = {"(((1*2)))-3"};  
+  double result = 0.0;
+  int stop = 0;
+  result = read_string(start_string, &stop);
+  ck_assert_double_eq_tol(result, -1.0, 7);
+}
+END_TEST
+
+START_TEST(mix_5) {
+  char start_string[256] = {"1+2+3*(0-1)+(-1)"};  
+  double result = 0.0;
+  int stop = 0;
+  result = read_string(start_string, &stop);
+  ck_assert_double_eq_tol(result, -1.0, 7);
+}
+END_TEST
+
+
+
+START_TEST(mix_6) {
+  char start_string[256] = {"3 + 4 * 2 / ( 1 - 5 ) ^ 2 "};  
+  double result = 0.0;
+  int stop = 0;
+  result = read_string(start_string, &stop);
+  ck_assert_double_eq_tol(result, 3.5, 7);
+}
+END_TEST
+
+START_TEST(mix_7) {
+  char start_string[256] = {"2+3^(2*1+1)"};
+  double result = 0.0;
+  int stop = 0;
+  result = read_string(start_string, &stop);
+  ck_assert_double_eq_tol(result, 27.0, 7);
+}
+END_TEST
+
+START_TEST(mix_8) {
+  char start_string[256] = {"3 + 5 * 2 / ( 6 - 4 ) ^ 2 "};
+  double result = 0.0;
+  int stop = 0;
+  result = read_string(start_string, &stop);
+  ck_assert_double_eq_tol(result, 5.5, 7);
+}
+END_TEST
+
+char start_string[256] = {"3+4*2/(2+0)^(3^1)*100"};
+
+
+START_TEST(mix_9) {
+  char start_string[256] = {"3+4*2/(2+0)^(3^1)*100"};
+  double result = 0.0;
+  int stop = 0;
+  result = read_string(start_string, &stop);
+  ck_assert_double_eq_tol(result, 103.0, 7);
+}
+END_TEST
+
+
+START_TEST(mix_10) {
+  char start_string[256] = {"11+(7^2)"};
+  double result = 0.0;
+  int stop = 0;
+  result = read_string(start_string, &stop);
+  ck_assert_double_eq_tol(result, 60.0, 7);
+}
+END_TEST
+
+START_TEST(mix_11) {
+  char start_string[256] = {"11+7^2"}; // 803
+  double result = 0.0;
+  int stop = 0;
+  result = read_string(start_string, &stop);
+  ck_assert_double_eq_tol(result, 60.0, 7);
+}
+END_TEST
+
+
 
 //----------------------------------------------------------------------------------------------//
 
@@ -329,6 +435,18 @@ int main(void) {
   tcase_add_test(tc1_1, cosine_3);
   tcase_add_test(tc1_1, cosine_4);
   tcase_add_test(tc1_1, cosine_5);
+
+  tcase_add_test(tc1_1, mix_1);
+  tcase_add_test(tc1_1, mix_2);
+  tcase_add_test(tc1_1, mix_3);
+  tcase_add_test(tc1_1, mix_4);
+  tcase_add_test(tc1_1, mix_5);
+  tcase_add_test(tc1_1, mix_6);
+  tcase_add_test(tc1_1, mix_7);
+  tcase_add_test(tc1_1, mix_8);
+  tcase_add_test(tc1_1, mix_9);
+  tcase_add_test(tc1_1, mix_10);
+  tcase_add_test(tc1_1, mix_11);
 
   srunner_run_all(sr, CK_ENV);
   tc = srunner_ntests_failed(sr);
