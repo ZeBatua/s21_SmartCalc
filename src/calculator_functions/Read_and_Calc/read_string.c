@@ -52,8 +52,11 @@ double read_string(char *start_string, int *break_status) {
       } else if ((previous_function == '*' || previous_function == '/' || previous_function == '^') && (current_function == '-' || current_function == '+')) {
         priority_status = 1;
         calc_current_values(&n_head, &f_head, end_string_status, &priority_status);
-        push_function(&f_head, current_function);  
-        continue;
+
+        if (current_function != '-') {
+          push_function(&f_head, current_function);  
+          continue;
+        }
       }
       previous_function = '\0';
       //---внимание_гавнокод---//

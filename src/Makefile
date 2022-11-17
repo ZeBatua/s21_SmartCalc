@@ -1,5 +1,5 @@
 # ASAN := -fsanitize=address
-# CFLAGS := -std=c11 $(ASAN)
+# CFLAGS := -std=c11 $(ASAN) -pedantic
 # CPPFLAGS := -Wall -Werror -Wextra
 CC = gcc -g
 GFLAGS = -coverage

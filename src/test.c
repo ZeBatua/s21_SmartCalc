@@ -381,7 +381,7 @@ START_TEST(mix_10) {
 END_TEST
 
 START_TEST(mix_11) {
-  char start_string[256] = {"11+7^2"}; // 803
+  char start_string[256] = {"11+7^2"}; 
   double result = 0.0;
   int stop = 0;
   result = read_string(start_string, &stop);
@@ -390,6 +390,14 @@ START_TEST(mix_11) {
 END_TEST
 
 
+START_TEST(mix_12) {
+  char start_string[256] = {"(0.432*54.2/4^2-(-8*4))*0.02"};
+  double result = 0.0;
+  int stop = 0;
+  result = read_string(start_string, &stop);
+  ck_assert_double_eq_tol(result, 0.669268, 7);
+}
+END_TEST
 
 //----------------------------------------------------------------------------------------------//
 
@@ -447,6 +455,7 @@ int main(void) {
   tcase_add_test(tc1_1, mix_9);
   tcase_add_test(tc1_1, mix_10);
   tcase_add_test(tc1_1, mix_11);
+  tcase_add_test(tc1_1, mix_12);
 
   srunner_run_all(sr, CK_ENV);
   tc = srunner_ntests_failed(sr);

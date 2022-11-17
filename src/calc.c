@@ -1,20 +1,10 @@
 #include "calc.h"
 
-int main() {
-  // char start_string[256] = {"3+4*2/(1-5)"}; // сделай ожидание закрывающей скобки, обработай ввод функций, двойная реализация степени (без и с "()")
-  // пропиши все 3 кейса выдачи приоритета выполнения (закрывающая скобка, падение приоритета, конец строки)
-  // char start_string[256] = {"(3+4*2/(2+0)^(3^1)*100) + 7^2"}; // 803
-  char start_string[256] = {"(11+2^2^(2) + 3*3)/6+2/2 + 15 + c0 * 10 + 5 / 5)"}; // 803
-  // char start_string[256] = {"3+8/4*100"}; // 803
-  
-  // char start_string[256] = {"3 + 5 * 2 / ( 6 - 4 ) ^ 2 "}; //  5.5
-  // test.c:339:F:Core:mix_6:0: Assertion 'fabsl(3.5 - result) < 7' failed: result == nan, 3.5 == 3.5, 7 == 7
-  
+int calc() {
   double result = 0.0;
   int stop = 0;
-  result = read_string(start_string, &stop); // 6 + 5 + 3 // 
+  result = read_string(start_string, &stop); 
   printf("result = %F\n", result);
-  // printf("num = %F\n", 3 + 4 * 2 / ( 6 - 5 ) ^ (2 ^ 3) * 100);
   return 0;
 }
 
@@ -40,7 +30,16 @@ u- -> s- S- c- C- t- T- l- L- q- first_symbol !before_bracket! after_bracket
 */
 
 
-
+  // char start_string[256] = {"3+4*2/(1-5)"}; // сделай ожидание закрывающей скобки, обработай ввод функций, двойная реализация степени (без и с "()")
+  // пропиши все 3 кейса выдачи приоритета выполнения (закрывающая скобка, падение приоритета, конец строки)
+  // char start_string[256] = {"(3+4*2/(2+0)^(3^1)*100) + 7^2"}; // 803
+  // char start_string[256] = {"(11+2^2^(2) + 3*3)/6+2/2 + 15 + c0) * 10 + 5 / 5)"}; // 803
+  // char start_string[256] = {"3+8/4*100"}; // 803
+  
+  // char start_string[256] = {"2*3-(8*2)"}; //  -10.0
+  // char start_string[256] = {"(0.432*54.2/4^2-(-8*4))*0.02"}; //  5.5
+  // // test.c:339:F:Core:mix_6:0: Assertion 'fabsl(3.5 - result) < 7' failed: result == nan, 3.5 == 3.5, 7 == 7
+  // double result = 0.0;
 
 //   tcase_add_test(tc1_1, cosine_1);
 //   tcase_add_test(tc1_1, cosine_2);

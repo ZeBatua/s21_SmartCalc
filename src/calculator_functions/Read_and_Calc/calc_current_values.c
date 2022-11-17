@@ -2,7 +2,7 @@
 
 void calc_current_values(num_stack **num_head, func_stack **function_head, int end_strig, int *status_priority) {
   double first_value = 0.0;
-  double     second_value = 0.0;
+  double second_value = 0.0;
 
   printNumStack(*num_head);
   printFuncStack(*function_head);
@@ -41,7 +41,7 @@ void calc_current_values(num_stack **num_head, func_stack **function_head, int e
       second_value = pop_num(num_head);
       push_num(num_head, first_value + second_value);
     } else if (s21_strcmp(current_function, chtoto.subtraction)) {
-      second_value = pop_num(num_head);
+      second_value =  pop_num(num_head);
       push_num(num_head, second_value - first_value);
     } else if (s21_strcmp(current_function, chtoto.multiplication)) {
       second_value = pop_num(num_head);
@@ -84,7 +84,12 @@ void calc_current_values(num_stack **num_head, func_stack **function_head, int e
       push_num(num_head, log10(first_value));
       find_second_bracket = 0;
     }
-    *status_priority = 0;
+
+    if (*status_priority = 1 && (peek_function(*function_head) == '*' || peek_function(*function_head) == '/')) {
+    } else {
+      *status_priority = 0;
+    }
+
 
     first_value = pop_num(num_head);
     if (end_strig == 1 && peek_function(*function_head) == '\0') break;
