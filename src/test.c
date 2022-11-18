@@ -466,6 +466,8 @@ int main(void) {
   tcase_add_test(tc1_1, mix_11);
   tcase_add_test(tc1_1, mix_12);
 
+  // tcase_add_test(tc1_1, empty);
+
   srunner_run_all(sr, CK_ENV);
   tc = srunner_ntests_failed(sr);
   srunner_free(sr);

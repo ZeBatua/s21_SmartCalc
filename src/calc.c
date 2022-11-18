@@ -3,10 +3,13 @@
 int main() {
   double result = 0.0;
   int stop = 0;
-  char *start_string = "9-6";
+  char start_string[256] = {"1+2"};
   result = read_string(start_string, &stop); 
   printf("result = %F\n", result);
   return 0;
+
+  // обработчик строки который изменит ÷ на / и прочеее 
+
 }
 
 /*

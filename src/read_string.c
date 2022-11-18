@@ -418,7 +418,9 @@ double exec_expression_with_minus(char *curent_string, int *string_position) {
 
 int is_unary_minus(char *curent_string, int string_position) {
   int sign_status = 0;
-  if (curent_string[string_position - 1] == 'c' ||
+  if (string_position == 1) {
+    sign_status = 1;
+  } else if (curent_string[string_position - 1] == 'c' ||
       curent_string[string_position - 1] == 'C' ||
       curent_string[string_position - 1] == 's' ||
       curent_string[string_position - 1] == 'S' ||
@@ -427,9 +429,7 @@ int is_unary_minus(char *curent_string, int string_position) {
       curent_string[string_position - 1] == 'q' ||
       curent_string[string_position - 1] == 'l' ||
       curent_string[string_position - 1] == 'L' ||
-      curent_string[string_position - 1] == '(' ||
-      // curent_string[string_position + 1] == '(' ||
-      string_position == 1) {
+      curent_string[string_position - 1] == '(') {
     sign_status = 1;
   }
   return sign_status;
@@ -438,7 +438,7 @@ int is_unary_minus(char *curent_string, int string_position) {
 char s21_strchr_2(char *string, char symbol) {
   int check = 0;
   int i = 0;
-  for (; i < strlen(string); i++) {
+  for (; i < 11; i++) {
     if (string[i] == symbol) {
       check = 1;
       return string[i];

@@ -19,11 +19,11 @@ s21_calc.a: clean
 # nm s21_calc.a | grep "\.o"
 
 test: s21_calc.a
-	$(CC) s21_calc.a test.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
+	$(CC) $(ASAN) s21_calc.a test.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
 	./$@
 
 main: s21_calc.a
-	gcc -g s21_calc.a calc.c -o $@
+	gcc $(ASAN) -g s21_calc.a calc.c -o $@
 	@./$@
 
 gcov_report: clean
@@ -37,16 +37,17 @@ gcov_report: clean
 	open ./report.html
 
 check:
-	cppcheck functions/*.c
-	cppcheck tests.c
-	clang-format -i -n functions/*.c
-	clang-format -i -n *.h
-	clang-format -i -n tests.c
+	cppcheck *.c
+# clang-format -i -n functions/*.c
+# clang-format -i -n *.h
+# clang-format -i -n tests.c
+
+leaks:
 	CK_FORK=no leaks --atExit -- ./test
+
 
 clean:
 	@rm -rf s21_calc.a test *.html *.gcda *.gcno gcov_report *.info report *.o *.dSYM *.css
-
 
 dist:
 	cd .. && tar -czf s21_SmartCalc_v1.0.tgz src

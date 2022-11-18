@@ -1,9 +1,6 @@
 #include "calc.h"
 
 double read_string(char *start_string, int *break_status) {
-  printf("break status = %d\n", *break_status);
-  printf("hello zatup\n");
-  printf("statr string: %s\n", start_string);
   num_stack *n_head = NULL;
   func_stack *f_head = NULL;
   double current_num = 0.0;
@@ -11,7 +8,7 @@ double read_string(char *start_string, int *break_status) {
   int priority_status = 0, string_position = 0, end_string_status = 0,
       bug_stop = 0;
   int break_power_signal = 0;
-//  size_t check_size = strlen(start_string);
+  size_t check_size = strlen(start_string);
 
   while (string_position < strlen(start_string)) {
     if (start_string[string_position] == ' ') {
@@ -58,7 +55,7 @@ double read_string(char *start_string, int *break_status) {
           continue;
         }
       }
-//      previous_function = '\0';
+      previous_function = '\0';
       //---внимание_гавнокод---//
 
       push_function(&f_head, current_function);
@@ -114,13 +111,7 @@ double read_string(char *start_string, int *break_status) {
   }
   printNumStack(n_head);
   printFuncStack(f_head);
-
-
-
-  printf("break status = %d\n", *break_status);
-  if (*break_status != 0) {
-      *break_status = string_position;
-  }
+  if (*break_status != 0) *break_status = string_position;
 
   current_num = pop_num(&n_head);
   return current_num;
@@ -181,7 +172,7 @@ void calc_current_values(num_stack **num_head, func_stack **function_head, int e
   printNumStack(*num_head);
   printFuncStack(*function_head);
 
-  OPS chtoto = {"(",   ")",   "+",   "-",   "*",   "/",   "^",
+  OPS chtoto = {"(",   ")",   "+",   "-",   "x",   "÷",   "^",
                 "%",   "U",   "u",   "c",   "s",   "t",   "C",
                 "S",   "T",   "q",   "l",   "L"};
 
@@ -355,7 +346,7 @@ double peek_num(const num_stack *head) {
 
 int get_function(char *part_string, int *string_position, char *function) {
   int status = 0;
-  const char str_functions[60] = "(|)|+|-|*|/|^|%|U|u|c|s|t|C|S|T|q|l|L";
+  const char str_functions[60] = "(|)|+|-|x|÷|^|%|U|u|c|s|t|C|S|T|q|l|L";
   *function = *strchr(str_functions, part_string[*string_position]);
   if (function != NULL) {
     status = 1;
@@ -426,7 +417,9 @@ double exec_expression_with_minus(char *curent_string, int *string_position) {
 
 int is_unary_minus(char *curent_string, int string_position) {
   int sign_status = 0;
-  if (curent_string[string_position - 1] == 'c' ||
+  if (string_position == 1) {
+    sign_status = 1;
+  } else if (curent_string[string_position - 1] == 'c' ||
       curent_string[string_position - 1] == 'C' ||
       curent_string[string_position - 1] == 's' ||
       curent_string[string_position - 1] == 'S' ||
@@ -435,18 +428,18 @@ int is_unary_minus(char *curent_string, int string_position) {
       curent_string[string_position - 1] == 'q' ||
       curent_string[string_position - 1] == 'l' ||
       curent_string[string_position - 1] == 'L' ||
-      curent_string[string_position - 1] == '(' ||
-      // curent_string[string_position + 1] == '(' ||
-      string_position == 1) {
+      curent_string[string_position - 1] == '(') {
     sign_status = 1;
   }
   return sign_status;
 }
 
 char s21_strchr_2(char *string, char symbol) {
+  int check = 0;
   int i = 0;
-  for (; i < strlen(string); i++) {
+  for (; i < 11; i++) {
     if (string[i] == symbol) {
+      check = 1;
       return string[i];
     }
   }
@@ -454,7 +447,9 @@ char s21_strchr_2(char *string, char symbol) {
 }
 
 char s21_strchr(char string, char symbol) {
+  int check = 0;
   if (string == symbol) {
+    check = 1;
     return string;
   }
   return '\0';
