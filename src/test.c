@@ -399,6 +399,15 @@ START_TEST(mix_12) {
 }
 END_TEST
 
+START_TEST(empty) {
+  char start_string[256] = {""};
+  double result = 0.0;
+  int stop = 0;
+  result = read_string(start_string, &stop);
+  ck_assert_double_eq_tol(result, 0.669268, 7);
+}
+END_TEST
+
 //----------------------------------------------------------------------------------------------//
 
 int main(void) {

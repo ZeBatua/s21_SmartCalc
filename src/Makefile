@@ -7,7 +7,7 @@ LDLIBS = -lgcov
 TFLAGS = -lcheck
 ARFLAGS := rcs
 OBJECTS = *.o
-SOURCES := ./calculator_functions/*/*.c
+SOURCES := read_string.c
 # VAR = $(shell pkg-config --cflags --libs check)
 
 all: clean s21_calc.a
@@ -47,3 +47,18 @@ check:
 clean:
 	@rm -rf s21_calc.a test *.html *.gcda *.gcno gcov_report *.info report *.o *.dSYM *.css
 
+
+dist:
+	cd .. && tar -czf s21_SmartCalc_v1.0.tgz src
+
+
+dvi: dvi_clean
+	makeinfo manual.texi --html
+	open ./manual/index.html
+
+dvi_clean:
+	rm -rf manual
+
+clean_cash:
+	sh cleaner.sh
+	sh cleaner_2.sh
