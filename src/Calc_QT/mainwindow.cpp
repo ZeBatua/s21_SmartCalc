@@ -91,18 +91,11 @@ void MainWindow::on_pushButton_x_clicked()
 void MainWindow::on_pushButton_clean_clicked()
 {
     QString qstr = ui->result_number->text();
-    char str[256];
-    char equal[2];
-    equal[0] = '=';
-    double x_num = 0;
     QByteArray bytes = qstr.toLocal8Bit();
-    strcpy(str, bytes.data());
-    strncat(str, equal, 1);
-//    if (ui->result_number->text().contains('x')) {
-//        x_num = ui->x_calc_value->text().toDouble();
-//    }
+    char mass[256];
+    strlcpy(mass, bytes.data(), 256);
     double res = 0.0;
-//    res = read_string(str, 0);
+    res = read_string(mass, 0);
     QString new_label = QString::number(res, 'f', 6);
     ui->result_number->setText(new_label);
 }
