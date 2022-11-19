@@ -137,9 +137,9 @@ START_TEST(division_3) {
 END_TEST
 
 START_TEST(division_4) {
-  char start_string[256] = {"100/2/2/5/5."};
+  char start_string[256] = {"100./2./2./5/5."};
   int string_status = valid_string(start_string);
-  ck_assert_int_eq(string_status, 0);
+  ck_assert_int_eq(string_status, 1);
 }
 END_TEST
 
@@ -153,7 +153,7 @@ END_TEST
 //----------------------------------------------------------------------------------------------//
 
 START_TEST(power_1) {
-  char start_string[256] = {"10^2"};
+  char start_string[256] = {"10^2)"};
   int string_status = valid_string(start_string);
   ck_assert_int_eq(string_status, 1);
 }
@@ -174,7 +174,7 @@ START_TEST(power_3) {
 END_TEST
 
 START_TEST(power_4) {
-  char start_string[256] = {"0^0"};
+  char start_string[256] = {"0^0)"};
   int string_status = valid_string(start_string);
   ck_assert_int_eq(string_status, 1);
 }
@@ -197,7 +197,7 @@ START_TEST(cosine_1) {
 END_TEST
 
 START_TEST(cosine_2) {
-  char start_string[256] = {"c1+1.34)"};  
+  char start_string[256] = {"c1+1.34)"};
   int string_status = valid_string(start_string);
   ck_assert_int_eq(string_status, 1);
 }
@@ -218,7 +218,7 @@ START_TEST(cosine_4) {
 END_TEST
 
 START_TEST(cosine_5) {
-  char start_string[256] = {"c0.3.0)"};  
+  char start_string[256] = {"c0.3.0)"};
   int string_status = valid_string(start_string);
   ck_assert_int_eq(string_status, 0);
 }
