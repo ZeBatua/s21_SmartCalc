@@ -7,8 +7,10 @@ LDLIBS = -lgcov
 TFLAGS = -lcheck
 ARFLAGS := rcs
 OBJECTS = *.o
-SOURCES := read_string.c
-# VAR = $(shell pkg-config --cflags --libs check)
+SOURCES := Smart_Calc_QT/read_string.c \
+Smart_Calc_QT/valid_string.c
+
+VAR = $(shell pkg-config --cflags --libs check)
 
 all: clean s21_calc.a
 
@@ -20,6 +22,10 @@ s21_calc.a: clean
 
 test: s21_calc.a
 	$(CC) $(ASAN) s21_calc.a test.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
+	./$@
+
+stile_test: s21_calc.a
+	$(CC) $(ASAN) s21_calc.a  Smart_Calc_QT/stile_test.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
 	./$@
 
 main: s21_calc.a

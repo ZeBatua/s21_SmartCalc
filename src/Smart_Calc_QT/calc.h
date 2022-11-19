@@ -80,5 +80,7 @@ int is_unary_minus(char *curent_string, int string_position);
 int check_power_next_function(char *part_string, int string_position);
 double exec_expression_with_power(char *curent_string, int *string_position, double current_num);
 
+int valid_string(char *input_string);
+
 
 #endif  // SRC_SOURCE_CALC_H_
