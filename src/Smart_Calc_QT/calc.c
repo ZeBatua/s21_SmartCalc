@@ -5,7 +5,7 @@ int main() {
   int string_status = 0;
   int stop = 0;
   // char start_string[256] = {"--2+3*2"};
-  char start_string[256] = {"c1+1.34)"};
+  char start_string[256] = {"10*5"};
 
   string_status = valid_string(start_string);
   printf("string_status = %d\n", string_status);

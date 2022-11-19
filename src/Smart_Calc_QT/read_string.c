@@ -172,7 +172,7 @@ void calc_current_values(num_stack **num_head, func_stack **function_head, int e
   printNumStack(*num_head);
   printFuncStack(*function_head);
 
-  OPS chtoto = {"(",   ")",   "+",   "-",   "x",   "÷",   "^",
+  OPS chtoto = {"(",   ")",   "+",   "-",   "*",   "/",   "^",
                 "%",   "U",   "u",   "c",   "s",   "t",   "C",
                 "S",   "T",   "q",   "l",   "L"};
 
