@@ -21,6 +21,8 @@ set(PROJECT_SOURCES
         mainwindow.ui
         calc.h
         read_string.c
+        adapt_string.c
+        valid_string.c
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

@@ -44,10 +44,6 @@ typedef struct operations {
   char *decimal_logarithm;
 } OPS;
 
-#define OPERATIONS_DEFAULTS                                               \
-  {"(",   ")",   "+",   "-",    "*",    "/",    "^",    "%",  "u+", "u-", \
-   "cos", "sin", "tan", "acos", "asin", "atan", "sqrt", "ln", "lg"};
-
 double read_string(char *start_string, int *break_status);
 void calc_current_values(num_stack **num_head, func_stack **function_head,
                            int end_string, int *priority_status);
@@ -81,6 +77,7 @@ int check_power_next_function(char *part_string, int string_position);
 double exec_expression_with_power(char *curent_string, int *string_position, double current_num);
 
 int valid_string(char *input_string);
+void adapt_string(char *string);
 
 
 #endif  // SRC_SOURCE_CALC_H_

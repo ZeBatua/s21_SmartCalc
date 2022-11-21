@@ -4,9 +4,11 @@ int main() {
   double result = 0.0;
   int string_status = 0;
   int stop = 0;
-  // char start_string[256] = {"--2+3*2"};
-  char start_string[256] = {"10*5"};
+  char start_string[256] = {"9/3"};
 
+
+  adapt_string(start_string);
+  printf("string after adapt: %s\n", start_string);
   string_status = valid_string(start_string);
   printf("string_status = %d\n", string_status);
 
@@ -22,6 +24,9 @@ int main() {
   // функция обработки строки должна уметь скипать пробелы или убрать их до обработки
   // ты можешь возвращать конкретный код ошибки в соотвествии прописывать ее выводе qt
   // is_open_op надо переделать тк не всегда требуется закрывающая скобка // НЕТ! скобки я ставлю везде
+  // не работает акртангенс 
+  // степень вообще игнорирует что либо
+  // valid можно упросить в 2 раза тк ты всегда подаешь скобки
 
 }
 

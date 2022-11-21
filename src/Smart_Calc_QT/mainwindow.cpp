@@ -28,20 +28,19 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->sub, SIGNAL(clicked()), this, SLOT(write_string()));
     connect(ui->div, SIGNAL(clicked()), this, SLOT(write_string()));
 
-    connect(ui->ln, SIGNAL(clicked()), this, SLOT(write_string()));
-    connect(ui->lg, SIGNAL(clicked()), this, SLOT(write_string()));
+    connect(ui->ln, SIGNAL(clicked()), this, SLOT(write_ln()));
+    connect(ui->lg, SIGNAL(clicked()), this, SLOT(write_lg()));
     connect(ui->mod, SIGNAL(clicked()), this, SLOT(write_string()));
-    connect(ui->sin, SIGNAL(clicked()), this, SLOT(write_string()));
-    connect(ui->cos, SIGNAL(clicked()), this, SLOT(write_string()));
-    connect(ui->tan, SIGNAL(clicked()), this, SLOT(write_string()));
-    connect(ui->asin, SIGNAL(clicked()), this, SLOT(write_string()));
-    connect(ui->acos, SIGNAL(clicked()), this, SLOT(write_string()));
-    connect(ui->atan, SIGNAL(clicked()), this, SLOT(write_string()));
-    connect(ui->sqrt, SIGNAL(clicked()), this, SLOT(write_string()));
+    connect(ui->sin, SIGNAL(clicked()), this, SLOT(write_sin()));
+    connect(ui->cos, SIGNAL(clicked()), this, SLOT(write_cos()));
+    connect(ui->tan, SIGNAL(clicked()), this, SLOT(write_tan()));
+    connect(ui->asin, SIGNAL(clicked()), this, SLOT(write_asin()));
+    connect(ui->acos, SIGNAL(clicked()), this, SLOT(write_acos()));
+    connect(ui->atan, SIGNAL(clicked()), this, SLOT(write_atan()));
+    connect(ui->sqrt, SIGNAL(clicked()), this, SLOT(write_sqrt()));
 
     connect(ui->open_bracket, SIGNAL(clicked()), this, SLOT(write_string()));
     connect(ui->close_bracket, SIGNAL(clicked()), this, SLOT(write_string()));
-    connect(ui->change_sign, SIGNAL(clicked()), this, SLOT(write_string()));
 
     connect(ui->all_clean, SIGNAL(clicked()), this, SLOT(all_clean()));
     connect(ui->equals, SIGNAL(clicked()), this, SLOT(equals_clicked()));
@@ -66,6 +65,114 @@ void MainWindow::write_string()
     ui->result_number->setText(string);
 }
 
+void MainWindow::write_ln()
+{
+    if (clean_board == 1)
+    {
+        ui->result_number->setText("");
+        clean_board = 0;
+    }
+    QString string;
+    string = (ui->result_number->text() + "ln(");
+    ui->result_number->setText(string);
+}
+
+void MainWindow::write_lg()
+{
+    if (clean_board == 1)
+    {
+        ui->result_number->setText("");
+        clean_board = 0;
+    }
+    QString string;
+    string = (ui->result_number->text() + "lg(");
+    ui->result_number->setText(string);
+}
+
+void MainWindow::write_sin()
+{
+    if (clean_board == 1)
+    {
+        ui->result_number->setText("");
+        clean_board = 0;
+    }
+    QString string;
+    string = (ui->result_number->text() + "sin(");
+    ui->result_number->setText(string);
+}
+
+void MainWindow::write_asin()
+{
+    if (clean_board == 1)
+    {
+        ui->result_number->setText("");
+        clean_board = 0;
+    }
+    QString string;
+    string = (ui->result_number->text() + "asin(");
+    ui->result_number->setText(string);
+}
+
+void MainWindow::write_cos()
+{
+    if (clean_board == 1)
+    {
+        ui->result_number->setText("");
+        clean_board = 0;
+    }
+    QString string;
+    string = (ui->result_number->text() + "cos(");
+    ui->result_number->setText(string);
+}
+
+void MainWindow::write_acos()
+{
+    if (clean_board == 1)
+    {
+        ui->result_number->setText("");
+        clean_board = 0;
+    }
+    QString string;
+    string = (ui->result_number->text() + "acos(");
+    ui->result_number->setText(string);
+}
+
+void MainWindow::write_tan()
+{
+    if (clean_board == 1)
+    {
+        ui->result_number->setText("");
+        clean_board = 0;
+    }
+    QString string;
+    string = (ui->result_number->text() + "tan(");
+    ui->result_number->setText(string);
+}
+
+void MainWindow::write_atan()
+{
+    if (clean_board == 1)
+    {
+        ui->result_number->setText("");
+        clean_board = 0;
+    }
+    QString string;
+    string = (ui->result_number->text() + "atan(");
+    ui->result_number->setText(string);
+}
+
+void MainWindow::write_sqrt()
+{
+    if (clean_board == 1)
+    {
+        ui->result_number->setText("");
+        clean_board = 0;
+    }
+    QString string;
+    string = (ui->result_number->text() + "^(");
+    ui->result_number->setText(string);
+}
+
 void MainWindow::all_clean()
 {
     ui->result_number->setText("");
@@ -82,7 +189,12 @@ void MainWindow::equals_clicked()
     strlcpy(mass, bytes.data(), 256);
     double res = 0.0;
     int status = 0;
-    res = read_string(mass, &status);
-    QString new_label = QString::number(res, 'f', 6);
-    ui->result_number->setText(new_label);
+    adapt_string(mass);
+    if (valid_string(mass)) {
+        res = read_string(mass, &status);
+        QString new_label = QString::number(res, 'f', 6);
+        ui->result_number->setText(new_label);
+    } else {
+        ui->result_number->setText("Error");
+    }
 }

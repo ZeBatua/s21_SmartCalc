@@ -1,6 +1,9 @@
 #include "calc.h"
 
 double read_string(char *start_string, int *break_status) {
+   printf("input string: %s\n", start_string);
+
+
   num_stack *n_head = NULL;
   func_stack *f_head = NULL;
   double current_num = 0.0;
@@ -55,7 +58,6 @@ double read_string(char *start_string, int *break_status) {
           continue;
         }
       }
-      previous_function = '\0';
       //---внимание_гавнокод---//
 
       push_function(&f_head, current_function);

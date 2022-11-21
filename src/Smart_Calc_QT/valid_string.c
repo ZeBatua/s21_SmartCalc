@@ -12,7 +12,7 @@ int valid_node_position(char *string);
 
 int valid_string(char *input_string) {
     int status = 0;
-    
+    printf("char = %s\n", input_string);
     status += check_valid_brackets(input_string);  // счетчик открывающих скобки операторов 
     status += valid_binary_op_position(input_string);  // проверка правильной позиции операторов
     status += valid_node_position(input_string);  // проверка правильно посталвенной точки
@@ -113,7 +113,7 @@ int valid_node_position(char *string) {
 
     int ready_to_find_node = 0;
     int first_node = 0;
-
+    printf("char = %s\n", &string[0]);
     for (size_t i = 0; i < length_string && status != 1; i++) {
         printf("char = %c\n", string[i]);
         if (ready_to_find_node == 1 && first_node == 1 && string[i] == '.') {

@@ -44,7 +44,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 27,
+				"line" : 29,
 				"parent" : 0
 			},
 			{
@@ -68,7 +68,7 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 49,
+				"line" : 51,
 				"parent" : 0
 			},
 			{
@@ -378,7 +378,9 @@
 			"language" : "C",
 			"sourceIndexes" : 
 			[
-				6
+				6,
+				7,
+				8
 			]
 		}
 	],
@@ -481,7 +483,9 @@
 				0,
 				1,
 				2,
-				6
+				6,
+				7,
+				8
 			]
 		},
 		{
@@ -490,7 +494,7 @@
 			[
 				3,
 				5,
-				7
+				9
 			]
 		},
 		{
@@ -541,6 +545,18 @@
 			"backtrace" : 4,
 			"compileGroupIndex" : 1,
 			"path" : "read_string.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 1,
+			"path" : "adapt_string.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 1,
+			"path" : "valid_string.c",
 			"sourceGroupIndex" : 0
 		},
 		{

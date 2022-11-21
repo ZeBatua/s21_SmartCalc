@@ -166,6 +166,30 @@ Smart_Calc_QT_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/Smart_Calc_QT_autogen/mocs_compilation.cpp.s
 .PHONY : Smart_Calc_QT_autogen/mocs_compilation.cpp.s
 
+adapt_string.o: adapt_string.c.o
+.PHONY : adapt_string.o
+
+# target to build an object file
+adapt_string.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/adapt_string.c.o
+.PHONY : adapt_string.c.o
+
+adapt_string.i: adapt_string.c.i
+.PHONY : adapt_string.i
+
+# target to preprocess a source file
+adapt_string.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/adapt_string.c.i
+.PHONY : adapt_string.c.i
+
+adapt_string.s: adapt_string.c.s
+.PHONY : adapt_string.s
+
+# target to generate assembly for a file
+adapt_string.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/adapt_string.c.s
+.PHONY : adapt_string.c.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -238,6 +262,30 @@ read_string.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/read_string.c.s
 .PHONY : read_string.c.s
 
+valid_string.o: valid_string.c.o
+.PHONY : valid_string.o
+
+# target to build an object file
+valid_string.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/valid_string.c.o
+.PHONY : valid_string.c.o
+
+valid_string.i: valid_string.c.i
+.PHONY : valid_string.i
+
+# target to preprocess a source file
+valid_string.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/valid_string.c.i
+.PHONY : valid_string.c.i
+
+valid_string.s: valid_string.c.s
+.PHONY : valid_string.s
+
+# target to generate assembly for a file
+valid_string.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/valid_string.c.s
+.PHONY : valid_string.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -251,6 +299,9 @@ help:
 	@echo "... Smart_Calc_QT_autogen/mocs_compilation.o"
 	@echo "... Smart_Calc_QT_autogen/mocs_compilation.i"
 	@echo "... Smart_Calc_QT_autogen/mocs_compilation.s"
+	@echo "... adapt_string.o"
+	@echo "... adapt_string.i"
+	@echo "... adapt_string.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -260,6 +311,9 @@ help:
 	@echo "... read_string.o"
 	@echo "... read_string.i"
 	@echo "... read_string.s"
+	@echo "... valid_string.o"
+	@echo "... valid_string.i"
+	@echo "... valid_string.s"
 .PHONY : help
 
 

@@ -44,7 +44,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 27,
+				"line" : 29,
 				"parent" : 0
 			},
 			{
@@ -68,7 +68,7 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 49,
+				"line" : 51,
 				"parent" : 0
 			},
 			{
@@ -295,6 +295,93 @@
 				1,
 				2
 			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.6"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-fPIC"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 13,
+					"define" : "QT_CORE_LIB"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "QT_GUI_LIB"
+				},
+				{
+					"backtrace" : 5,
+					"define" : "QT_WIDGETS_LIB"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"path" : "/Users/thalassa/C7_SmartCalc_v1.0-0/src/build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug"
+				},
+				{
+					"path" : "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT"
+				},
+				{
+					"backtrace" : 0,
+					"path" : "/Users/thalassa/C7_SmartCalc_v1.0-0/src/build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug/Smart_Calc_QT_autogen/include"
+				},
+				{
+					"backtrace" : 13,
+					"isSystem" : true,
+					"path" : "/usr/local/lib/QtCore.framework"
+				},
+				{
+					"backtrace" : 13,
+					"isSystem" : true,
+					"path" : "/usr/local/lib/QtCore.framework/Headers"
+				},
+				{
+					"backtrace" : 13,
+					"isSystem" : true,
+					"path" : "/usr/local/share/qt/mkspecs/macx-clang"
+				},
+				{
+					"backtrace" : 13,
+					"isSystem" : true,
+					"path" : "/usr/local/include"
+				},
+				{
+					"backtrace" : 5,
+					"isSystem" : true,
+					"path" : "/usr/local/lib/QtWidgets.framework"
+				},
+				{
+					"backtrace" : 5,
+					"isSystem" : true,
+					"path" : "/usr/local/lib/QtWidgets.framework/Headers"
+				},
+				{
+					"backtrace" : 5,
+					"isSystem" : true,
+					"path" : "/usr/local/lib/QtGui.framework"
+				},
+				{
+					"backtrace" : 5,
+					"isSystem" : true,
+					"path" : "/usr/local/lib/QtGui.framework/Headers"
+				}
+			],
+			"language" : "C",
+			"sourceIndexes" : 
+			[
+				6,
+				7,
+				8
+			]
 		}
 	],
 	"dependencies" : 
@@ -396,7 +483,9 @@
 				0,
 				1,
 				2,
-				6
+				6,
+				7,
+				8
 			]
 		},
 		{
@@ -405,7 +494,7 @@
 			[
 				3,
 				5,
-				7
+				9
 			]
 		},
 		{
@@ -454,7 +543,20 @@
 		},
 		{
 			"backtrace" : 4,
+			"compileGroupIndex" : 1,
 			"path" : "read_string.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 1,
+			"path" : "adapt_string.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 1,
+			"path" : "valid_string.c",
 			"sourceGroupIndex" : 0
 		},
 		{
