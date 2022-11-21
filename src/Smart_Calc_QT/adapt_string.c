@@ -54,7 +54,7 @@ void adapt_string(char *string) {
         } else if (string[i] == 'a' && string[i + 1] == 't' && string[i + 4] != '(') { // atan
             new_string[j] = 'T';
             i += 3;
-        } else if (string[i] == 'a' && string[i + 1] == 't' && string[i + 4] != '(') { // atan(
+        } else if (string[i] == 'a' && string[i + 1] == 't' && string[i + 4] == '(') { // atan(
             new_string[j] = 'T';
             i += 4;
         } else if (string[i] == 'm') { // mod

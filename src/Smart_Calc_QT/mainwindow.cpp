@@ -176,11 +176,12 @@ void MainWindow::write_sqrt()
 void MainWindow::all_clean()
 {
     ui->result_number->setText("");
+    clean_board = 0;
 }
 
 void MainWindow::equals_clicked()
 {
-    clean_board = 1;
+    clean_board = 0;
     cout << "Hello world!!!\n";
     QString qstr = ui->result_number->text();
     QByteArray bytes = qstr.toLocal8Bit();
@@ -190,11 +191,18 @@ void MainWindow::equals_clicked()
     double res = 0.0;
     int status = 0;
     adapt_string(mass);
+
     if (valid_string(mass)) {
+        cout << "valid!!!\n";
         res = read_string(mass, &status);
+        cout << "read string done!!!\n";
         QString new_label = QString::number(res, 'f', 6);
         ui->result_number->setText(new_label);
     } else {
-        ui->result_number->setText("Error");
+        cout << "NOT valid!!!\n";
+        QString new_label = "Error";
+        ui->result_number->setText(new_label);
     }
+    cout << "done\n";
+    clean_board = 1;
 }

@@ -1,15 +1,13 @@
 #include "calc.h"
 
 double read_string(char *start_string, int *break_status) {
-   printf("input string: %s\n", start_string);
-
+  printf("input string: %s\n", start_string);
 
   num_stack *n_head = NULL;
   func_stack *f_head = NULL;
   double current_num = 0.0;
   char current_function = '\0';
-  int priority_status = 0, string_position = 0, end_string_status = 0,
-      bug_stop = 0;
+  int priority_status = 0, string_position = 0, end_string_status = 0, bug_stop = 0;
   int break_power_signal = 0;
   size_t check_size = strlen(start_string);
 
@@ -23,8 +21,8 @@ double read_string(char *start_string, int *break_status) {
       continue;
     } else if (get_num(start_string, &string_position, &current_num)) {
       push_num(&n_head, current_num);
-      printf("peek_num = %F\n", peek_num(n_head));
-      printNumStack(n_head);
+      // printf("peek_num = %F\n", peek_num(n_head));
+      // printNumStack(n_head);
     } else if (get_function(start_string, &string_position, &current_function)) {
 
 
@@ -61,11 +59,11 @@ double read_string(char *start_string, int *break_status) {
       //---внимание_гавнокод---//
 
       push_function(&f_head, current_function);
-      printf("peek_function = %c\n", peek_function(f_head));
-      printFuncStack(f_head);
+      // printf("peek_function = %c\n", peek_function(f_head));
+      // printFuncStack(f_head);
       if (peek_function(f_head) == '-') {
-        printf("AAA string = %s\n", &start_string[string_position]);
-        printf("string poition = %d\n", string_position);
+        // printf("AAA string = %s\n", &start_string[string_position]);
+        // printf("string poition = %d\n", string_position);з
         // if (string_position == 1) { // унарный минус unary minus
         if (is_unary_minus(start_string - 1, string_position)) { // унарный минус
           current_num = exec_expression_with_minus(start_string, &string_position);
@@ -111,11 +109,13 @@ double read_string(char *start_string, int *break_status) {
   if (peek_function(f_head) != '\0') {
     calc_current_values(&n_head, &f_head, 1, &priority_status);
   }
-  printNumStack(n_head);
-  printFuncStack(f_head);
+  // printNumStack(n_head);
+  // printFuncStack(f_head);
+
   if (*break_status != 0) *break_status = string_position;
 
   current_num = pop_num(&n_head);
+  printf("FINAL RESULT = %F\n", current_num);
   return current_num;
 }
 
@@ -159,8 +159,8 @@ void calc_current_values(num_stack **num_head, func_stack **function_head, int e
   double first_value = 0.0;
   double second_value = 0.0;
 
-  printNumStack(*num_head);
-  printFuncStack(*function_head);
+  // printNumStack(*num_head);
+  // printFuncStack(*function_head);
 
   first_value = pop_num(num_head);
   char current_function = '\0';
@@ -171,8 +171,8 @@ void calc_current_values(num_stack **num_head, func_stack **function_head, int e
     current_function = pop_function(function_head);
   }
 
-  printNumStack(*num_head);
-  printFuncStack(*function_head);
+  // printNumStack(*num_head);
+  // printFuncStack(*function_head);
 
   OPS chtoto = {"(",   ")",   "+",   "-",   "*",   "/",   "^",
                 "%",   "U",   "u",   "c",   "s",   "t",   "C",
@@ -333,7 +333,7 @@ double pop_num(num_stack **head) {
 
 char peek_function(const func_stack *head) {
   if (head == NULL) {
-    printf("STACK_UNDERFLOW!!!\n");
+    printf("peeked function = null\n");
     return '\0';
   }
   return head->function;
@@ -359,22 +359,22 @@ int get_function(char *part_string, int *string_position, char *function) {
 
 int get_num(char *part_string, int *string_position, double *value) {
   int status = 0;
-  static int debug_exit = 0;
-  debug_exit++;
-  printf("string: %s\n", &part_string[*string_position]);
-  if (debug_exit == 40) {
-    printf("debug_exit\n");
-    exit(0);
-  }
+  // static int debug_exit = 0;
+  // debug_exit++;
+  // printf("string: %s\n", &part_string[*string_position]);
+  // if (debug_exit == 40) {
+  //   printf("debug_exit\n");
+  //   exit(0);
+  // }
   char str_num[11] = "0123456789.";
   *value = atof(&part_string[*string_position]);
   while (s21_strchr_2(str_num, part_string[*string_position]) != '\0') {
     *string_position += 1;
     status = 1;
-    if (*string_position == 100) {
-      printf("loh\n");
-      exit(0);
-    }
+    // if (*string_position == 100) {
+    //   printf("loh\n");
+    //   exit(0);
+    // }
   }
   return status;
 }

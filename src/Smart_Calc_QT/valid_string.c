@@ -12,17 +12,17 @@ int valid_node_position(char *string);
 
 int valid_string(char *input_string) {
     int status = 0;
-    printf("char = %s\n", input_string);
+    printf("string for VALID = %s\n", input_string);
     status += check_valid_brackets(input_string);  // счетчик открывающих скобки операторов 
     status += valid_binary_op_position(input_string);  // проверка правильной позиции операторов
     status += valid_node_position(input_string);  // проверка правильно посталвенной точки
     // status += check_stuck_symbols(input_string);  // проверка правильной позиции операторов
-
+    printf("FINAL STATUS = %d\n", !status);    
     return !status;
 }
 
 int check_valid_brackets(char *string) {
-    static int bracket_count = 0;
+    int bracket_count = 0;
     size_t length_string = strlen(string);
     for (size_t i = 0; length_string > i; i++) {
         if (is_open_op(string[i])) {
@@ -36,7 +36,7 @@ int check_valid_brackets(char *string) {
 }
 
 int valid_binary_op_position(char *string) {
-    static int status = 0;
+    int status = 0;
     size_t length_string = strlen(string);
     
     if (is_binary_op(*string) && *string != '-') status = 1;  // проверка что первый знак не бинарный оператор (!-)
@@ -113,9 +113,9 @@ int valid_node_position(char *string) {
 
     int ready_to_find_node = 0;
     int first_node = 0;
-    printf("char = %s\n", &string[0]);
+    printf("string in valid function = %s\n", &string[0]);
     for (size_t i = 0; i < length_string && status != 1; i++) {
-        printf("char = %c\n", string[i]);
+        // printf("char = %c\n", string[i]);
         if (ready_to_find_node == 1 && first_node == 1 && string[i] == '.') {
             status = 1;
         }
