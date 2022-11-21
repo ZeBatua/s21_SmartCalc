@@ -20,6 +20,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    int clean_board = 0;
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
