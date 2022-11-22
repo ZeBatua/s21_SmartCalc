@@ -73,7 +73,7 @@ int valid_binary_op_position(char *string) {
     if (is_binary_op(string[length_string - 1])) status = 1;  // проверка что последний знак не бинарный оператор
     if (triple_binary_op(string)) status = 1;  // провекра наличия 3 операторов подряд
 
-    for (size_t i = 1; length_string > i && status != 1; i++) {
+    for (size_t i = 0; length_string > i && status != 1; i++) {
         if (is_open_op(string[i]) && is_binary_op(string[i + 1]) && string[i + 1] != '-') status = 1;
         if (string[i] == ')' && is_binary_op(string[i - 1])) status = 1;
         if (is_invalid_double_op(&string[i])) status = 1;  // проверка коректных 2 операторов подоряд
@@ -135,13 +135,16 @@ int triple_binary_op(char *string) {
     size_t length_string = strlen(string);
     int operators_counter = 0;
 
-    for (size_t i = 1; length_string < i && status != 1; i++) {
+    for (size_t i = 0; length_string > i && status != 1; i++) {
         if (is_binary_op(string[i])) {
             operators_counter += 1;
         } else {
             operators_counter = 0;
         }
-        if (operators_counter == 3) status = 1;
+        if (operators_counter == 3) {
+            status = 1;
+            break;
+        }
     }
     return status;
 }

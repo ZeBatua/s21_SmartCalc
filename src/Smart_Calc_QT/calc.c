@@ -5,7 +5,9 @@ int main() {
   int string_status = 0;
   int stop = 0;
   // char start_string[256] = {"2^(2^(3))"};
-  char start_string[256] = {"-----3"};
+  // char start_string[256] = {"--3"};
+  char start_string[256] = {"---9"};
+
 
   adapt_string(start_string);
   printf("string after adapt: %s\n", start_string);

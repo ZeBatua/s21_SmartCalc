@@ -42,7 +42,7 @@ double read_string(char *start_string, int *break_status) {
         current_num = peek_num(n_head);
         current_num = exec_expression_with_power(start_string, &string_position, current_num);
         pop_num(&n_head);
-        push_num(&n_head, current_num); /// 1 + 2 ^ ( 3 * 7)
+        push_num(&n_head, current_num); /// 1 + 2 ^ ( 3 * 2)
         // pop_function(&f_head);
         if (*break_status == 4) {
           break;
