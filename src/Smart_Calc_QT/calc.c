@@ -4,7 +4,8 @@ int main() {
   double result = 0.0;
   int string_status = 0;
   int stop = 0;
-  char start_string[256] = {"1+2"};
+  // char start_string[256] = {"2^(2^(3))"};
+  char start_string[256] = {"-----3"};
 
   adapt_string(start_string);
   printf("string after adapt: %s\n", start_string);
@@ -28,7 +29,13 @@ int main() {
   // valid можно упросить в 2 раза тк ты всегда подаешь скобки
   // если первый символ минус то он его как ошибку считает
   // gcc calc.c adapt_string.c valid_string.c read_string.c -g -o main && ./main
+  // sqrt и ^ разные вещи одну из них ты забыл
+
+  // cos2 + 3 -> give status priority -> make cos2 when '3' scaned
+  // cos(cos3) 
+  // исключаем coscoscossintan это гавнозапись -> добавить в valid слипшийся случайс coscos
   // 
+
 
 }
 

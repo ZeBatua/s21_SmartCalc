@@ -55,6 +55,7 @@ public:
     QLabel *result_number_2;
     QPushButton *value_x;
     QLabel *label;
+    QPushButton *power;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -453,7 +454,7 @@ public:
         sqrt->setIconSize(QSize(16, 16));
         close_bracket = new QPushButton(centralwidget);
         close_bracket->setObjectName(QString::fromUtf8("close_bracket"));
-        close_bracket->setGeometry(QRect(90, 126, 91, 45));
+        close_bracket->setGeometry(QRect(60, 126, 61, 45));
         close_bracket->setFont(font1);
         close_bracket->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "  background-color: rgb(173, 172, 175);\n"
@@ -467,7 +468,7 @@ public:
         close_bracket->setIconSize(QSize(16, 16));
         open_bracket = new QPushButton(centralwidget);
         open_bracket->setObjectName(QString::fromUtf8("open_bracket"));
-        open_bracket->setGeometry(QRect(0, 126, 92, 45));
+        open_bracket->setGeometry(QRect(0, 126, 61, 45));
         open_bracket->setFont(font1);
         open_bracket->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "  background-color: rgb(173, 172, 175);\n"
@@ -511,6 +512,20 @@ public:
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(60, 410, 51, 20));
+        power = new QPushButton(centralwidget);
+        power->setObjectName(QString::fromUtf8("power"));
+        power->setGeometry(QRect(120, 126, 61, 45));
+        power->setFont(font1);
+        power->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"  background-color: rgb(173, 172, 175);\n"
+"  color:  black;\n"
+"  border: 1px solid gray;\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                      stop: 0 #BEBEBE, stop: 1 #D7D7D7);\n"
+"}"));
+        power->setIconSize(QSize(16, 16));
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
@@ -554,6 +569,7 @@ public:
         result_number_2->setText(QString());
         value_x->setText(QCoreApplication::translate("MainWindow", "x", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "X = ", nullptr));
+        power->setText(QCoreApplication::translate("MainWindow", "^", nullptr));
     } // retranslateUi
 
 };

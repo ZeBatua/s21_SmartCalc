@@ -29,15 +29,15 @@ private:
 
 private slots:
     void write_string();
-    void write_ln();
-    void write_lg();
-    void write_sin();
-    void write_cos();
-    void write_tan();
-    void write_asin();
-    void write_acos();
-    void write_atan();
-    void write_sqrt();
+//    void write_ln();
+//    void write_lg();
+//    void write_sin();
+//    void write_cos();
+//    void write_tan();
+//    void write_asin();
+//    void write_acos();
+//    void write_atan();
+//    void write_sqrt();
 
     void equals_clicked();
     void all_clean();

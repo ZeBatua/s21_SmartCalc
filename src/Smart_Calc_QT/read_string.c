@@ -1,5 +1,7 @@
 #include "calc.h"
 
+int is_math_operator(char symbol);
+
 double read_string(char *start_string, int *break_status) {
   printf("input string: %s\n", start_string);
 
@@ -47,15 +49,25 @@ double read_string(char *start_string, int *break_status) {
         }
         // push_function(&f_head, current_function);  
         continue;
-      } else if ((previous_function == '*' || previous_function == '/' || previous_function == '^') && (current_function == '-' || current_function == '+')) {
-        priority_status = 1;
-        calc_current_values(&n_head, &f_head, end_string_status, &priority_status);
+      } else if ((previous_function == '*' || previous_function == '/' || previous_function == '^') && (current_function == '-' || current_function == '+')
+                || (is_math_operator(previous_function) && current_function != '(' && current_function != '-' && !is_math_operator(current_function)) ) {
+        // priority_status = 1;
+        calc_current_values(&n_head, &f_head, 1, &priority_status);
 
         if (current_function != '-') {
           push_function(&f_head, current_function);  
           continue;
         }
+      } else if (is_math_operator(previous_function) && current_function == '-') {        
+        // make function //
+          push_function(&f_head, current_function);  
+          current_num = exec_expression_with_minus(start_string, &string_position);
+          push_num(&n_head, current_num);
+          pop_function(&f_head);
+          continue;
       }
+        // make function //
+
       //---внимание_гавнокод---//
 
       push_function(&f_head, current_function);
@@ -105,6 +117,8 @@ double read_string(char *start_string, int *break_status) {
       }
     }
     bug_stop++;
+    printNumStack(n_head);
+    printFuncStack(f_head);
   }
   if (peek_function(f_head) != '\0') {
     calc_current_values(&n_head, &f_head, 1, &priority_status);
@@ -163,7 +177,7 @@ void calc_current_values(num_stack **num_head, func_stack **function_head, int e
   // printFuncStack(*function_head);
 
   first_value = pop_num(num_head);
-  char current_function = '\0';
+  char current_function = '\0', last_function = '\0';;
   current_function = pop_function(function_head);
   int find_second_bracket = 0;
   if (current_function == ')') {
@@ -242,6 +256,7 @@ void calc_current_values(num_stack **num_head, func_stack **function_head, int e
 
     if (*status_priority == 1 && (peek_function(*function_head) == '*' || peek_function(*function_head) == '/')) {
     } else {
+      
       *status_priority = 0;
     }
 
@@ -251,11 +266,25 @@ void calc_current_values(num_stack **num_head, func_stack **function_head, int e
     // if (*status_priority == 1) break;
     current_function = pop_function(function_head);
     if (current_function == '(') {
-      pop_function(function_head);
+      if (is_math_operator(peek_function(*function_head))) {
+        push_num(num_head, first_value);
+        *status_priority = 1;
+        calc_current_values(num_head, function_head, 0, status_priority);
+        first_value = pop_num(num_head);
+      }
       break;
-    }
+    } 
   }
+
   push_num(num_head, first_value);
+}
+
+int is_math_operator(char symbol) {
+  int status = 0;
+  if (symbol == 'c' || symbol == 'C' || symbol == 's' || symbol == 'S' || symbol == '^' || symbol == 'l' || symbol == 'L' || symbol == 't' || symbol == 'T' || symbol == 'q') {
+    status = 1;
+  }
+  return status;
 }
 
 int push_function(func_stack **head, char current_function) {

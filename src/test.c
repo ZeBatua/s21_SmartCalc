@@ -258,7 +258,7 @@ START_TEST(cosine_2) {
 END_TEST
 
 START_TEST(cosine_3) {
-  char start_string[256] = {"c-5)"}; // добавить проверку унарного минуса
+  char start_string[256] = {"c-5"}; // добавить проверку унарного минуса
   double result = 0.0;
   int stop = 0;
   result = read_string(start_string, &stop);
