@@ -41,9 +41,12 @@ void adapt_string(char *string) {
         } else if (string[i] == 's' && string[i +  1] == 'q') { // sqrt
             new_string[j] = 'q';
             i += 3;
-        } else { 
+        } else if (string[i] == ' ') { 
+            continue;
+        } else {
             printf("\n!!!SMOTRI ADAPT STRING TI NAKOSIACHILL!!!\n");
         }
+        
         j++;
     }
     char nothing = '\0';
