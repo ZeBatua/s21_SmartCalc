@@ -4,10 +4,13 @@ int main() {
   double result = 0.0;
   int string_status = 0;
   int stop = 0;
-  // char start_string[256] = {"2^(2^(3))"};
+  // char start_string[256] = {"2^3^2"};
   // char start_string[256] = {"--3"};
-  char start_string[256] = {"---9"};
-
+  // char start_string[256] = {"2^(3)^2+10"};
+  char start_string[256] = {"2^(3+2)^2"};
+  //  char start_string[256] = {"2+3^(2*1+1)"};
+  // char start_string[256] = {"3+4*2/(2)^(3^1)*100"}; // 103
+  // char start_string[256] = {"11+7^2"}; 
 
   adapt_string(start_string);
   printf("string after adapt: %s\n", start_string);

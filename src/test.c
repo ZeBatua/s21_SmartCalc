@@ -332,7 +332,7 @@ END_TEST
 
 
 START_TEST(mix_6) {
-  char start_string[256] = {"3 + 4 * 2 / ( 1 - 5 ) ^ 2 "};  
+  char start_string[256] = {"3+4*2/(1-5)^2"};  
   double result = 0.0;
   int stop = 0;
   result = read_string(start_string, &stop);
@@ -350,7 +350,7 @@ START_TEST(mix_7) {
 END_TEST
 
 START_TEST(mix_8) {
-  char start_string[256] = {"3 + 5 * 2 / ( 6 - 4 ) ^ 2 "};
+  char start_string[256] = {"3+5*2/(6-4)^2"};
   double result = 0.0;
   int stop = 0;
   result = read_string(start_string, &stop);

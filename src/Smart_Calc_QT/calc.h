@@ -80,4 +80,19 @@ int valid_string(char *input_string);
 void adapt_string(char *string);
 
 
+// valid_string
+int check_valid_brackets(char *string);
+int valid_binary_op_position(char *string);
+int is_binary_op(char string);
+int triple_binary_op(char *string);
+int is_invalid_double_op(char *string);
+int is_open_op(char string);
+int is_num(char symbol);
+int binary_op_after_math_op(char *string);
+int valid_node_position(char *string);
+int check_math_neighbor(char *math);
+int check_non_empty_brackets(char *string);
+int enough_arguements(char *string);
+
+
 #endif  // SRC_SOURCE_CALC_H_
