@@ -4,7 +4,7 @@ int main() {
   double result = 0.0;
   int string_status = 0;
   int stop = 0;
-  // char start_string[256] = {"2^3^2"};
+  // char start_string[256] = {"2^3^2-100"};
   // char start_string[256] = {"--3"};
   // char start_string[256] = {"2^(3)^2+10"};
 
@@ -15,12 +15,10 @@ int main() {
 
 
   //  char start_string[256] = {"2+3^(2*1+1)"};
-  // char start_string[256] = {"3+4*2/(2)^(3^1)*100"}; // 103
-  // char start_string[256] = {"11+7^2"}; 
+  char start_string[256] = {"512/(2)^(3^2)*100"}; // 103
 
-  // char start_string[256] = {"1        +  2  ^ ( 3  * 2)"}; //НЕ РАБОТАЕТ. КАРОЧЕ нужна функция которая будет считать выражения в скобках
 
-  char start_string[256] = {"100-(50+(10-7)-5)"};
+  // char start_string[256] = {"100-(50+(10-7)-5)"};
 
 
 
