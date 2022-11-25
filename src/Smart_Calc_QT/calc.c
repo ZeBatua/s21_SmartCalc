@@ -15,13 +15,15 @@ int main() {
 
 
   //  char start_string[256] = {"2+3^(2*1+1)"};
-  char start_string[256] = {"3+4*2/(2)^(3^1)*100"}; // 103
+  // char start_string[256] = {"3+4*2/(2)^(3^1)*100"}; // 103
   // char start_string[256] = {"11+7^2"}; 
 
   // char start_string[256] = {"1        +  2  ^ ( 3  * 2)"}; //НЕ РАБОТАЕТ. КАРОЧЕ нужна функция которая будет считать выражения в скобках
 
+  char start_string[256] = {"11-(6+(4-9))"}; // -120526.054910 = 11-(123124.0001+(42-32.327)-32)*423/432"
   adapt_string(start_string);
   printf("string after adapt: %s\n", start_string);
+
 
   if (valid_string(start_string)) {
     int status = 0;

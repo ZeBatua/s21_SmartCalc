@@ -408,6 +408,32 @@ START_TEST(empty) {
 }
 END_TEST
 
+
+// -----------------------------------------------
+START_TEST(mix_13) {
+  char start_string[256] = {"11-(123124.0001+(42-32.327)-32)*423/432"};
+  double result = 0.0;
+  int stop = 0;
+  result = read_string(start_string, &stop);
+  ck_assert_double_eq_tol(result, -120526.054910, 7);
+}
+END_TEST
+START_TEST(mix_14) {
+  char start_string[256] = {"32%(32-30)"};
+  double result = 0.0;
+  int stop = 0;
+  result = read_string(start_string, &stop);
+  ck_assert_double_eq_tol(result, 0.0, 7);
+}
+END_TEST
+START_TEST(mix_15) {
+  char start_string[256] = {"12-32*(2143-312*(4-5)-1.32/(83.2/3))"};
+  double result = 0.0;
+  int stop = 0;
+  result = read_string(start_string, &stop);
+  ck_assert_double_eq_tol(result, -78546.476923, 7);
+}
+END_TEST
 //----------------------------------------------------------------------------------------------//
 
 int main(void) {
@@ -465,6 +491,9 @@ int main(void) {
   tcase_add_test(tc1_1, mix_10);
   tcase_add_test(tc1_1, mix_11);
   tcase_add_test(tc1_1, mix_12);
+  tcase_add_test(tc1_1, mix_13);
+  tcase_add_test(tc1_1, mix_14);
+  tcase_add_test(tc1_1, mix_15);
 
   // tcase_add_test(tc1_1, empty);
 
