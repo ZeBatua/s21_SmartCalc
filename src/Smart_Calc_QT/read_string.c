@@ -25,7 +25,10 @@ double read_string(char *start_string, int *break_status) {
         current_function = pop_function(&f_head);
         push_num(&n_head, current_num);
       }
-      if (current_function == ')' && check_power_next_function(start_string, string_position)) continue;
+      // if (current_function == ')' && check_power_next_function(start_string, string_position)) continue;
+      // if (current_function == '^') {!!!!
+      //   current_num = exec_expression_with_power(start_string, &string_position);!!!!!
+      // }!!!!
       if (is_lower_priority(previous_function, current_function)) {
         current_function = pop_function(&f_head);
         calc_current_values(&n_head, &f_head);
@@ -38,14 +41,14 @@ double read_string(char *start_string, int *break_status) {
       calc_current_values(&n_head, &f_head);
       if ((current_function == ')') && (*break_status != 0)) break;
     }
-    printNumStack(n_head);
-    printFuncStack(f_head);
+    // printNumStack(n_head);
+    // printFuncStack(f_head);
   }
   if (peek_function(f_head) != '\0' && *break_status == 0) calc_current_values(&n_head, &f_head);
   if (*break_status != 0) *break_status = string_position;
 
   current_num = pop_num(&n_head);
-  printf("FINAL RESULT = %F\n", current_num);
+  // printf("FINAL RESULT = %F\n", current_num);
   return current_num;
  }
 
@@ -55,15 +58,12 @@ int check_power_next_function(char *part_string, int string_position) {
   int skip_status = 0;
 
   for (; status == 0 && &part_string[string_position] != NULL; string_position++) {
-    if (part_string[string_position] == ' ') {
-      continue;
-    } else if (part_string[string_position] == '^') {
+    if (part_string[string_position] == '^') {
       status = 1;
     } else if (is_num(part_string[string_position])){
       continue;
     } else if (part_string[string_position] == '(') {
       skip_status = 1;
-
     } else if (!is_num(part_string[string_position]) && skip_status == 1 && part_string[string_position] != ')' ) {
       continue;
     } else if (part_string[string_position] == ')'){
@@ -81,9 +81,7 @@ double exec_expression_with_power(char *curent_string, int *string_position, dou
   double result = 0.0;
   int extra_position = 3;
 
-  while (curent_string[*string_position] == ' ') {
-    *string_position += 1;
-  } 
+  // check_power_next_function(curent_string, string_position); !!!!!
 
   if (get_num(curent_string, string_position, &result)) {
     result = pow(current_num, result);
@@ -99,8 +97,8 @@ void calc_current_values(num_stack **num_head, func_stack **function_head) {
   double first_value = 0.0;
   double second_value = 0.0;
 
-  printNumStack(*num_head);
-  printFuncStack(*function_head);
+  // printNumStack(*num_head);
+  // printFuncStack(*function_head);
 
   first_value = pop_num(num_head);
   char current_function = '\0', last_function = '\0';;
@@ -272,22 +270,11 @@ int get_function(char *part_string, int *string_position, char *function) {
 
 int get_num(char *part_string, int *string_position, double *value) {
   int status = 0;
-  // static int debug_exit = 0;
-  // debug_exit++;
-  // printf("string: %s\n", &part_string[*string_position]);
-  // if (debug_exit == 40) {
-  //   printf("debug_exit\n");
-  //   exit(0);
-  // }
   char str_num[11] = "0123456789.";
   *value = atof(&part_string[*string_position]);
   while (s21_strchr_2(str_num, part_string[*string_position]) != '\0') {
     *string_position += 1;
     status = 1;
-    // if (*string_position == 100) {
-    //   printf("loh\n");
-    //   exit(0);
-    // }
   }
   return status;
 }
@@ -306,8 +293,6 @@ double exec_expression_with_division(char *curent_string, int *string_position) 
     result = read_string(&curent_string[*string_position], &extra_position);
     result = 1.0 / result;
     *string_position += extra_position;
-    // printf("cho za bred\n");
-    // exit(0);
   }
   return result;
 }
