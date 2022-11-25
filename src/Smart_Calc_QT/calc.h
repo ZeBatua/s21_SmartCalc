@@ -45,8 +45,7 @@ typedef struct operations {
 } OPS;
 
 double read_string(char *start_string, int *break_status);
-void calc_current_values(num_stack **num_head, func_stack **function_head,
-                           int end_string, int *priority_status);
+void calc_current_values(num_stack **num_head, func_stack **function_head);
 
 void push_num(num_stack **head, double value);
 int push_function(func_stack **head, char current_function);
@@ -75,6 +74,9 @@ int is_unary_minus(char *curent_string, int string_position);
 
 int check_power_next_function(char *part_string, int string_position);
 double exec_expression_with_power(char *curent_string, int *string_position, double current_num);
+double exec_expression_with_open_bracket(char *curent_string, int *string_position);
+int is_lower_priority(char previous_function, char current_function);
+
 
 int valid_string(char *input_string);
 void adapt_string(char *string);

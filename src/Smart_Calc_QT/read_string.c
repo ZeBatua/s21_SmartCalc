@@ -6,101 +6,48 @@ double get_div(char *start_string, int *string_position, num_stack **n_head, fun
 
 double read_string(char *start_string, int *break_status) {
   printf("input string: %s\n", start_string);
-
   num_stack *n_head = NULL;
   func_stack *f_head = NULL;
   double current_num = 0.0;
   char current_function = '\0';
   int priority_status = 0, string_position = 0, end_string_status = 0, bug_stop = 0;
   int break_power_signal = 0;
+  char previous_function = '\0';
   size_t check_size = strlen(start_string);
-
   while (string_position < strlen(start_string)) {
     if (get_num(start_string, &string_position, &current_num)) {
       push_num(&n_head, current_num);
     } else if (get_function(start_string, &string_position, &current_function)) {
-      //---внимание_гавнокод---//
-      char previous_function = '\0';
       previous_function = peek_function(f_head);
-
-      if (current_function == '^') {
-        int continue_status = 0;
-
-        if (check_power_next_function(start_string, string_position)) {
-          push_function(&f_head, current_function);  
-          continue;
-        }
-
-        current_num = peek_num(n_head);
-        current_num = exec_expression_with_power(start_string, &string_position, current_num);
-        pop_num(&n_head);
-        push_num(&n_head, current_num);
-        if (*break_status == 4) {
-          if (&start_string[string_position + 1] != NULL) {
-            if (start_string[string_position + 1] == ')') {
-              *break_status += 1;
-              char breaket = 1;
-              push_function(&f_head, breaket);
-            }
-          }
-          break;
-        }
-        continue;
-      } else if ((previous_function == '*' || previous_function == '/' || previous_function == '^') && (current_function == '-' || current_function == '+')
-                || (is_math_operator(previous_function) && current_function != '(' && current_function != '-' && !is_math_operator(current_function)) ) {
-        // priority_status = 1;
-        calc_current_values(&n_head, &f_head, 1, &priority_status);
-
-        if (current_function != '-') {
-          push_function(&f_head, current_function);  
-          continue;
-        }
-      } else if (is_math_operator(previous_function) && current_function == '-') {        
-        // make function //
-          push_function(&f_head, current_function);  
-          current_num = exec_expression_with_minus(start_string, &string_position);
-          push_num(&n_head, current_num);
-          pop_function(&f_head);
-          continue;
-      }
-        // make function //
-
-      //---внимание_гавнокод---//
-
       push_function(&f_head, current_function);
-      if (peek_function(f_head) == '-') {
-        current_num = get_minus(start_string, &string_position, &n_head, &f_head);
-        // lost current_function 
+      if (current_function == '(') {
+        current_num = exec_expression_with_open_bracket(start_string, &string_position);
+        current_function = pop_function(&f_head);
+        push_num(&n_head, current_num);
       }
-      if (peek_function(f_head) == '/') {
-        current_num = get_div(start_string, &string_position, &n_head, &f_head);
-        // lost current_function 
+      if (current_function == ')' && check_power_next_function(start_string, string_position)) continue;
+      if (is_lower_priority(previous_function, current_function)) {
+        current_function = pop_function(&f_head);
+        calc_current_values(&n_head, &f_head);
+        push_function(&f_head, current_function);
       }
-      
-    } else {
-      printf("ti nacosiachil vo vvode!\n");
-      exit(INVALID_VALUE);
-    }
-
-
-    if (priority_status || strlen(start_string) == string_position || current_function == ')' ) {
-      if (check_power_next_function(start_string, string_position) && break_status != 0) continue;
-      if (strlen(start_string) == string_position) end_string_status = 1;
-      calc_current_values(&n_head, &f_head, end_string_status, &priority_status);
+      if (peek_function(f_head) == '-') current_num = get_minus(start_string, &string_position, &n_head, &f_head);
+      if (peek_function(f_head) == '/') current_num = get_div(start_string, &string_position, &n_head, &f_head);
+    } 
+    if (strlen(start_string) == string_position || current_function == ')' ) {
+      calc_current_values(&n_head, &f_head);
       if ((current_function == ')') && (*break_status != 0)) break;
     }
-    bug_stop++;
     printNumStack(n_head);
     printFuncStack(f_head);
   }
-
-  if (peek_function(f_head) != '\0' && *break_status == 0) calc_current_values(&n_head, &f_head, 1, &priority_status);
+  if (peek_function(f_head) != '\0' && *break_status == 0) calc_current_values(&n_head, &f_head);
   if (*break_status != 0) *break_status = string_position;
 
   current_num = pop_num(&n_head);
   printf("FINAL RESULT = %F\n", current_num);
   return current_num;
-}
+ }
 
 int check_power_next_function(char *part_string, int string_position) {
   int status = 0;
@@ -148,7 +95,7 @@ double exec_expression_with_power(char *curent_string, int *string_position, dou
   return result;
 }
 
-void calc_current_values(num_stack **num_head, func_stack **function_head, int end_strig, int *status_priority) {
+void calc_current_values(num_stack **num_head, func_stack **function_head) {
   double first_value = 0.0;
   double second_value = 0.0;
 
@@ -158,11 +105,6 @@ void calc_current_values(num_stack **num_head, func_stack **function_head, int e
   first_value = pop_num(num_head);
   char current_function = '\0', last_function = '\0';;
   current_function = pop_function(function_head);
-  int find_second_bracket = 0;
-  if (current_function == ')') {
-    find_second_bracket = 1;
-    current_function = pop_function(function_head);
-  }
 
   // printNumStack(*num_head);
   // printFuncStack(*function_head);
@@ -173,19 +115,12 @@ void calc_current_values(num_stack **num_head, func_stack **function_head, int e
 
   int bug_stop = 0;
 
-  while (find_second_bracket != 0 || *status_priority != 0 || end_strig != 0) {
-    if (current_function == '\0' || current_function == '(') {
-      if (end_strig != 0) {
-        push_num(num_head, first_value);
-      } else {
-        break;
-      }
+  while (current_function != '\0') {
+    if (current_function == ')' || current_function == ')') {
+      current_function = pop_function(function_head);
+      if (current_function == '\0') break;
     }
-    if (s21_strcmp(current_function, chtoto.open_bracket)) {
-      find_second_bracket = 0;
-    } else if (s21_strcmp(current_function, chtoto.closing_bracket)) {
-      // *status_priority = 1;
-    } else if (s21_strcmp(current_function, chtoto.addition)) {
+    if (s21_strcmp(current_function, chtoto.addition)) {
       second_value = pop_num(num_head);
       push_num(num_head, first_value + second_value);
     } else if (s21_strcmp(current_function, chtoto.subtraction)) {
@@ -203,58 +138,28 @@ void calc_current_values(num_stack **num_head, func_stack **function_head, int e
     } else if (s21_strcmp(current_function, chtoto.power)) {
       second_value = pop_num(num_head);
       push_num(num_head, pow(second_value, first_value));
-      find_second_bracket = 0;
     } else if (s21_strcmp(current_function, chtoto.cosine)) {
       push_num(num_head, cos(first_value));
-      find_second_bracket = 0;
     } else if (s21_strcmp(current_function, chtoto.sinus)) {
       push_num(num_head, sin(first_value));
-      find_second_bracket = 0;
     } else if (s21_strcmp(current_function, chtoto.tangent)) {
       push_num(num_head, tan(first_value));
-      find_second_bracket = 0;
     } else if (s21_strcmp(current_function, chtoto.arccosine)) {
       push_num(num_head, acos(first_value));
-      find_second_bracket = 0;
     } else if (s21_strcmp(current_function, chtoto.arcsine)) {
       push_num(num_head, asin(first_value));
-      find_second_bracket = 0;
     } else if (s21_strcmp(current_function, chtoto.arc_tangent)) {
       push_num(num_head, atan(first_value));
-      find_second_bracket = 0;
     } else if (s21_strcmp(current_function, chtoto.square_root)) {
       push_num(num_head, sqrt(first_value));
-      find_second_bracket = 0;
     } else if (s21_strcmp(current_function, chtoto.natural_logarithm)) {
       push_num(num_head, log(first_value));
-      find_second_bracket = 0;
     } else if (s21_strcmp(current_function, chtoto.decimal_logarithm)) {
       push_num(num_head, log10(first_value));
-      find_second_bracket = 0;
     }
-
-    if (*status_priority == 1 && (peek_function(*function_head) == '*' || peek_function(*function_head) == '/')) {
-    } else {
-      
-      *status_priority = 0;
-    }
-
-    first_value = pop_num(num_head);
-    
-    if (end_strig == 1 && peek_function(*function_head) == '\0') break;
-    // if (*status_priority == 1) break;
     current_function = pop_function(function_head);
-    if (current_function == '(') {
-      if (is_math_operator(peek_function(*function_head))) {
-        push_num(num_head, first_value);
-        *status_priority = 1;
-        calc_current_values(num_head, function_head, 0, status_priority);
-        first_value = pop_num(num_head);
-      }
-      break;
-    } 
+    first_value = pop_num(num_head);
   }
-
   push_num(num_head, first_value);
 }
 
@@ -442,6 +347,10 @@ int is_unary_minus(char *curent_string, int string_position) {
     sign_status = 1;
   }
   return sign_status;
+  // -....
+  // (-.....)
+  // -- -> +
+  // 
 }
 
 char s21_strchr_2(char *string, char symbol) {
@@ -496,4 +405,28 @@ double get_div(char *start_string, int *string_position, num_stack **n_head, fun
   char current_function = '*';
   push_function(f_head, current_function);
   return current_num;
+}
+
+
+double exec_expression_with_open_bracket(char *curent_string, int *string_position) {
+  double result = 0.0;
+
+  int extra_position = 9; // find close bracket_and_do
+  result = read_string(&curent_string[*string_position], &extra_position);
+  *string_position += extra_position;
+
+  return result;
+}
+
+
+
+
+int is_lower_priority(char previous_function, char current_function) {
+  int status = 0;
+  if ((previous_function == '*' || previous_function == '/' || previous_function == '^') && (current_function == '-' || current_function == '+') ||
+      (is_math_operator(previous_function) && current_function != '(' && current_function != '-' && !is_math_operator(current_function)) ) {
+    status = 1;
+    
+  }
+  return status;
 }
