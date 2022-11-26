@@ -5,7 +5,13 @@ int main() {
   int string_status = 0;
   int stop = 0;
 
-  char start_string[256] = {"c1)"};
+  // char start_string[256] = {"(tan(5)^2)^3*2"};
+  char start_string[256] = {"(tan(sin(cos(1)^2))+1)^3*2-10"};
+
+
+
+  // char start_string[256] = {"(cos1^2)^3"};
+  // char start_string[256] = {"cos2^3"};
 
   if (valid_string(start_string)) {
     int status = 0;

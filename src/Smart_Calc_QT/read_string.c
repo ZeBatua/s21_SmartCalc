@@ -105,8 +105,10 @@ int check_power_next_function(char *part_string, int string_position) {
       skip_status = 1;
     } else if (!is_num(part_string[string_position]) && skip_status == 1 && part_string[string_position] != ')' ) {
       continue;
-    } else if (part_string[string_position] == ')'){
+    } else if (part_string[string_position] == ')' && skip_status == 1) {
       skip_status = 0;
+    } else if (part_string[string_position] == ')' && skip_status != 1) {
+      status = 3;
     } else {
       status = 3;
     }
