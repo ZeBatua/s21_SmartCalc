@@ -434,6 +434,42 @@ START_TEST(mix_15) {
   ck_assert_double_eq_tol(result, -78546.476923, 7);
 }
 END_TEST
+
+START_TEST(mix_16) {
+  char start_string[256] = {"2^3^2-100"};
+  double result = 0.0;
+  int stop = 0;
+  result = read_string(start_string, &stop);
+  ck_assert_double_eq_tol(result, 412.0, 7);
+}
+END_TEST
+
+START_TEST(mix_17) {
+  char start_string[256] = {"2^(3)^2+10"};
+  double result = 0.0;
+  int stop = 0;
+  result = read_string(start_string, &stop);
+  ck_assert_double_eq_tol(result, 522.0, 7);
+}
+END_TEST
+
+START_TEST(mix_18) {
+  char start_string[256] = {"2+3^(2*1+1)"};
+  double result = 0.0;
+  int stop = 0;
+  result = read_string(start_string, &stop);
+  ck_assert_double_eq_tol(result, 29.0, 7);
+}
+END_TEST
+
+START_TEST(mix_19) {
+  char start_string[256] = {"512/(2)^(3^2)*100+3"};
+  double result = 0.0;
+  int stop = 0;
+  result = read_string(start_string, &stop);
+  ck_assert_double_eq_tol(result, 103.0, 7);
+}
+END_TEST
 //----------------------------------------------------------------------------------------------//
 
 int main(void) {
@@ -494,6 +530,11 @@ int main(void) {
   tcase_add_test(tc1_1, mix_13);
   tcase_add_test(tc1_1, mix_14);
   tcase_add_test(tc1_1, mix_15);
+  tcase_add_test(tc1_1, mix_16);
+  tcase_add_test(tc1_1, mix_17);
+  tcase_add_test(tc1_1, mix_18);
+  tcase_add_test(tc1_1, mix_19);
+
 
   // tcase_add_test(tc1_1, empty);
 
