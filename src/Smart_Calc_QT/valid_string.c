@@ -2,14 +2,14 @@
 
 int valid_string(char *input_string) {
     int status = 0;
-    printf("string for VALID = %s\n", input_string);
-    status += check_valid_brackets(input_string);  // счетчик открывающих скобки операторов
-    status += valid_binary_op_position(input_string);  // проверка правильной позиции операторов
-    status += valid_node_position(input_string);  // проверка правильно посталвенной точки
-    status += enough_arguements(input_string);  // проверка правильно посталвенной точки
-    // есть опе
 
-    printf("FINAL STATUS = %d\n", !status);    
+    status = adapt_string(input_string);                               // cos -> c  // +mini valid string
+    if (status == 0) upgrade_string(input_string);                     // 2cos -> 2*cos
+    if (status == 0) status = check_valid_brackets(input_string);      // счетчик открывающих скобки операторов
+    if (status == 0) status = valid_binary_op_position(input_string);  // проверка правильной позиции операторов
+    if (status == 0) status = valid_node_position(input_string);       // проверка правильно посталвенной точки
+    if (status == 0) status = enough_arguements(input_string);         // cos(?)
+
     return !status;
 }
 
@@ -150,9 +150,7 @@ int valid_node_position(char *string) {
 
     int ready_to_find_node = 0;
     int first_node = 0;
-    printf("string in valid function = %s\n", &string[0]);
     for (size_t i = 0; i < length_string && status != 1; i++) {
-        // printf("char = %c\n", string[i]);
         if (ready_to_find_node == 1 && first_node == 1 && string[i] == '.') {
             status = 1;
         }
@@ -198,6 +196,33 @@ int enough_arguements(char *string) {
     return status;
 }
 
-// + - * / % ^ 
-//  функция которая идет по строке и ищет 3 операттора подряд 
-// двойная
+void upgrade_string(char *input_string) {
+    char new_string[256] = {'\0'};
+    size_t string_length = strlen(input_string);
+    for (size_t i = 0, j = 0; i < string_length; i++) {
+        if (is_num(input_string[i]) && is_stuck_symbol(input_string[i + 1])) {    // 2cos -> 2*cos
+            new_string[j] = input_string[i];
+            new_string[j + 1] = '*';
+            new_string[j + 2] = input_string[i + 1];
+            j += 2;
+            i += 1;
+        } else if (input_string[i] == '-' && input_string[i + 1] == '-') {  // -- -> +
+            new_string[j] = '+';
+            i += 1;
+        } else {
+            new_string[j] = input_string[i];
+        }
+        j++;
+    }
+    char nothing = '\0';
+    memset(input_string, nothing, 256);
+    strcpy(input_string, new_string);
+}
+
+int is_stuck_symbol(char symbol) {
+    int status = 0;
+    if (symbol == 'c' || symbol == 'C' || symbol == 's' || symbol == 'S' || symbol == '(' || symbol == 'l' || symbol == 'L' || symbol == 't' || symbol == 'T' || symbol == 'q') {
+        status = 1;
+    }
+    return status;
+}

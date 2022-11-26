@@ -79,7 +79,11 @@ int is_lower_priority(char previous_function, char current_function);
 
 
 int valid_string(char *input_string);
-void adapt_string(char *string);
+int adapt_string(char *string);
+
+int is_math_operator(char symbol);
+double get_minus(char *start_string, int *string_position, num_stack **n_head, func_stack **f_head);
+double get_div(char *start_string, int *string_position, num_stack **n_head, func_stack **f_head);
 
 
 // valid_string
@@ -95,6 +99,8 @@ int valid_node_position(char *string);
 int check_math_neighbor(char *math);
 int check_non_empty_brackets(char *string);
 int enough_arguements(char *string);
+void upgrade_string(char *input_string);
+int is_stuck_symbol(char symbol);
 
 
 #endif  // SRC_SOURCE_CALC_H_

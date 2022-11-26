@@ -80,8 +80,8 @@ double read_string(char *start_string, int *break_status) {
       calc_current_values(&n_head, &f_head);
       if ((current_function == ')') && (*break_status != 0)) break;
     }
-    printNumStack(n_head);
-    printFuncStack(f_head);
+    // printNumStack(n_head);
+    // printFuncStack(f_head);
   }
   if (peek_function(f_head) != '\0' && *break_status == 0) calc_current_values(&n_head, &f_head);
   if (*break_status != 0) *break_status = string_position;
@@ -124,46 +124,8 @@ double exec_expression_with_power(char *curent_string, int *string_position, dou
   result = pow(current_num, result);
   *string_position += extra_position;
 
-
-  // check_power_next_function(curent_string, string_position); // 512/(2)^(3^2)*100 // 2^3^3^7
-
-  // if (get_num(curent_string, string_position, &result)) {
-  //   if (check_power_next_function(curent_string, string_position)) {
-  //     get_num(curent_string, string_position, &result);
-  //     result = 1;
-  //   }
-  //   result = pow(current_num, result);
-  // } else {
-  //   result = read_string(&curent_string[*string_position], &extra_position);
-  //   result = pow(current_num, result);
-  //   *string_position += extra_position;
-  // }
-
-  // while (get_num(curent_string, string_position, &result)) {
-  //   double mini_res = result;
-  //   if (check_power_next_function(curent_string, string_position)) {
-  //     string_position += 1;
-
-  //   }
-  // }
-  
-  
   return result;
-
-
 }
-
-// double exec_expression_with_open_bracket(char *curent_string, int *string_position) {
-//   double result = 0.0;
-
-//   int extra_position = 9; // find close bracket_and_do
-//   result = read_string(&curent_string[*string_position], &extra_position);
-//   *string_position += extra_position;
-
-//   return result;
-// }
-
-
 
 void calc_current_values(num_stack **num_head, func_stack **function_head) {
   double first_value = 0.0;
@@ -241,9 +203,6 @@ int is_math_operator(char symbol) {
 int push_function(func_stack **head, char current_function) {
   char previous_function = '\0';
   int priority = 0;
-//  previous_function = peek_function(*head);
-
-
   func_stack *tmp = malloc(sizeof(func_stack));
   if (tmp == NULL) {
     exit(STACK_OVERFLOW);
@@ -394,10 +353,6 @@ int is_unary_minus(char *curent_string, int string_position) {
     sign_status = 1;
   }
   return sign_status;
-  // -....
-  // (-.....)
-  // -- -> +
-  // 
 }
 
 char s21_strchr_2(char *string, char symbol) {

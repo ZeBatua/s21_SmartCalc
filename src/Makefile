@@ -8,7 +8,8 @@ TFLAGS = -lcheck
 ARFLAGS := rcs
 OBJECTS = *.o
 SOURCES := Smart_Calc_QT/read_string.c \
-Smart_Calc_QT/valid_string.c
+Smart_Calc_QT/valid_string.c \
+Smart_Calc_QT/adapt_string.c
 
 VAR = $(shell pkg-config --cflags --libs check)
 

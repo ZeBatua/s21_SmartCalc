@@ -4,25 +4,8 @@ int main() {
   double result = 0.0;
   int string_status = 0;
   int stop = 0;
-  // char start_string[256] = {"2^3^2-100"};
-  // char start_string[256] = {"--3"};
-  // char start_string[256] = {"2^(3)^2+10"};
 
-
-
-  // char start_string[256] = {"2^(3)^2"};
-
-
-
-  //  char start_string[256] = {"2+3^(2*1+1)"};
-  char start_string[256] = {"512/(2)^(3^2)*100+3"}; // 103!!!!!!!!!!!!!!
-
-
-  // char start_string[256] = {"100-(50+(10-7)-5)"};
-
-  // char start_string[256] = {"10-(100(-60))*5"};!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  adapt_string(start_string);
-  printf("string after adapt: %s\n", start_string);
+  char start_string[256] = {"c1)"};
 
   if (valid_string(start_string)) {
     int status = 0;
