@@ -5,7 +5,7 @@ double get_minus(char *start_string, int *string_position, num_stack **n_head, f
 double get_div(char *start_string, int *string_position, num_stack **n_head, func_stack **f_head);
 
 double read_string(char *start_string, int *break_status) {
-  printf("input string: %s\n", start_string);
+  // printf("input string: %s\n", start_string);
   num_stack *n_head = NULL;
   func_stack *f_head = NULL;
   double current_num = 0.0, buf_current_num = 0.0;

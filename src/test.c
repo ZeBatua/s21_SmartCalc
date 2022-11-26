@@ -11,7 +11,7 @@ START_TEST(addition_1) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 3.0, 7);
 }
@@ -24,7 +24,7 @@ START_TEST(addition_2) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 10.5, 7);
 }
@@ -37,7 +37,7 @@ START_TEST(addition_3) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 0.0, 7);
 }
@@ -50,7 +50,7 @@ START_TEST(addition_4) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 0.0, 7);
 }
@@ -63,7 +63,7 @@ START_TEST(addition_5) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, -50.0, 7);
 }
@@ -78,7 +78,7 @@ START_TEST(subtraction_1) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 5.0, 7);
 }
@@ -91,7 +91,7 @@ START_TEST(subtraction_2) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, -1000.0, 7);
 }
@@ -104,7 +104,7 @@ START_TEST(subtraction_3) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 0.0, 7);
 }
@@ -117,7 +117,7 @@ START_TEST(subtraction_4) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, -499.0, 7);
 }
@@ -130,7 +130,7 @@ START_TEST(subtraction_5) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, -263.0, 7);
 }
@@ -145,7 +145,7 @@ START_TEST(multiplication_1) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 50.0, 7);
 }
@@ -158,7 +158,7 @@ START_TEST(multiplication_2) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 0.0, 7);
 }
@@ -171,7 +171,7 @@ START_TEST(multiplication_3) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 64.0, 7);
 }
@@ -184,7 +184,7 @@ START_TEST(multiplication_4) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 64.0, 7);
 }
@@ -197,7 +197,7 @@ START_TEST(multiplication_5) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, -42.0, 7);
 }
@@ -212,7 +212,7 @@ START_TEST(division_1) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 5.0, 7);
 }
@@ -225,7 +225,7 @@ START_TEST(division_2) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 0.0, 7);
 }
@@ -238,7 +238,7 @@ START_TEST(division_3) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 15.5, 7);
 }
@@ -251,7 +251,7 @@ START_TEST(division_4) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 1.0, 7);
 }
@@ -264,7 +264,7 @@ START_TEST(division_5) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, -111.0, 7);
 }
@@ -279,7 +279,7 @@ START_TEST(power_1) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 100.0, 7);
 }
@@ -292,7 +292,7 @@ START_TEST(power_2) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 1.0, 7);
 }
@@ -305,7 +305,7 @@ START_TEST(power_3) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 9.0, 7);
 }
@@ -318,7 +318,7 @@ START_TEST(power_4) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 0.0, 7);
 }
@@ -331,7 +331,7 @@ START_TEST(power_5) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, -1.0, 7);
 }
@@ -340,65 +340,65 @@ END_TEST
 //----------------------------------------------------------------------------------------------//
 
 START_TEST(cosine_1) {
-  char start_string[256] = {"c0)"};  
+  char start_string[256] = {"cos0"};  
   double result = 0.0;
   int stop = 0;
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, cos(0), 7);
 }
 END_TEST
 
 START_TEST(cosine_2) {
-  char start_string[256] = {"c1)"};  
+  char start_string[256] = {"cos(1)"};  
   double result = 0.0;
   int stop = 0;
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, cos(1), 7);
 }
 END_TEST
 
 START_TEST(cosine_3) {
-  char start_string[256] = {"c-5"}; // добавить проверку унарного минуса
+  char start_string[256] = {"cos-5"}; // добавить проверку унарного минуса
   double result = 0.0;
   int stop = 0;
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, cos(-5), 7);
 }
 END_TEST
 
 START_TEST(cosine_4) {
-  char start_string[256] = {"c5)"};  
+  char start_string[256] = {"cos(5)"};  
   double result = 0.0;
   int stop = 0;
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, cos(5), 7);
 }
 END_TEST
 
 START_TEST(cosine_5) {
-  char start_string[256] = {"c0.30)"};  
+  char start_string[256] = {"cos0.30"};  
   double result = 0.0;
   int stop = 0;
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, cos(0.30), 7);
 }
@@ -411,7 +411,7 @@ START_TEST(mix_1) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 29.0, 7);
 }
@@ -424,7 +424,7 @@ START_TEST(mix_2) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 9.0, 7);
 }
@@ -437,7 +437,7 @@ START_TEST(mix_3) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 9.0, 7);
 }
@@ -450,7 +450,7 @@ START_TEST(mix_4) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, -1.0, 7);
 }
@@ -463,7 +463,7 @@ START_TEST(mix_5) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, -1.0, 7);
 }
@@ -478,7 +478,7 @@ START_TEST(mix_6) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 3.5, 7);
 }
@@ -491,7 +491,7 @@ START_TEST(mix_7) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 27.0, 7);
 }
@@ -504,7 +504,7 @@ START_TEST(mix_8) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 5.5, 7);
 }
@@ -520,7 +520,7 @@ START_TEST(mix_9) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 103.0, 7);
 }
@@ -534,7 +534,7 @@ START_TEST(mix_10) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 60.0, 7);
 }
@@ -547,7 +547,7 @@ START_TEST(mix_11) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 60.0, 7);
 }
@@ -561,7 +561,7 @@ START_TEST(mix_12) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 0.669268, 7);
 }
@@ -574,7 +574,7 @@ START_TEST(empty) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 0.669268, 7);
 }
@@ -589,19 +589,19 @@ START_TEST(mix_13) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, -120526.054910, 7);
 }
 END_TEST
 START_TEST(mix_14) {
-  char start_string[256] = {"32%(32-30)"};
+  char start_string[256] = {"32mod(32-30)"};
   double result = 0.0;
   int stop = 0;
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 0.0, 7);
 }
@@ -613,7 +613,7 @@ START_TEST(mix_15) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, -78546.476923, 7);
 }
@@ -626,7 +626,7 @@ START_TEST(mix_16) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 412.0, 7);
 }
@@ -639,7 +639,7 @@ START_TEST(mix_17) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 522.0, 7);
 }
@@ -652,7 +652,7 @@ START_TEST(mix_18) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 29.0, 7);
 }
@@ -665,7 +665,7 @@ START_TEST(mix_19) {
   if (valid_string(start_string)) {
     result = read_string(start_string, &stop);    
   } else {
-    printf("NOT VALID\n");
+    printf("string: %s\nNOT VALID\n", start_string);
   }
   ck_assert_double_eq_tol(result, 103.0, 7);
 }
