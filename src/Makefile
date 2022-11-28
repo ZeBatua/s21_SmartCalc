@@ -9,6 +9,7 @@ ARFLAGS := rcs
 OBJECTS = *.o
 SOURCES := Smart_Calc_QT/read_string.c \
 Smart_Calc_QT/valid_string.c \
+Smart_Calc_QT/add_x_value_in_string.c\
 
 VAR = $(shell pkg-config --cflags --libs check)
 
