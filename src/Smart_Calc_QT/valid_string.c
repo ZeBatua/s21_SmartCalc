@@ -1,17 +1,28 @@
 #include "calc.h"
 
-int valid_string(char *input_string) {
+int valid_string(char *input_string, char *input_x_string) {
     int status = 0;
-
+    // for x 
     status = adapt_string(input_string);                               // cos -> c  // +mini valid string
     if (status == 0) upgrade_string(input_string);                     // 2cos -> 2*cos
     if (status == 0) status = check_valid_brackets(input_string);      // счетчик открывающих скобки операторов
     if (status == 0) status = valid_binary_op_position(input_string);  // проверка правильной позиции операторов
     if (status == 0) status = valid_node_position(input_string);       // проверка правильно посталвенной точки
     if (status == 0) status = enough_arguements(input_string);         // cos(?)
+    // for common string
+    if (status == 0) status = adapt_string(input_x_string);              // cos -> c  // +mini valid string
+    if (status == 0) upgrade_string(input_x_string);                     // 2cos -> 2*cos
+    if (status == 0) status = check_valid_brackets(input_x_string);      // счетчик открывающих скобки операторов
+    if (status == 0) status = valid_binary_op_position(input_x_string);  // проверка правильной позиции операторов
+    if (status == 0) status = valid_node_position(input_x_string);       // проверка правильно посталвенной точки
+    if (status == 0) status = enough_arguements(input_x_string);         // cos(?)
+    if (status == 0) status = x_in_input_x_string(input_x_string);       // проверка что x не содержит x в самом себе
 
     return !status;
 }
+
+
+
 
 int check_valid_brackets(char *string) {
     int bracket_count = 0;
@@ -46,7 +57,7 @@ int check_non_empty_brackets(char *string) {
                 status = 1;
                 break;
             }
-            if (is_num(string[i])) num_status = 1;
+            if (is_num(string[i]) || string[i] == 'x') num_status = 1;
         }
     }
     return status;
@@ -61,8 +72,8 @@ int valid_binary_op_position(char *string) {
     if (triple_binary_op(string)) status = 1;  // провекра наличия 3 операторов подряд
 
     for (size_t i = 0; length_string > i && status != 1; i++) {
-        if (is_open_op(string[i]) && is_binary_op(string[i + 1]) && string[i + 1] != '-') status = 1;
-        if (string[i] == ')' && is_binary_op(string[i - 1])) status = 1;
+        if (is_open_op(string[i]) && is_binary_op(string[i + 1]) && string[i + 1] != '-') status = 1; // cos(*...) sin(/...)
+        if (string[i] == ')' && is_binary_op(string[i - 1])) status = 1; // .../) ...*/)
         if (is_invalid_double_op(&string[i])) status = 1;  // проверка коректных 2 операторов подоряд
         if (binary_op_after_math_op(&string[i])) status = 1;  // проверка случаев вида cos(* sin(/
         if (check_math_neighbor(&string[i])) status = 1;
@@ -182,16 +193,18 @@ int is_num(char symbol) {
 }
 
 int enough_arguements(char *string) {
-    int status = 1;
+    int status = 0;
     int length_string = strlen(string);
     for (int i = 0; i < length_string; i++) {
-        if (string[i] == '^') break;
+        if (string[i] == '^') {
+            status = 1;
+            break;
+        }
         if (is_num(string[i]) || string[i] == 'x') {
             status = 0;
             break;
         }
-    } 
-
+    }
 
     return status;
 }
@@ -200,7 +213,7 @@ void upgrade_string(char *input_string) {
     char new_string[256] = {'\0'};
     size_t string_length = strlen(input_string);
     for (size_t i = 0, j = 0; i < string_length; i++) {
-        if (is_num(input_string[i]) && is_stuck_symbol(input_string[i + 1])) {    // 2cos -> 2*cos
+        if ((is_num(input_string[i]) || input_string[i] == 'x') && is_stuck_symbol(input_string[i + 1])) {    // 2cos -> 2*cos
             new_string[j] = input_string[i];
             new_string[j + 1] = '*';
             new_string[j + 2] = input_string[i + 1];
@@ -221,7 +234,85 @@ void upgrade_string(char *input_string) {
 
 int is_stuck_symbol(char symbol) {
     int status = 0;
-    if (symbol == 'c' || symbol == 'C' || symbol == 's' || symbol == 'S' || symbol == '(' || symbol == 'l' || symbol == 'L' || symbol == 't' || symbol == 'T' || symbol == 'q') {
+    if (symbol == 'c' || symbol == 'C' || symbol == 's' || symbol == 'S' || symbol == '(' || symbol == 'l' || symbol == 'L' || symbol == 't' || symbol == 'T' || symbol == 'q' || symbol == 'x') {
+        status = 1;
+    }
+    return status;
+}
+
+int x_in_input_x_string(char *string) {
+    int status = 0;
+    size_t string_length = strlen(string);
+    for(size_t i = 0; i < string_length; i++) {
+        if (string[i] == 'x') {
+            status = 1;
+            break;
+        }
+    }
+    return status;    
+}
+
+int adapt_string(char *string) {
+    int valid_status = 0;
+    char new_string[256] = {'\0'};
+
+    size_t string_length = strlen(string);
+    for (size_t i = 0, j = 0; i < string_length; i++) {
+        if (ez_skip(string[i])) {
+            new_string[j] = string[i];
+        } else if (string[i] == 'l' && string[i + 1] == 'n') { // ln
+            new_string[j] = 'l';
+            i += 1;
+        } else if (string[i] == 'l' && string[i + 1] == 'g') { // lg
+            new_string[j] = 'L';
+            i += 1; 
+        } else if (string[i] == 'c' && string[i + 1] == 'o' && string[i + 2] == 's') { // cos
+            new_string[j] = 'c';
+            i += 2;
+        } else if (string[i] == 'a' && string[i + 1] == 'c' && string[i + 2] == 'o' && string[i + 3] == 's') { // acos
+            new_string[j] = 'C';
+            i += 3;
+        } else if (string[i] == 's' && string[i + 1] == 'i' && string[i + 2] == 'n') { // sin
+            new_string[j] = 's';
+            i += 2;    
+        } else if (string[i] == 'a' && string[i + 1] == 's' && string[i + 2] == 'i' && string[i + 3] == 'n') { // asin
+            new_string[j] = 'S';
+            i += 3;
+        } else if (string[i] == 't' && string[i + 1] == 'a' && string[i + 2] == 'n') { // tan
+            new_string[j] = 't';
+            i += 2;
+        } else if (string[i] == 'a' && string[i + 1] == 't' && string[i + 2] == 'a' && string[i + 3] == 'n') { // atan
+            new_string[j] = 'T';
+            i += 3;
+        } else if (string[i] == 'm' && string[i + 1] == 'o' && string[i + 2] == 'd') { // mod
+            new_string[j] = '%';
+            i += 2;
+        } else if (string[i] == '^') { // ^
+            new_string[j] = '^';
+        } else if (string[i] == 's' && string[i +  1] == 'q' && string[i + 2] == 'r' && string[i + 3] == 't') { // sqrt
+            new_string[j] = 'q';
+            i += 3;
+        } else if (string[i] == ' ') { 
+            continue;
+        } else {
+            valid_status = 1;
+            break;
+        }
+        
+        j++;
+    }
+    char nothing = '\0';
+    memset(string, nothing, 256);
+    strcpy(string, new_string);
+    return valid_status;
+}
+
+int ez_skip(char symbol) {
+    int status = 0;
+    if (symbol == '0' || symbol == '1' || symbol == '2' || symbol == '3' || symbol == '4' || 
+        symbol == '5' || symbol == '6' || symbol == '7' || symbol == '8' || symbol == '9' || 
+        symbol == '.' || symbol == '+' || symbol == '-' || symbol == '*' || symbol == '/' || 
+        symbol == '(' || symbol == ')' || symbol == 'x') {
         status = 1;
     }
     return status;

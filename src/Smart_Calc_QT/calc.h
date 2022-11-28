@@ -78,7 +78,7 @@ double exec_expression_with_open_bracket(char *curent_string, int *string_positi
 int is_lower_priority(char previous_function, char current_function);
 
 
-int valid_string(char *input_string);
+int valid_string(char *input_string, char *input_x_string);
 int adapt_string(char *string);
 
 int is_math_operator(char symbol);
@@ -101,6 +101,11 @@ int check_non_empty_brackets(char *string);
 int enough_arguements(char *string);
 void upgrade_string(char *input_string);
 int is_stuck_symbol(char symbol);
+int x_in_input_x_string(char *string);
+int ez_skip(char symbol);
 
+
+double calc_string(char *start_string, char *x_string);
+void add_x_value_in_string(char *start_string, double x_value);
 
 #endif  // SRC_SOURCE_CALC_H_

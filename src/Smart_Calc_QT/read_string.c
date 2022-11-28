@@ -86,7 +86,7 @@ double read_string(char *start_string, int *break_status) {
   if (peek_function(f_head) != '\0' && *break_status == 0) calc_current_values(&n_head, &f_head);
   if (*break_status != 0) *break_status = string_position;
 
-  current_num = pop_num(&n_head);
+  if (*start_string != '\0') current_num = pop_num(&n_head);
   // printf("FINAL RESULT = %F\n", current_num);
   return current_num;
  }
