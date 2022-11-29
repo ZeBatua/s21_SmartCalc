@@ -992,46 +992,6 @@ QPushButton:pressed {
      </size>
     </property>
    </widget>
-   <widget class="QLabel" name="result_number_2">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>400</y>
-      <width>191</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>20</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QLabel {
-   background-color:  rgb(217, 215, 218);
-   color: black;
-   qproperty-alignment: 'AlignVCenter | AlignRight';
-   border: 1px solid gray;
-}
-
-background-color : white;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-    </property>
-    <property name="wordWrap">
-     <bool>false</bool>
-    </property>
-    <property name="margin">
-     <number>0</number>
-    </property>
-    <property name="indent">
-     <number>25</number>
-    </property>
-   </widget>
    <widget class="QPushButton" name="value_x">
     <property name="geometry">
      <rect>
@@ -1109,6 +1069,16 @@ QPushButton:pressed {
       <width>16</width>
       <height>16</height>
      </size>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="result_number_2">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>410</y>
+      <width>221</width>
+      <height>41</height>
+     </rect>
     </property>
    </widget>
   </widget>

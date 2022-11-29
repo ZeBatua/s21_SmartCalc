@@ -366,7 +366,12 @@
 	"SOURCES" : 
 	[
 		[
-			"/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/adapt_string.c",
+			"/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/add_x_value_in_string.c",
+			"MU",
+			null
+		],
+		[
+			"/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/calc_string.c",
 			"MU",
 			null
 		],

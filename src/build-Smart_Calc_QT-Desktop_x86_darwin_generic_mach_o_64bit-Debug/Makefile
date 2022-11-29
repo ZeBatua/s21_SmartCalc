@@ -166,29 +166,53 @@ Smart_Calc_QT_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/Smart_Calc_QT_autogen/mocs_compilation.cpp.s
 .PHONY : Smart_Calc_QT_autogen/mocs_compilation.cpp.s
 
-adapt_string.o: adapt_string.c.o
-.PHONY : adapt_string.o
+add_x_value_in_string.o: add_x_value_in_string.c.o
+.PHONY : add_x_value_in_string.o
 
 # target to build an object file
-adapt_string.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/adapt_string.c.o
-.PHONY : adapt_string.c.o
+add_x_value_in_string.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/add_x_value_in_string.c.o
+.PHONY : add_x_value_in_string.c.o
 
-adapt_string.i: adapt_string.c.i
-.PHONY : adapt_string.i
+add_x_value_in_string.i: add_x_value_in_string.c.i
+.PHONY : add_x_value_in_string.i
 
 # target to preprocess a source file
-adapt_string.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/adapt_string.c.i
-.PHONY : adapt_string.c.i
+add_x_value_in_string.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/add_x_value_in_string.c.i
+.PHONY : add_x_value_in_string.c.i
 
-adapt_string.s: adapt_string.c.s
-.PHONY : adapt_string.s
+add_x_value_in_string.s: add_x_value_in_string.c.s
+.PHONY : add_x_value_in_string.s
 
 # target to generate assembly for a file
-adapt_string.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/adapt_string.c.s
-.PHONY : adapt_string.c.s
+add_x_value_in_string.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/add_x_value_in_string.c.s
+.PHONY : add_x_value_in_string.c.s
+
+calc_string.o: calc_string.c.o
+.PHONY : calc_string.o
+
+# target to build an object file
+calc_string.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/calc_string.c.o
+.PHONY : calc_string.c.o
+
+calc_string.i: calc_string.c.i
+.PHONY : calc_string.i
+
+# target to preprocess a source file
+calc_string.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/calc_string.c.i
+.PHONY : calc_string.c.i
+
+calc_string.s: calc_string.c.s
+.PHONY : calc_string.s
+
+# target to generate assembly for a file
+calc_string.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/calc_string.c.s
+.PHONY : calc_string.c.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -299,9 +323,12 @@ help:
 	@echo "... Smart_Calc_QT_autogen/mocs_compilation.o"
 	@echo "... Smart_Calc_QT_autogen/mocs_compilation.i"
 	@echo "... Smart_Calc_QT_autogen/mocs_compilation.s"
-	@echo "... adapt_string.o"
-	@echo "... adapt_string.i"
-	@echo "... adapt_string.s"
+	@echo "... add_x_value_in_string.o"
+	@echo "... add_x_value_in_string.i"
+	@echo "... add_x_value_in_string.s"
+	@echo "... calc_string.o"
+	@echo "... calc_string.i"
+	@echo "... calc_string.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

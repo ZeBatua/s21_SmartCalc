@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
@@ -52,10 +53,10 @@ public:
     QPushButton *sqrt;
     QPushButton *close_bracket;
     QPushButton *open_bracket;
-    QLabel *result_number_2;
     QPushButton *value_x;
     QLabel *label;
     QPushButton *power;
+    QLineEdit *result_number_2;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -480,22 +481,6 @@ public:
 "                                      stop: 0 #BEBEBE, stop: 1 #D7D7D7);\n"
 "}"));
         open_bracket->setIconSize(QSize(16, 16));
-        result_number_2 = new QLabel(centralwidget);
-        result_number_2->setObjectName(QString::fromUtf8("result_number_2"));
-        result_number_2->setGeometry(QRect(110, 400, 191, 41));
-        result_number_2->setFont(font);
-        result_number_2->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"   background-color:  rgb(217, 215, 218);\n"
-"   color: black;\n"
-"   qproperty-alignment: 'AlignVCenter | AlignRight';\n"
-"   border: 1px solid gray;\n"
-"}\n"
-"\n"
-"background-color : white;"));
-        result_number_2->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-        result_number_2->setWordWrap(false);
-        result_number_2->setMargin(0);
-        result_number_2->setIndent(25);
         value_x = new QPushButton(centralwidget);
         value_x->setObjectName(QString::fromUtf8("value_x"));
         value_x->setGeometry(QRect(240, 230, 61, 61));
@@ -526,6 +511,9 @@ public:
 "                                      stop: 0 #BEBEBE, stop: 1 #D7D7D7);\n"
 "}"));
         power->setIconSize(QSize(16, 16));
+        result_number_2 = new QLineEdit(centralwidget);
+        result_number_2->setObjectName(QString::fromUtf8("result_number_2"));
+        result_number_2->setGeometry(QRect(110, 410, 221, 41));
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
@@ -566,7 +554,6 @@ public:
         sqrt->setText(QCoreApplication::translate("MainWindow", "sqrt", nullptr));
         close_bracket->setText(QCoreApplication::translate("MainWindow", ")", nullptr));
         open_bracket->setText(QCoreApplication::translate("MainWindow", "(", nullptr));
-        result_number_2->setText(QString());
         value_x->setText(QCoreApplication::translate("MainWindow", "x", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "X = ", nullptr));
         power->setText(QCoreApplication::translate("MainWindow", "^", nullptr));

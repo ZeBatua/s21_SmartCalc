@@ -8,7 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/adapt_string.c" "CMakeFiles/Smart_Calc_QT.dir/adapt_string.c.o" "gcc" "CMakeFiles/Smart_Calc_QT.dir/adapt_string.c.o.d"
+  "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/add_x_value_in_string.c" "CMakeFiles/Smart_Calc_QT.dir/add_x_value_in_string.c.o" "gcc" "CMakeFiles/Smart_Calc_QT.dir/add_x_value_in_string.c.o.d"
+  "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/calc_string.c" "CMakeFiles/Smart_Calc_QT.dir/calc_string.c.o" "gcc" "CMakeFiles/Smart_Calc_QT.dir/calc_string.c.o.d"
   "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/read_string.c" "CMakeFiles/Smart_Calc_QT.dir/read_string.c.o" "gcc" "CMakeFiles/Smart_Calc_QT.dir/read_string.c.o.d"
   "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/valid_string.c" "CMakeFiles/Smart_Calc_QT.dir/valid_string.c.o" "gcc" "CMakeFiles/Smart_Calc_QT.dir/valid_string.c.o.d"
   "/Users/thalassa/C7_SmartCalc_v1.0-0/src/build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug/Smart_Calc_QT_autogen/mocs_compilation.cpp" "CMakeFiles/Smart_Calc_QT.dir/Smart_Calc_QT_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/Smart_Calc_QT.dir/Smart_Calc_QT_autogen/mocs_compilation.cpp.o.d"

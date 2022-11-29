@@ -22,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->Button_9, SIGNAL(clicked()), this, SLOT(write_string()));
 
     connect(ui->dot, SIGNAL(clicked()), this, SLOT(write_string()));
+    connect(ui->value_x, SIGNAL(clicked()), this, SLOT(write_string()));
 
     connect(ui->mul, SIGNAL(clicked()), this, SLOT(write_string()));
     connect(ui->add, SIGNAL(clicked()), this, SLOT(write_string()));
@@ -76,20 +77,22 @@ void MainWindow::all_clean()
 void MainWindow::equals_clicked()
 {
     clean_board = 0;
-    cout << "Hello world!!!\n";
+
     QString qstr = ui->result_number->text();
     QByteArray bytes = qstr.toLocal8Bit();
-    char mass[256];
+    char common_string[256];
+    strlcpy(common_string, bytes.data(), 256);
 
-    strlcpy(mass, bytes.data(), 256);
-    double res = 0.0;
-    int status = 0;
-    adapt_string(mass);
+    QString qstr_x = ui->result_number_2->text();
+    QByteArray bytes_x = qstr_x.toLocal8Bit();
+    char string_x[256];
+    strlcpy(string_x, bytes_x.data(), 256);
 
-    if (valid_string(mass)) {
-        cout << "valid!!!\n";
-        res = read_string(mass, &status);
-        cout << "read string done!!!\n";
+
+    if (valid_string(common_string, string_x)) {
+        double res = 0.0;
+
+        res = calc_string(common_string, string_x);
         QString new_label = QString::number(res, 'f', 6);
         ui->result_number->setText(new_label);
     } else {
