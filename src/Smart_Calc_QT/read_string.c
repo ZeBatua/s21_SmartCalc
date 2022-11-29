@@ -68,7 +68,7 @@ double read_string(char *start_string, int *break_status) {
           push_num(&n_head, current_num);
         }
       }
-      if (is_lower_priority(previous_function, current_function)) {
+      if (is_lower_priority(previous_function, current_function, &start_string[string_position - 1])) {
         current_function = pop_function(&f_head);
         calc_current_values(&n_head, &f_head);
         push_function(&f_head, current_function);
@@ -338,7 +338,7 @@ double exec_expression_with_minus(char *curent_string, int *string_position) {
   return result;
 }
 
-int is_unary_minus(char *curent_string, int string_position) {
+int is_unary_minus(char *curent_string, int string_position) { // номрально напиши 
   int sign_status = 0;
   if (string_position == 1) {
     sign_status = 1;
@@ -351,6 +351,10 @@ int is_unary_minus(char *curent_string, int string_position) {
       curent_string[string_position - 1] == 'q' ||
       curent_string[string_position - 1] == 'l' ||
       curent_string[string_position - 1] == 'L' ||
+      curent_string[string_position - 1] == '*' ||
+      curent_string[string_position - 1] == '/' ||
+      curent_string[string_position - 1] == '^' ||
+      curent_string[string_position - 1] == '%' ||
       curent_string[string_position - 1] == '(') {
     sign_status = 1;
   }
@@ -425,12 +429,16 @@ double exec_expression_with_open_bracket(char *curent_string, int *string_positi
 
 
 
-int is_lower_priority(char previous_function, char current_function) {
+int is_lower_priority(char previous_function, char current_function, char *string) {
   int status = 0;
   if ((previous_function == '*' || previous_function == '/' || previous_function == '^') && (current_function == '-' || current_function == '+') ||
       (is_math_operator(previous_function) && current_function != '(' && current_function != '-' && !is_math_operator(current_function)) ) {
     status = 1;
-    
+  }
+  if ((string - 1) != NULL) {
+    if (*string == '-' && (*(string - 1) == '*' || *(string - 1) == '/' || *(string - 1) == '%' || *(string - 1) == '^')) {
+      status = 0;
+    }
   }
   return status;
 }

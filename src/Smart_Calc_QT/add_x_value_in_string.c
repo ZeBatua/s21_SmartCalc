@@ -1,7 +1,7 @@
 #include "calc.h"
 
 void add_x_value_in_string(char *start_string, double x_value) {
-  printf("!!!size start = %d\n", sizeof(start_string));
+  // printf("!!!size start = %d\n", sizeof(start_string));
   char new_string[256] = {'\0'};
   char x_string[100] = {'\0'};
   size_t string_len = strlen(start_string);
@@ -18,12 +18,6 @@ void add_x_value_in_string(char *start_string, double x_value) {
     }
   }
   char nothing = '\0';
-  printf("start_string = %s\n", start_string);
   memset(start_string, nothing, 256);
-  printf("start_string = %s\n", start_string);
-  printf("new_string = %s\n", new_string);
-
-  printf("size start = %d\n", sizeof(start_string));
-  printf("size start = %d\n", sizeof(new_string));
-  strcpy(&start_string[0], new_string);
+  strcpy(start_string, new_string);
 }

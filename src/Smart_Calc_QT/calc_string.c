@@ -4,7 +4,7 @@ double calc_string(char *start_string, char *x_string) {
   // if (valid_string(start_string, x_string)) {
     int status = 0;
     double result = 0.0, x_result = 0.0;
-    printf("!!FWFQWFwa!size start = %d\n", sizeof(start_string));
+    // printf("!!FWFQWFwa!size start = %d\n", sizeof(start_string));
     x_result = read_string(x_string, &status);
     add_x_value_in_string(start_string, x_result);
     result = read_string(start_string, &status);
