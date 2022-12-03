@@ -12,6 +12,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Smart_Calc_QT.dir/main.cpp.o.d"
   "CMakeFiles/Smart_Calc_QT.dir/mainwindow.cpp.o"
   "CMakeFiles/Smart_Calc_QT.dir/mainwindow.cpp.o.d"
+  "CMakeFiles/Smart_Calc_QT.dir/qcustomplot.cpp.o"
+  "CMakeFiles/Smart_Calc_QT.dir/qcustomplot.cpp.o.d"
   "CMakeFiles/Smart_Calc_QT.dir/read_string.c.o"
   "CMakeFiles/Smart_Calc_QT.dir/read_string.c.o.d"
   "CMakeFiles/Smart_Calc_QT.dir/valid_string.c.o"

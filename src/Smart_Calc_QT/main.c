@@ -1,7 +1,7 @@
 #include "calc.h"
 
 void main() {
-  char string_xxx[256] = {"10*10/5-100+4"};
+  char string_xxx[256] = {"-10"};
   char start_string[256] = {"x*x"};
 
     // char string_xxx[256] = {"10 * -10"}; не работает

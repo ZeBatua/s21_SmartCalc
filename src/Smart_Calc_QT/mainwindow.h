@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-// #include <qcustomplot.h>
+#include <qcustomplot.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -31,6 +31,8 @@ private slots:
     void write_string();
     void equals_clicked();
     void all_clean();
+    void on_pushButton_make_graph_clicked();
+
 
 };
 #endif // MAINWINDOW_H

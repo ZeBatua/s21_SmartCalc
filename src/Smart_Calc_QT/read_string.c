@@ -435,6 +435,7 @@ int is_lower_priority(char previous_function, char current_function, char *strin
       (is_math_operator(previous_function) && current_function != '(' && current_function != '-' && !is_math_operator(current_function)) ) {
     status = 1;
   }
+//  printf("\n\n|||%s|||\n\n", *(string - 1));
   if ((string - 1) != NULL) {
     if (*string == '-' && (*(string - 1) == '*' || *(string - 1) == '/' || *(string - 1) == '%' || *(string - 1) == '^')) {
       status = 0;

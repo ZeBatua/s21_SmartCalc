@@ -13,6 +13,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS PrintSupport REQUIRED)
 
 set(PROJECT_SOURCES
         main.cpp
@@ -24,6 +25,9 @@ set(PROJECT_SOURCES
         valid_string.c
         calc_string.c
         add_x_value_in_string.c
+        qcustomplot.h
+        config.h
+        qcustomplot.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -50,6 +54,7 @@ else()
 endif()
 
 target_link_libraries(Smart_Calc_QT PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(Smart_Calc_QT PRIVATE Qt${QT_VERSION_MAJOR}::PrintSupport)
 
 set_target_properties(Smart_Calc_QT PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
