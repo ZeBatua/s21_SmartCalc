@@ -48,7 +48,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 34,
+				"line" : 33,
 				"parent" : 0
 			},
 			{
@@ -72,13 +72,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 57,
+				"line" : 56,
 				"parent" : 0
 			},
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 56,
+				"line" : 55,
 				"parent" : 0
 			},
 			{
@@ -386,7 +386,7 @@
 				0,
 				1,
 				2,
-				12
+				11
 			]
 		},
 		{
@@ -610,7 +610,7 @@
 				7,
 				8,
 				9,
-				12
+				11
 			]
 		},
 		{
@@ -620,8 +620,7 @@
 				3,
 				5,
 				10,
-				11,
-				13
+				12
 			]
 		},
 		{
@@ -695,11 +694,6 @@
 		{
 			"backtrace" : 4,
 			"path" : "qcustomplot.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 4,
-			"path" : "config.h",
 			"sourceGroupIndex" : 1
 		},
 		{

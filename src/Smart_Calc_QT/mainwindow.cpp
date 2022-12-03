@@ -136,6 +136,7 @@ void MainWindow::on_pushButton_make_graph_clicked()
        std::string string_x = std::to_string(x1);
        char *x_char = &string_x[0];
        double y = calc_string(common_string, x_char);
+
        Y.push_back(y);
        x1 += 0.1;
     }

@@ -26,7 +26,6 @@ set(PROJECT_SOURCES
         calc_string.c
         add_x_value_in_string.c
         qcustomplot.h
-        config.h
         qcustomplot.cpp
 )
 
