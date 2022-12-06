@@ -108,4 +108,7 @@ int ez_skip(char symbol);
 double calc_string(char *start_string, char *x_string);
 void add_x_value_in_string(char *start_string, double x_value);
 
+void credit_annuity_calc(double balance_owed, int term, double percent, double *my_return);
+void credit_diff_calc(double balance_owed, int term, double percent, double *my_return);
+
 #endif  // SRC_SOURCE_CALC_H_

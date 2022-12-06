@@ -1,21 +1,17 @@
 #include "calc.h"
 
 void main() {
-  char string_xxx[256] = {"-10"};
-  char start_string[256] = {"x*x"};
+  double my_return[3] = {0.0};
+  double balance_owed = 200000.0, term = 24.0, percent = 12.0;
+  credit_annuity_calc(balance_owed, term, percent, my_return);
+  printf("mounthly_payment = %F\n", my_return[0]);
+  printf("total_payment = %F\n", my_return[1]);
+  printf("overpayment = %F\n\n", my_return[2]);
 
-    // char string_xxx[256] = {"10 * -10"}; не работает
-  // char start_string[256] = {"x*x"};
-
-
-
-  double res = 0.0;
-  // if (valid_string(start_string, string_xxx)) {
-  res = calc_string(start_string, string_xxx);
-    printf("res = %F\n", res);
-  // } else {
-  //   printf("NOT VALID\n");
-  // }
+  credit_diff_calc(balance_owed, term, percent, my_return);
+  printf("mounthly_payment = %F\n", my_return[0]);
+  printf("total_payment = %F\n", my_return[1]);
+  printf("overpayment = %F\n\n", my_return[2]);
 }
 
 
@@ -24,3 +20,5 @@ void main() {
   // дай x по умолчанию значение 0.0, иначе могут быть ошибки и сложности которые мне не нужны
   // 9^^3 багуется 
   // проверь случай -^
+  // в графике падает x*x*x())) как и в других местах
+  // char string_xxx[256] = {"10 * -10"}; не работает
