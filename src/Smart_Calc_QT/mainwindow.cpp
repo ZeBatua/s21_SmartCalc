@@ -103,7 +103,6 @@ void MainWindow::equals_clicked()
         QString new_label = "Error";
         ui->result_number->setText(new_label);
     }
-    // cout << "done\n"; !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     clean_board = 1;
 }
 
@@ -154,3 +153,35 @@ void MainWindow::on_pushButton_make_graph_clicked()
     ui->graph->graph(0)->data()->clear();
 }
 
+void MainWindow::on_credit_result_clicked() {
+    double amount = std::atof(ui->cr_amount->text().toLocal8Bit().data());
+    double rate = std::atof(ui->cr_rate->text().toLocal8Bit().data());
+    int term = std::atof(ui->cr_term->text().toLocal8Bit().data());
+
+    double values[3] = {0};
+    int type = 0;
+    if (ui->box_type_credit->currentIndex() == 1) type = 1;
+    if (ui->box_type_credit->currentIndex() == 2) type = 2;
+    cout << ui->box_type_credit->currentIndex() << endl;
+
+    if (!amount || !rate || !term) {
+        ui->result_cr_monthly_pay->setText("not valid");
+        ui->result_cr_overpayment->setText("not valid");
+        ui->result_cr_total->setText("not valid");
+    } else {
+        if (type == 0) {
+            credit_annuity_calc(amount, term, rate, values);
+            cout << "type 1\n";
+        } else if (type == 1) {
+            credit_diff_calc(amount, term, rate, values);
+            cout << "type 2\n";
+        }
+        QString monthly_payment = QString::number(values[0], 'f', 6);
+        QString overpayment = QString::number(values[1], 'f', 6);
+        QString total_payment = QString::number(values[2], 'f', 6);
+        ui->result_cr_monthly_pay->setText(monthly_payment);
+        ui->result_cr_overpayment->setText(overpayment);
+        ui->result_cr_total->setText(total_payment);
+    }
+
+}

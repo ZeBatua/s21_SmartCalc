@@ -27,6 +27,9 @@ set(PROJECT_SOURCES
         add_x_value_in_string.c
         qcustomplot.h
         qcustomplot.cpp
+        credit_annuity_calc.c
+        credit_diff_calc.c
+
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

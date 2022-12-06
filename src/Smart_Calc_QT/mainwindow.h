@@ -32,6 +32,7 @@ private slots:
     void equals_clicked();
     void all_clean();
     void on_pushButton_make_graph_clicked();
+    void on_credit_result_clicked();
 
 
 };

@@ -15,4 +15,4 @@ void credit_diff_calc(double balance_owed, int term, double percent, double *my_
     my_return[0] = main_mounthly_payment;
     my_return[1] = total_payment;
     my_return[2] = overpayment;
-}v
+}
