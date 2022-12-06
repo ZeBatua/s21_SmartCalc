@@ -851,7 +851,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/private/var/folders/zz/zyxvpxvq6csfxvn_n000266m000jjn/T/AppTranslocation/07AC6C63-A21F-4226-A028-1C56C4594318/d/Qt Creator.app/Contents/Resources/package-manager/auto-setup.cmake"
+			"value" : "/opt/goinfre/thalassa/Qt Creator.app/Contents/Resources/package-manager/auto-setup.cmake"
 		},
 		{
 			"name" : "CMAKE_PROJECT_NAME",

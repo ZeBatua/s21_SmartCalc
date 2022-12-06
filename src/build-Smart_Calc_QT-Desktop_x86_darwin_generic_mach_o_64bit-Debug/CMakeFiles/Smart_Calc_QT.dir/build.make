@@ -181,6 +181,34 @@ CMakeFiles/Smart_Calc_QT.dir/qcustomplot.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Smart_Calc_QT.dir/qcustomplot.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/qcustomplot.cpp -o CMakeFiles/Smart_Calc_QT.dir/qcustomplot.cpp.s
 
+CMakeFiles/Smart_Calc_QT.dir/credit_annuity_calc.c.o: CMakeFiles/Smart_Calc_QT.dir/flags.make
+CMakeFiles/Smart_Calc_QT.dir/credit_annuity_calc.c.o: /Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/credit_annuity_calc.c
+CMakeFiles/Smart_Calc_QT.dir/credit_annuity_calc.c.o: CMakeFiles/Smart_Calc_QT.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/thalassa/C7_SmartCalc_v1.0-0/src/build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/Smart_Calc_QT.dir/credit_annuity_calc.c.o"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Smart_Calc_QT.dir/credit_annuity_calc.c.o -MF CMakeFiles/Smart_Calc_QT.dir/credit_annuity_calc.c.o.d -o CMakeFiles/Smart_Calc_QT.dir/credit_annuity_calc.c.o -c /Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/credit_annuity_calc.c
+
+CMakeFiles/Smart_Calc_QT.dir/credit_annuity_calc.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Smart_Calc_QT.dir/credit_annuity_calc.c.i"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/credit_annuity_calc.c > CMakeFiles/Smart_Calc_QT.dir/credit_annuity_calc.c.i
+
+CMakeFiles/Smart_Calc_QT.dir/credit_annuity_calc.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Smart_Calc_QT.dir/credit_annuity_calc.c.s"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/credit_annuity_calc.c -o CMakeFiles/Smart_Calc_QT.dir/credit_annuity_calc.c.s
+
+CMakeFiles/Smart_Calc_QT.dir/credit_diff_calc.c.o: CMakeFiles/Smart_Calc_QT.dir/flags.make
+CMakeFiles/Smart_Calc_QT.dir/credit_diff_calc.c.o: /Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/credit_diff_calc.c
+CMakeFiles/Smart_Calc_QT.dir/credit_diff_calc.c.o: CMakeFiles/Smart_Calc_QT.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/thalassa/C7_SmartCalc_v1.0-0/src/build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/Smart_Calc_QT.dir/credit_diff_calc.c.o"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Smart_Calc_QT.dir/credit_diff_calc.c.o -MF CMakeFiles/Smart_Calc_QT.dir/credit_diff_calc.c.o.d -o CMakeFiles/Smart_Calc_QT.dir/credit_diff_calc.c.o -c /Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/credit_diff_calc.c
+
+CMakeFiles/Smart_Calc_QT.dir/credit_diff_calc.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Smart_Calc_QT.dir/credit_diff_calc.c.i"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/credit_diff_calc.c > CMakeFiles/Smart_Calc_QT.dir/credit_diff_calc.c.i
+
+CMakeFiles/Smart_Calc_QT.dir/credit_diff_calc.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Smart_Calc_QT.dir/credit_diff_calc.c.s"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/credit_diff_calc.c -o CMakeFiles/Smart_Calc_QT.dir/credit_diff_calc.c.s
+
 # Object files for target Smart_Calc_QT
 Smart_Calc_QT_OBJECTS = \
 "CMakeFiles/Smart_Calc_QT.dir/Smart_Calc_QT_autogen/mocs_compilation.cpp.o" \
@@ -190,7 +218,9 @@ Smart_Calc_QT_OBJECTS = \
 "CMakeFiles/Smart_Calc_QT.dir/valid_string.c.o" \
 "CMakeFiles/Smart_Calc_QT.dir/calc_string.c.o" \
 "CMakeFiles/Smart_Calc_QT.dir/add_x_value_in_string.c.o" \
-"CMakeFiles/Smart_Calc_QT.dir/qcustomplot.cpp.o"
+"CMakeFiles/Smart_Calc_QT.dir/qcustomplot.cpp.o" \
+"CMakeFiles/Smart_Calc_QT.dir/credit_annuity_calc.c.o" \
+"CMakeFiles/Smart_Calc_QT.dir/credit_diff_calc.c.o"
 
 # External object files for target Smart_Calc_QT
 Smart_Calc_QT_EXTERNAL_OBJECTS =
@@ -203,6 +233,8 @@ Smart_Calc_QT.app/Contents/MacOS/Smart_Calc_QT: CMakeFiles/Smart_Calc_QT.dir/val
 Smart_Calc_QT.app/Contents/MacOS/Smart_Calc_QT: CMakeFiles/Smart_Calc_QT.dir/calc_string.c.o
 Smart_Calc_QT.app/Contents/MacOS/Smart_Calc_QT: CMakeFiles/Smart_Calc_QT.dir/add_x_value_in_string.c.o
 Smart_Calc_QT.app/Contents/MacOS/Smart_Calc_QT: CMakeFiles/Smart_Calc_QT.dir/qcustomplot.cpp.o
+Smart_Calc_QT.app/Contents/MacOS/Smart_Calc_QT: CMakeFiles/Smart_Calc_QT.dir/credit_annuity_calc.c.o
+Smart_Calc_QT.app/Contents/MacOS/Smart_Calc_QT: CMakeFiles/Smart_Calc_QT.dir/credit_diff_calc.c.o
 Smart_Calc_QT.app/Contents/MacOS/Smart_Calc_QT: CMakeFiles/Smart_Calc_QT.dir/build.make
 Smart_Calc_QT.app/Contents/MacOS/Smart_Calc_QT: /usr/local/lib/QtPrintSupport.framework/Versions/A/QtPrintSupport
 Smart_Calc_QT.app/Contents/MacOS/Smart_Calc_QT: /usr/local/lib/QtWidgets.framework/Versions/A/QtWidgets
@@ -210,7 +242,7 @@ Smart_Calc_QT.app/Contents/MacOS/Smart_Calc_QT: /usr/local/lib/QtGui.framework/V
 Smart_Calc_QT.app/Contents/MacOS/Smart_Calc_QT: /usr/local/lib/QtCore.framework/Versions/A/QtCore
 Smart_Calc_QT.app/Contents/MacOS/Smart_Calc_QT: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/lib/libcups.tbd
 Smart_Calc_QT.app/Contents/MacOS/Smart_Calc_QT: CMakeFiles/Smart_Calc_QT.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/thalassa/C7_SmartCalc_v1.0-0/src/build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable Smart_Calc_QT.app/Contents/MacOS/Smart_Calc_QT"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/thalassa/C7_SmartCalc_v1.0-0/src/build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable Smart_Calc_QT.app/Contents/MacOS/Smart_Calc_QT"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Smart_Calc_QT.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

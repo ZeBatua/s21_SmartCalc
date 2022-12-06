@@ -214,6 +214,54 @@ calc_string.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/calc_string.c.s
 .PHONY : calc_string.c.s
 
+credit_annuity_calc.o: credit_annuity_calc.c.o
+.PHONY : credit_annuity_calc.o
+
+# target to build an object file
+credit_annuity_calc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/credit_annuity_calc.c.o
+.PHONY : credit_annuity_calc.c.o
+
+credit_annuity_calc.i: credit_annuity_calc.c.i
+.PHONY : credit_annuity_calc.i
+
+# target to preprocess a source file
+credit_annuity_calc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/credit_annuity_calc.c.i
+.PHONY : credit_annuity_calc.c.i
+
+credit_annuity_calc.s: credit_annuity_calc.c.s
+.PHONY : credit_annuity_calc.s
+
+# target to generate assembly for a file
+credit_annuity_calc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/credit_annuity_calc.c.s
+.PHONY : credit_annuity_calc.c.s
+
+credit_diff_calc.o: credit_diff_calc.c.o
+.PHONY : credit_diff_calc.o
+
+# target to build an object file
+credit_diff_calc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/credit_diff_calc.c.o
+.PHONY : credit_diff_calc.c.o
+
+credit_diff_calc.i: credit_diff_calc.c.i
+.PHONY : credit_diff_calc.i
+
+# target to preprocess a source file
+credit_diff_calc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/credit_diff_calc.c.i
+.PHONY : credit_diff_calc.c.i
+
+credit_diff_calc.s: credit_diff_calc.c.s
+.PHONY : credit_diff_calc.s
+
+# target to generate assembly for a file
+credit_diff_calc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/credit_diff_calc.c.s
+.PHONY : credit_diff_calc.c.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -353,6 +401,12 @@ help:
 	@echo "... calc_string.o"
 	@echo "... calc_string.i"
 	@echo "... calc_string.s"
+	@echo "... credit_annuity_calc.o"
+	@echo "... credit_annuity_calc.i"
+	@echo "... credit_annuity_calc.s"
+	@echo "... credit_diff_calc.o"
+	@echo "... credit_diff_calc.i"
+	@echo "... credit_diff_calc.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
