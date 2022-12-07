@@ -16,10 +16,7 @@ double calc_string(char *start_string, char *x_string) {
   return result;
 }
 
-
-
-
-
   // ты можешь возвращать конкретный код ошибки в соотвествии прописывать ее выводе qt
   // gcc calc.c adapt_string.c valid_string.c read_string.c -g -o main && ./main
+
 

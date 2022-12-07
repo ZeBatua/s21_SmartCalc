@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1234</width>
-    <height>521</height>
+    <width>1210</width>
+    <height>520</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -930,35 +930,6 @@
      <string>x</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>470</y>
-      <width>51</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Avenir Next</family>
-      <pointsize>16</pointsize>
-      <italic>false</italic>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QLabel {
-	font: 16pt &quot;Avenir Next&quot;;
-	color: black;
-	border: 0px;
-	background-color: rgb(255, 255, 255);
-}</string>
-    </property>
-    <property name="text">
-     <string>X = </string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="power">
     <property name="geometry">
      <rect>
@@ -995,7 +966,7 @@
    <widget class="QLineEdit" name="result_number_2">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>120</x>
       <y>470</y>
       <width>191</width>
       <height>41</height>
@@ -2043,7 +2014,7 @@
     </property>
     <property name="styleSheet">
      <string>QLabel {
-	font: 16pt &quot;Avenir Next&quot;;
+	font: 14pt &quot;Avenir Next&quot;;
 	color: black;
 	border: 0px;
 }</string>
@@ -2084,6 +2055,739 @@
     </property>
     <property name="alignment">
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="form_7">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>470</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir Next</family>
+      <pointsize>16</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 16pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="text">
+     <string>X:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="form_18">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>292</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir Next</family>
+      <pointsize>14</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="text">
+     <string>term:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="dep_amount">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>258</y>
+      <width>80</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="dep_replenishments_list">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>374</y>
+      <width>321</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="dep_tax">
+    <property name="geometry">
+     <rect>
+      <x>1080</x>
+      <y>258</y>
+      <width>80</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="form_23">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>310</y>
+      <width>41</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir Next</family>
+      <pointsize>14</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="text">
+     <string>mounth</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="dep_rate">
+    <property name="geometry">
+     <rect>
+      <x>930</x>
+      <y>258</y>
+      <width>80</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="default_2">
+    <property name="geometry">
+     <rect>
+      <x>1030</x>
+      <y>273</y>
+      <width>41</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir Next</family>
+      <pointsize>14</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="text">
+     <string>def: 7.5</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="form_17">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>372</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir Next</family>
+      <pointsize>14</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="text">
+     <string>replenishments:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="dep_withdrawals_list">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>338</y>
+      <width>321</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="result_dep_tax">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>451</y>
+      <width>221</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir Next</family>
+      <pointsize>14</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="tabletTracking">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+	background-color: rgb(255, 255, 255);
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="form_16">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>492</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir Next</family>
+      <pointsize>14</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="text">
+     <string>total amount:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="form_24">
+    <property name="geometry">
+     <rect>
+      <x>1030</x>
+      <y>298</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir Next</family>
+      <pointsize>14</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="text">
+     <string>capitalization:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="dep_term">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>296</y>
+      <width>80</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="form_26">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>352</y>
+      <width>121</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir Next</family>
+      <pointsize>14</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="text">
+     <string>mounth:sum - 02:4325</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="form_15">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>417</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir Next</family>
+      <pointsize>14</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="text">
+     <string>percents:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="form_27">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>389</y>
+      <width>128</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir Next</family>
+      <pointsize>14</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="text">
+     <string>mounth:sum - 10:4797</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="form_21">
+    <property name="geometry">
+     <rect>
+      <x>1030</x>
+      <y>255</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir Next</family>
+      <pointsize>14</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="text">
+     <string>tax, %:</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="capitalization_check">
+    <property name="geometry">
+     <rect>
+      <x>1140</x>
+      <y>299</y>
+      <width>16</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string>QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_dep_result">
+    <property name="geometry">
+     <rect>
+      <x>1080</x>
+      <y>488</y>
+      <width>80</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="text">
+     <string>result</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>40</width>
+      <height>40</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="form_25">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>333</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir Next</family>
+      <pointsize>14</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="text">
+     <string>withdrawals:</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="box_dep_period">
+    <property name="geometry">
+     <rect>
+      <x>930</x>
+      <y>295</y>
+      <width>91</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>monthly</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>quarterly</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>annually</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="form_14">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>455</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir Next</family>
+      <pointsize>14</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="text">
+     <string>tax amount:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="result_dep_amount">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>488</y>
+      <width>221</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir Next</family>
+      <pointsize>14</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="tabletTracking">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+	background-color: rgb(255, 255, 255);
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="form_22">
+    <property name="geometry">
+     <rect>
+      <x>870</x>
+      <y>260</y>
+      <width>54</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir Next</family>
+      <pointsize>14</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="text">
+     <string>rate, %:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="result_dep_percents">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>414</y>
+      <width>221</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir Next</family>
+      <pointsize>14</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="tabletTracking">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+	background-color: rgb(255, 255, 255);
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="form_19">
+    <property name="geometry">
+     <rect>
+      <x>870</x>
+      <y>298</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir Next</family>
+      <pointsize>14</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="text">
+     <string>period:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="form_20">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>260</y>
+      <width>54</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir Next</family>
+      <pointsize>14</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 14pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="text">
+     <string>amount:</string>
     </property>
    </widget>
   </widget>
