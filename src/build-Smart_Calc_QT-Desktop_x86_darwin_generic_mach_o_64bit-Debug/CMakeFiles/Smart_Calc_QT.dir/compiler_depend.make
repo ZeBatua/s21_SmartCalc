@@ -3589,6 +3589,7 @@ CMakeFiles/Smart_Calc_QT.dir/mainwindow.cpp.o: /Users/thalassa/C7_SmartCalc_v1.0
   /usr/local/include/QtWidgets/QLineEdit \
   /usr/local/include/QtWidgets/QMainWindow \
   /usr/local/include/QtWidgets/QPushButton \
+  /usr/local/include/QtWidgets/QRadioButton \
   /usr/local/lib/QtWidgets.framework/Headers/QLabel \
   /usr/local/lib/QtCore.framework/Headers/QString \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/iostream
@@ -4844,6 +4845,8 @@ CMakeFiles/Smart_Calc_QT.dir/valid_string.c.o: /Users/thalassa/C7_SmartCalc_v1.0
 /Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/qcustomplot.cpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/iostream:
+
+/usr/local/include/QtWidgets/QRadioButton:
 
 /usr/local/include/QtWidgets/QLabel:
 

@@ -48,7 +48,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 36,
+				"line" : 37,
 				"parent" : 0
 			},
 			{
@@ -72,13 +72,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 59,
+				"line" : 60,
 				"parent" : 0
 			},
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 58,
+				"line" : 59,
 				"parent" : 0
 			},
 			{
@@ -490,7 +490,8 @@
 				8,
 				9,
 				12,
-				13
+				13,
+				14
 			]
 		}
 	],
@@ -614,7 +615,8 @@
 				9,
 				11,
 				12,
-				13
+				13,
+				14
 			]
 		},
 		{
@@ -624,7 +626,7 @@
 				3,
 				5,
 				10,
-				14
+				15
 			]
 		},
 		{
@@ -716,6 +718,12 @@
 			"backtrace" : 4,
 			"compileGroupIndex" : 1,
 			"path" : "credit_diff_calc.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 1,
+			"path" : "is_norm_dep_values.c",
 			"sourceGroupIndex" : 0
 		},
 		{

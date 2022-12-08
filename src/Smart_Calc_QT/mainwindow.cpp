@@ -185,3 +185,55 @@ void MainWindow::on_credit_result_clicked() {
     }
 
 }
+
+void MainWindow::on_dep_result_clicked() {
+    double amount = std::atof(ui->dep_amount->text().toLocal8Bit().data());
+    double rate = std::atof(ui->dep_rate->text().toLocal8Bit().data());
+    double tax = std::atof(ui->dep_tax->text().toLocal8Bit().data());
+    int term = std::atof(ui->dep_term->text().toLocal8Bit().data());
+    int tipe = ui->box_type_credit->currentIndex();
+    int capitalization = ui->capitalization_check->isChecked();
+
+    QString qstr = ui->dep_withdrawals_list->text();
+    QByteArray bytes = qstr.toLocal8Bit();
+    char withdrawals[256];
+    strlcpy(withdrawals, bytes.data(), 256);
+
+    QString qstr_2 = ui->dep_withdrawals_list->text();
+    QByteArray bytes_2 = qstr.toLocal8Bit();
+    char replenishments[256];
+    strlcpy(replenishments, bytes.data(), 256);
+
+    if is_norm_dep_values(amount, rate, tax, term, withdrawals, replenishments) {
+
+    } else {
+        ui->result_dep_percents->setText("invalid values");
+        ui->result_dep_tax_amount->setText("invalid values");
+        ui->result_dep_total_amount->setText("invalid values");
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

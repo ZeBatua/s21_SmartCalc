@@ -2522,7 +2522,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_dep_result">
+   <widget class="QPushButton" name="dep_result">
     <property name="geometry">
      <rect>
       <x>1080</x>

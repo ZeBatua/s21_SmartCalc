@@ -111,4 +111,7 @@ void add_x_value_in_string(char *start_string, double x_value);
 void credit_annuity_calc(double balance_owed, int term, double percent, double *my_return);
 void credit_diff_calc(double balance_owed, int term, double percent, double *my_return);
 
+int is_norm_dep_values(double amount, double rate, double tax, int term, char *withdrawals, char *replenishments);
+
+
 #endif  // SRC_SOURCE_CALC_H_

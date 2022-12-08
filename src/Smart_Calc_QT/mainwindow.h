@@ -33,7 +33,6 @@ private slots:
     void all_clean();
     void on_pushButton_make_graph_clicked();
     void on_credit_result_clicked();
-
-
+    void on_dep_result_clicked();
 };
 #endif // MAINWINDOW_H

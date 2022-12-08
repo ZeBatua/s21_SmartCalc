@@ -29,6 +29,7 @@ set(PROJECT_SOURCES
         qcustomplot.cpp
         credit_annuity_calc.c
         credit_diff_calc.c
+        is_norm_dep_values.c
 
 )
 
