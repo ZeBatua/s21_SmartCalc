@@ -112,6 +112,8 @@ void credit_annuity_calc(double balance_owed, int term, double percent, double *
 void credit_diff_calc(double balance_owed, int term, double percent, double *my_return);
 
 int is_norm_dep_values(double amount, double rate, double tax, int term, char *withdrawals, char *replenishments);
+void dep_calc(const double amount, const double rate, const double tax, const int term, const int type, const int capitalization, char *withdrawals, char *replenishments, double *my_return);
+
 
 
 #endif  // SRC_SOURCE_CALC_H_

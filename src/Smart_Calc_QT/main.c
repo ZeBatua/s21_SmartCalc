@@ -13,8 +13,23 @@ void main() {
   // printf("total_payment = %F\n", my_return[1]);
   // printf("overpayment = %F\n\n", my_return[2]);
 
-  
-
+  double amount = 100000;
+  double rate = 10;
+  double tax = 5;
+  int term = 24;
+  int type = 1;
+  int capitalization = 1;
+  char *withdrawals = "";
+  char *replenishments = "01:1500 05:3000 07:8000 02:900";
+  double my_return[256] = {0};
+  if (is_norm_dep_values(amount, rate, tax, term, withdrawals, replenishments)) {
+    dep_calc(amount, rate, tax, term, type, capitalization, withdrawals, replenishments, my_return);
+    printf("percents = %F\n", my_return[0]);
+    printf("tax_amount = %F\n", my_return[1]);
+    printf("total_amount = %F\n\n", my_return[2]);
+  } else {
+    printf("\n\nNOT NORMAL STRING!!!\n");
+  }
 
 }
 
