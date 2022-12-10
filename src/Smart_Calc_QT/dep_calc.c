@@ -1,7 +1,9 @@
 #include "calc.h"
 
+const int days_in_mounth[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+
 void get_mass_operations(char *operation, double *mass_data);
-void sort_mounth_data(int *mounth, double *data, double *mass_data);
 double calc_percents_cap(const int term, const double rate, const double amount, const int k, const double *rep_data, const double *with_data);
 double calc_percents(const int term, const double rate, const double amount, const double *rep_data, const double *with_data);
 
@@ -10,8 +12,12 @@ void dep_calc(const double amount, const double rate, const double tax, const in
     double rep_data[256] = {0};
     double with_data[256] = {0};
 
-    get_mass_operations(replenishments, rep_data);
-    get_mass_operations(withdrawals, with_data); // снятие
+    // get_mass_operations(replenishments, rep_data);
+    // get_mass_operations(withdrawals, with_data); // снятие
+    
+    // for (int i = 0; i < 10; i++) {
+    //     printf("mounth: %d, money = %F\n", i, rep_data[i]);
+    // }
 
     if (capitalization == 0) {  // не учтено пополнение снятие
         percents = calc_percents(term, rate, amount, rep_data, with_data);
@@ -29,53 +35,55 @@ void dep_calc(const double amount, const double rate, const double tax, const in
 
 void get_mass_operations(char *operation, double *mass_data) {
     int string_position = 0;
-    double current_num = 0.0;
-    int mounth[256] = {0};
-    double data[256] = {0};
-    int i = 0;
-    while (string_position < strlen(operation)) {
-        if (operation[i] == ' ') i++; 
-        get_num(operation, &string_position, &current_num);
-        mounth[i] = current_num;
-        if (operation[i] == ':') i++;
-        get_num(operation, &string_position, &current_num);
-        data[i] = current_num;
-        if (operation[i] == ' ') i++;
-        string_position++;
-        printf("\n\nqwertyuio\n");
-    }
-    sort_mounth_data(mounth, data, mass_data);
-}
+    double current_mounth = 0.0, current_data = 0.0;
 
-void sort_mounth_data(int *mounth, double *data, double *mass_data) {
-    for (int i = 0; i < 256; i++) {
-        mass_data[mounth[i]] = data[i];
+    while (string_position < strlen(operation)) {
+        while (operation[string_position] == ' ') {
+            string_position++; 
+        }
+        get_num(operation, &string_position, &current_mounth);
+        if (operation[string_position] == ':') {
+            string_position++;
+        }
+        get_num(operation, &string_position, &current_data);
+        mass_data[(int)current_mounth] = current_data;
+        string_position++;
     }
 }
 
 double calc_percents_cap(const int term, const double rate, const double amount, const int k, const double *rep_data, const double *with_data) {
     double percents = 0.0;
-    int mounth_count = 0;
     double full_amount = amount;
-    for (; mounth_count != term; mounth_count++) {
-        full_amount = full_amount + rep_data[term] - with_data[term];
+
+    // for (int i = 0; i < 256; i++) {
+    //     // if (rep_data[i] != 0 || with_data[i] != 0) {
+    //         printf("1 = %F\t2 = %F\n\n", rep_data[i], with_data[i]);
+    //     // }
+    // }
+
+
+    for (int mounth_count = 0, days = 0; mounth_count != term + 1; mounth_count++, days++) {
+        full_amount += rep_data[mounth_count] - with_data[mounth_count]; // 01:1500 05:3000 07:8000 02:900
         if (fmod(mounth_count, k) == 0) {
-            percents = ((full_amount * rate * term * 30) / 365) / 100;
-            full_amount += full_amount * pow((1 + (rate / 100) / 12), term * 3);
+            // printf("mounth count = %d, percents = %F\n", mounth_count, full_amount * (rate / 100.0) * days_in_mounth[days] / 365);
+            full_amount += percents;
+
+            percents = full_amount * (rate / 100.0) * days_in_mounth[days] / 365;
+            printf("percent = %F\ndep = %F\nrate = %F\ndays_in_mounth = %d\n\n", full_amount * (rate / 100.0) * days_in_mounth[days] / 365, full_amount, rate, days_in_mounth[days]);
         } else {
-            percents = ((full_amount * rate * term * 30) / 365) / 100;
+            printf("mounth count = %d, percents = %F\n", mounth_count, full_amount * (rate / 100.0) * days_in_mounth[days] / 365);
+            percents += (full_amount * (rate / 100.0) * days_in_mounth[days] / 365);
         }
     }
-    return percents;
+    return full_amount - amount;
 }
 
 double calc_percents(const int term, const double rate, const double amount, const double *rep_data, const double *with_data) {
     double percents = 0.0;
-    int mounth_count = 0;
     double full_amount = amount;
-    for (; mounth_count != term; mounth_count++) {
-        full_amount = full_amount + rep_data[term] - with_data[term];
-        percents = ((full_amount * rate * term * 30) / 365) / 100;
+    for (int mounth_count = 1, days = 0; mounth_count != term; mounth_count++) {
+        full_amount += rep_data[term] - with_data[term];
+        percents += ((full_amount * rate * days_in_mounth[days]) / 365) / 100;
     }
     return percents;
 }

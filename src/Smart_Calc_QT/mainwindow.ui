@@ -2169,7 +2169,7 @@
      <rect>
       <x>710</x>
       <y>310</y>
-      <width>41</width>
+      <width>51</width>
       <height>16</height>
      </rect>
     </property>
@@ -2189,7 +2189,7 @@
 }</string>
     </property>
     <property name="text">
-     <string>mounth</string>
+     <string>mounthh</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="dep_rate">
@@ -2282,7 +2282,7 @@
 }</string>
     </property>
    </widget>
-   <widget class="QLabel" name="result_dep_tax">
+   <widget class="QLabel" name="result_dep_tax_amount">
     <property name="geometry">
      <rect>
       <x>840</x>
@@ -2636,7 +2636,7 @@
      <string>tax amount:</string>
     </property>
    </widget>
-   <widget class="QLabel" name="result_dep_amount">
+   <widget class="QLabel" name="result_dep_total_amount">
     <property name="geometry">
      <rect>
       <x>840</x>

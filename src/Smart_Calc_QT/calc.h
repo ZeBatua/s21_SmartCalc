@@ -44,6 +44,7 @@ typedef struct operations {
   char *decimal_logarithm;
 } OPS;
 
+
 double read_string(char *start_string, int *break_status);
 void calc_current_values(num_stack **num_head, func_stack **function_head);
 

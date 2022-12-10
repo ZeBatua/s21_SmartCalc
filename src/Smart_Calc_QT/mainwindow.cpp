@@ -204,7 +204,7 @@ void MainWindow::on_dep_result_clicked() {
     char replenishments[256];
     strlcpy(replenishments, bytes.data(), 256);
 
-    if is_norm_dep_values(amount, rate, tax, term, withdrawals, replenishments) {
+    if (is_norm_dep_values(amount, rate, tax, term, withdrawals, replenishments)) {
 
     } else {
         ui->result_dep_percents->setText("invalid values");
