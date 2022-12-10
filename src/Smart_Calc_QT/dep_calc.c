@@ -61,19 +61,27 @@ double calc_percents_cap(const int term, const double rate, const double amount,
     //     // }
     // }
 
-
-    for (int mounth_count = 0, days = 0; mounth_count != term + 1; mounth_count++, days++) {
+    int static_mounth_count = 1;
+    for (int mounth_count = 1, days = 0; static_mounth_count != term + 1; mounth_count++, days++, static_mounth_count++) {
+        printf("static_mounth_count = %d\n", static_mounth_count);
         full_amount += rep_data[mounth_count] - with_data[mounth_count]; // 01:1500 05:3000 07:8000 02:900
         if (fmod(mounth_count, k) == 0) {
-            // printf("mounth count = %d, percents = %F\n", mounth_count, full_amount * (rate / 100.0) * days_in_mounth[days] / 365);
-            full_amount += percents;
 
             percents = full_amount * (rate / 100.0) * days_in_mounth[days] / 365;
             printf("percent = %F\ndep = %F\nrate = %F\ndays_in_mounth = %d\n\n", full_amount * (rate / 100.0) * days_in_mounth[days] / 365, full_amount, rate, days_in_mounth[days]);
+            if (fmod(mounth_count, 12) == 0 && full_amount - amount > 42500.0) {
+                full_amount += percents; // 110 471 -> 119 581
+                full_amount = amount + (full_amount - amount) * 0.87;
+            } else {
+                full_amount += percents;
+            }
+
+
         } else {
             printf("mounth count = %d, percents = %F\n", mounth_count, full_amount * (rate / 100.0) * days_in_mounth[days] / 365);
             percents += (full_amount * (rate / 100.0) * days_in_mounth[days] / 365);
         }
+        if (days == 11) days = -1;
     }
     return full_amount - amount;
 }

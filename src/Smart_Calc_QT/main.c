@@ -16,7 +16,7 @@ void main() {
   double amount = 100000;
   double rate = 10;
   double tax = 0;
-  int term = 12;
+  int term = 18;
   int type = 0;
   int capitalization = 1;
   char *withdrawals = "";
@@ -24,9 +24,9 @@ void main() {
   double my_return[256] = {0};
   if (is_norm_dep_values(amount, rate, tax, term, withdrawals, replenishments)) {
     dep_calc(amount, rate, tax, term, type, capitalization, withdrawals, replenishments, my_return);
-    printf("percents = %F\n", my_return[0]);
-    printf("tax_amount = %F\n", my_return[1]);
-    printf("total_amount = %F\n\n", my_return[2]);
+    printf("!percents = %F\n", my_return[0]);
+    printf("!tax_amount = %F\n", my_return[1]);
+    printf("!total_amount = %F\n\n", my_return[2]);
   } else {
     printf("\n\nNOT NORMAL STRING!!!\n");
   }
