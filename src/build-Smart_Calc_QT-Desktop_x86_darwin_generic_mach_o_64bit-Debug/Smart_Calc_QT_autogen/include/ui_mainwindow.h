@@ -457,7 +457,7 @@ public:
         power->setIconSize(QSize(16, 16));
         result_number_2 = new QLineEdit(centralwidget);
         result_number_2->setObjectName(QString::fromUtf8("result_number_2"));
-        result_number_2->setGeometry(QRect(120, 470, 191, 41));
+        result_number_2->setGeometry(QRect(110, 460, 191, 41));
         QFont font3;
         font3.setFamilies({QString::fromUtf8("Avenir Next")});
         result_number_2->setFont(font3);
@@ -826,7 +826,7 @@ public:
         xgraph_10->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         form_7 = new QLabel(centralwidget);
         form_7->setObjectName(QString::fromUtf8("form_7"));
-        form_7->setGeometry(QRect(80, 470, 41, 41));
+        form_7->setGeometry(QRect(40, 460, 60, 41));
         form_7->setFont(font);
         form_7->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
@@ -1173,7 +1173,7 @@ public:
 "	border: 0px;\n"
 "}", nullptr));
         xgraph_10->setText(QCoreApplication::translate("MainWindow", "Deposit Calculator", nullptr));
-        form_7->setText(QCoreApplication::translate("MainWindow", "X:", nullptr));
+        form_7->setText(QCoreApplication::translate("MainWindow", "X value:", nullptr));
         form_18->setText(QCoreApplication::translate("MainWindow", "term:", nullptr));
         form_23->setText(QCoreApplication::translate("MainWindow", "mounthh", nullptr));
         form_17->setText(QCoreApplication::translate("MainWindow", "replenishments:", nullptr));

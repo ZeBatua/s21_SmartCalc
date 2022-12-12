@@ -325,7 +325,7 @@ int ez_skip(char symbol) {
 int num_after_math_op(char *symbol) {
     int status = 0;
     if (symbol + 1 != NULL) {
-        if (is_math_operator(*symbol) && (!is_num(*(symbol + 1)) && *(symbol + 1) != '-' && *(symbol + 1) != 'x')) status = 1; 
+        if (is_math_operator(*symbol) && (!is_num(*(symbol + 1)) && *(symbol + 1) != '-' && *(symbol + 1) != 'x' && *(symbol + 1) != '(')) status = 1; 
     }
     return status;
 }

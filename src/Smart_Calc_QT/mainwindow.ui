@@ -966,8 +966,8 @@
    <widget class="QLineEdit" name="result_number_2">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>470</y>
+      <x>110</x>
+      <y>460</y>
       <width>191</width>
       <height>41</height>
      </rect>
@@ -2060,9 +2060,9 @@
    <widget class="QLabel" name="form_7">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>470</y>
-      <width>41</width>
+      <x>40</x>
+      <y>460</y>
+      <width>60</width>
       <height>41</height>
      </rect>
     </property>
@@ -2082,7 +2082,7 @@
 }</string>
     </property>
     <property name="text">
-     <string>X:</string>
+     <string>X value:</string>
     </property>
    </widget>
    <widget class="QLabel" name="form_18">
