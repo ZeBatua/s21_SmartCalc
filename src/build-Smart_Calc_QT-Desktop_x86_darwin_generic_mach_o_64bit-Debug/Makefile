@@ -262,6 +262,30 @@ credit_diff_calc.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/credit_diff_calc.c.s
 .PHONY : credit_diff_calc.c.s
 
+dep_calc.o: dep_calc.c.o
+.PHONY : dep_calc.o
+
+# target to build an object file
+dep_calc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/dep_calc.c.o
+.PHONY : dep_calc.c.o
+
+dep_calc.i: dep_calc.c.i
+.PHONY : dep_calc.i
+
+# target to preprocess a source file
+dep_calc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/dep_calc.c.i
+.PHONY : dep_calc.c.i
+
+dep_calc.s: dep_calc.c.s
+.PHONY : dep_calc.s
+
+# target to generate assembly for a file
+dep_calc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/dep_calc.c.s
+.PHONY : dep_calc.c.s
+
 is_norm_dep_values.o: is_norm_dep_values.c.o
 .PHONY : is_norm_dep_values.o
 
@@ -431,6 +455,9 @@ help:
 	@echo "... credit_diff_calc.o"
 	@echo "... credit_diff_calc.i"
 	@echo "... credit_diff_calc.s"
+	@echo "... dep_calc.o"
+	@echo "... dep_calc.i"
+	@echo "... dep_calc.s"
 	@echo "... is_norm_dep_values.o"
 	@echo "... is_norm_dep_values.i"
 	@echo "... is_norm_dep_values.s"

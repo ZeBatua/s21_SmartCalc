@@ -30,6 +30,7 @@ set(PROJECT_SOURCES
         credit_annuity_calc.c
         credit_diff_calc.c
         is_norm_dep_values.c
+        dep_calc.c
 
 )
 

@@ -165,9 +165,9 @@ void MainWindow::on_credit_result_clicked() {
     cout << ui->box_type_credit->currentIndex() << endl;
 
     if (!amount || !rate || !term) {
-        ui->result_cr_monthly_pay->setText("not valid");
-        ui->result_cr_overpayment->setText("not valid");
-        ui->result_cr_total->setText("not valid");
+        ui->result_cr_monthly_pay->setText(" invalid values");
+        ui->result_cr_overpayment->setText(" invalid values");
+        ui->result_cr_total->setText(" invalid values");
     } else {
         if (type == 0) {
             credit_annuity_calc(amount, term, rate, values);
@@ -191,7 +191,7 @@ void MainWindow::on_dep_result_clicked() {
     double rate = std::atof(ui->dep_rate->text().toLocal8Bit().data());
     double tax = std::atof(ui->dep_tax->text().toLocal8Bit().data());
     int term = std::atof(ui->dep_term->text().toLocal8Bit().data());
-    int tipe = ui->box_type_credit->currentIndex();
+    int type = ui->box_type_credit->currentIndex();
     int capitalization = ui->capitalization_check->isChecked();
 
     QString qstr = ui->dep_withdrawals_list->text();
@@ -199,19 +199,25 @@ void MainWindow::on_dep_result_clicked() {
     char withdrawals[256];
     strlcpy(withdrawals, bytes.data(), 256);
 
-    QString qstr_2 = ui->dep_withdrawals_list->text();
-    QByteArray bytes_2 = qstr.toLocal8Bit();
+    QString qstr_2 = ui->dep_replenishments_list->text();
+    QByteArray bytes_2 = qstr_2.toLocal8Bit();
     char replenishments[256];
-    strlcpy(replenishments, bytes.data(), 256);
+    strlcpy(replenishments, bytes_2.data(), 256);
 
     if (is_norm_dep_values(amount, rate, tax, term, withdrawals, replenishments)) {
-
+        double my_return[3];
+        dep_calc(amount, rate, tax, term, type, capitalization, withdrawals, replenishments, my_return);
+        QString percents = QString::number(my_return[0], 'f', 6);
+        QString tax = QString::number(my_return[1], 'f', 6);
+        QString total_amount = QString::number(my_return[2], 'f', 6);
+        ui->result_dep_percents->setText(percents);
+        ui->result_dep_tax_amount->setText(tax);
+        ui->result_dep_total_amount->setText(total_amount);
     } else {
-        ui->result_dep_percents->setText("invalid values");
-        ui->result_dep_tax_amount->setText("invalid values");
-        ui->result_dep_total_amount->setText("invalid values");
+        ui->result_dep_percents->setText(" invalid values");
+        ui->result_dep_tax_amount->setText(" invalid values");
+        ui->result_dep_total_amount->setText(" invalid values");
     }
-
 }
 
 

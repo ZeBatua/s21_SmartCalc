@@ -1,5 +1,7 @@
 #include "calc.h"
 
+
+double exec_expression_with_math_operator(char *start_string, int *string_position, char function);
 int is_math_operator(char symbol);
 double get_minus(char *start_string, int *string_position, num_stack **n_head, func_stack **f_head);
 double get_div(char *start_string, int *string_position, num_stack **n_head, func_stack **f_head);
@@ -31,6 +33,8 @@ double read_string(char *start_string, int *break_status) {
       } else if (*break_status == 77 && !check_power_next_function(start_string, string_position)) {
         break;
       }
+      if (*break_status == 5) break;
+
 
     } else if (get_function(start_string, &string_position, &current_function)) {
       previous_function = peek_function(f_head);
@@ -53,8 +57,6 @@ double read_string(char *start_string, int *break_status) {
         }
 
       }
-
-
       if (current_function  == '^') {
         current_num = exec_expression_with_power(start_string, &string_position, peek_num(n_head));
         if (*break_status == 77 || *break_status == 4) {
@@ -68,6 +70,13 @@ double read_string(char *start_string, int *break_status) {
           push_num(&n_head, current_num);
         }
       }
+
+      // if(is_math_operator(current_function) && current_function != '^') {
+      //   current_num = exec_expression_with_math_operator(start_string, &string_position, current_function); /////////////////////
+      //   push_num(&n_head, current_num);
+      //   pop_function(&f_head);
+      // }
+
       if (is_lower_priority(previous_function, current_function, &start_string[string_position - 1])) {
         current_function = pop_function(&f_head);
         calc_current_values(&n_head, &f_head);
@@ -290,6 +299,7 @@ double peek_num(const num_stack *head) {
 int get_function(char *part_string, int *string_position, char *function) {
   int status = 0;
   const char str_functions[60] = "(|)|+|-|*|/|^|%|U|u|c|s|t|C|S|T|q|l|L";
+  // printf("Aaa: %s\n", part_string[*string_position]);
   *function = *strchr(str_functions, part_string[*string_position]);
   if (function != NULL) {
     status = 1;
@@ -443,3 +453,29 @@ int is_lower_priority(char previous_function, char current_function, char *strin
   }
   return status;
 }
+
+double exec_expression_with_math_operator(char *start_string, int *string_position, char function) {
+  double result = 0.0;
+  int extra_position = 5;
+  result = read_string(&start_string[*string_position], &extra_position);
+  num_stack *n_head_tmp = NULL;
+  func_stack *f_head_tmp = NULL;
+  push_num(&n_head_tmp, result);
+  push_function(&f_head_tmp, function);
+  calc_current_values(&n_head_tmp, &f_head_tmp);
+  result = pop_num(&n_head_tmp);
+
+  *string_position += extra_position;
+  return result;
+}
+
+
+// double exec_expression_with_open_bracket(char *curent_string, int *string_position) {
+//   double result = 0.0;
+
+//   int extra_position = 9; // find close bracket_and_do
+//   result = read_string(&curent_string[*string_position], &extra_position);
+//   *string_position += extra_position;
+
+//   return result;
+// }

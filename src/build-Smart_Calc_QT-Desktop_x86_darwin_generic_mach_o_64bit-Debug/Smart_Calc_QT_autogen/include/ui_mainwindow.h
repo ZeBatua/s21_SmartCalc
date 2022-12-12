@@ -109,7 +109,7 @@ public:
     QLabel *default_2;
     QLabel *form_17;
     QLineEdit *dep_withdrawals_list;
-    QLabel *result_dep_tax;
+    QLabel *result_dep_tax_amount;
     QLabel *form_16;
     QLabel *form_24;
     QLineEdit *dep_term;
@@ -122,7 +122,7 @@ public:
     QLabel *form_25;
     QComboBox *box_dep_period;
     QLabel *form_14;
-    QLabel *result_dep_amount;
+    QLabel *result_dep_total_amount;
     QLabel *form_22;
     QLabel *result_dep_percents;
     QLabel *form_19;
@@ -874,7 +874,7 @@ public:
 "}"));
         form_23 = new QLabel(centralwidget);
         form_23->setObjectName(QString::fromUtf8("form_23"));
-        form_23->setGeometry(QRect(710, 310, 41, 16));
+        form_23->setGeometry(QRect(710, 310, 51, 16));
         form_23->setFont(font5);
         form_23->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 14pt \"Avenir Next\";\n"
@@ -915,13 +915,13 @@ public:
 "	color: black;\n"
 "	border: 0px;\n"
 "}"));
-        result_dep_tax = new QLabel(centralwidget);
-        result_dep_tax->setObjectName(QString::fromUtf8("result_dep_tax"));
-        result_dep_tax->setGeometry(QRect(840, 451, 221, 26));
-        result_dep_tax->setFont(font5);
-        result_dep_tax->setMouseTracking(false);
-        result_dep_tax->setTabletTracking(false);
-        result_dep_tax->setStyleSheet(QString::fromUtf8("QLabel {\n"
+        result_dep_tax_amount = new QLabel(centralwidget);
+        result_dep_tax_amount->setObjectName(QString::fromUtf8("result_dep_tax_amount"));
+        result_dep_tax_amount->setGeometry(QRect(840, 451, 221, 26));
+        result_dep_tax_amount->setFont(font5);
+        result_dep_tax_amount->setMouseTracking(false);
+        result_dep_tax_amount->setTabletTracking(false);
+        result_dep_tax_amount->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 14pt \"Avenir Next\";\n"
 "	color: black;\n"
 "	border: 0px;\n"
@@ -1030,13 +1030,13 @@ public:
 "	color: black;\n"
 "	border: 0px;\n"
 "}"));
-        result_dep_amount = new QLabel(centralwidget);
-        result_dep_amount->setObjectName(QString::fromUtf8("result_dep_amount"));
-        result_dep_amount->setGeometry(QRect(840, 488, 221, 26));
-        result_dep_amount->setFont(font5);
-        result_dep_amount->setMouseTracking(false);
-        result_dep_amount->setTabletTracking(false);
-        result_dep_amount->setStyleSheet(QString::fromUtf8("QLabel {\n"
+        result_dep_total_amount = new QLabel(centralwidget);
+        result_dep_total_amount->setObjectName(QString::fromUtf8("result_dep_total_amount"));
+        result_dep_total_amount->setGeometry(QRect(840, 488, 221, 26));
+        result_dep_total_amount->setFont(font5);
+        result_dep_total_amount->setMouseTracking(false);
+        result_dep_total_amount->setTabletTracking(false);
+        result_dep_total_amount->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 14pt \"Avenir Next\";\n"
 "	color: black;\n"
 "	border: 0px;\n"
@@ -1180,10 +1180,10 @@ public:
         xgraph_10->setText(QCoreApplication::translate("MainWindow", "Deposit Calculator", nullptr));
         form_7->setText(QCoreApplication::translate("MainWindow", "X:", nullptr));
         form_18->setText(QCoreApplication::translate("MainWindow", "term:", nullptr));
-        form_23->setText(QCoreApplication::translate("MainWindow", "mounth", nullptr));
+        form_23->setText(QCoreApplication::translate("MainWindow", "mounthh", nullptr));
         default_2->setText(QCoreApplication::translate("MainWindow", "def: 7.5", nullptr));
         form_17->setText(QCoreApplication::translate("MainWindow", "replenishments:", nullptr));
-        result_dep_tax->setText(QString());
+        result_dep_tax_amount->setText(QString());
         form_16->setText(QCoreApplication::translate("MainWindow", "total amount:", nullptr));
         form_24->setText(QCoreApplication::translate("MainWindow", "capitalization:", nullptr));
         form_26->setText(QCoreApplication::translate("MainWindow", "mounth:sum - 02:4325", nullptr));
@@ -1203,7 +1203,7 @@ public:
         box_dep_period->setItemText(2, QCoreApplication::translate("MainWindow", "annually", nullptr));
 
         form_14->setText(QCoreApplication::translate("MainWindow", "tax amount:", nullptr));
-        result_dep_amount->setText(QString());
+        result_dep_total_amount->setText(QString());
         form_22->setText(QCoreApplication::translate("MainWindow", "rate, %:", nullptr));
         result_dep_percents->setText(QString());
         form_19->setText(QCoreApplication::translate("MainWindow", "period:", nullptr));

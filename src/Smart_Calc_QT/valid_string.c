@@ -1,5 +1,7 @@
 #include "calc.h"
 
+int num_after_math_op(char *symbol);
+
 int valid_string(char *input_string, char *input_x_string) {
     // printf("\n--------------------------\n");
     // printf("input_string = %d\n", sizeof(input_string));
@@ -83,6 +85,7 @@ int valid_binary_op_position(char *string) {
         if (string[i] == ')' && is_binary_op(string[i - 1])) status = 1; // .../) ...*/)
         if (is_invalid_double_op(&string[i])) status = 1;  // проверка коректных 2 операторов подоряд
         if (binary_op_after_math_op(&string[i])) status = 1;  // проверка случаев вида cos(* sin(/
+        if (num_after_math_op(&string[i])) status = 1;
         if (check_math_neighbor(&string[i])) status = 1;
     }
 
@@ -202,14 +205,14 @@ int is_num(char symbol) {
 int enough_arguements(char *string) {
     int status = 0;
     int length_string = strlen(string);
+    int find_num = 0;
     for (int i = 0; i < length_string; i++) {
-        if (string[i] == '^') {
+        if (string[i] == '^' && find_num == 0) {
             status = 1;
             break;
         }
         if (is_num(string[i]) || string[i] == 'x') {
-            status = 0;
-            break;
+            find_num = 1;
         }
     }
 
@@ -321,6 +324,15 @@ int ez_skip(char symbol) {
         symbol == '.' || symbol == '+' || symbol == '-' || symbol == '*' || symbol == '/' || 
         symbol == '(' || symbol == ')' || symbol == 'x') {
         status = 1;
+    }
+    return status;
+}
+
+
+int num_after_math_op(char *symbol) {
+    int status = 0;
+    if (symbol + 1 != NULL) {
+        if (is_math_operator(*symbol) && (!is_num(*(symbol + 1)) && *(symbol + 1) != '-' && *(symbol + 1) != 'x')) status = 1; 
     }
     return status;
 }
