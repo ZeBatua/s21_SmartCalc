@@ -20,17 +20,21 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
-        calc.h
-        read_string.c
-        valid_string.c
-        calc_string.c
-        add_x_value_in_string.c
+
         qcustomplot.h
         qcustomplot.cpp
-        credit_annuity_calc.c
-        credit_diff_calc.c
-        is_norm_dep_values.c
-        dep_calc.c
+
+        calc.h
+        calculator/read_string.c
+        calculator/valid_string.c
+        calculator/calc_string.c
+        calculator/add_x_value_in_string.c
+
+        credit/credit_annuity_calc.c
+        credit/credit_diff_calc.c
+
+        deposit/is_norm_dep_values.c
+        deposit/dep_calc.c
 
 )
 

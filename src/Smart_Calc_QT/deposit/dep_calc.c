@@ -1,4 +1,4 @@
-#include "calc.h"
+#include "../calc.h"
 
 const int days_in_mounth[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 

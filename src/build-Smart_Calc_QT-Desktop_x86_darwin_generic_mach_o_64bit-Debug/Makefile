@@ -166,149 +166,197 @@ Smart_Calc_QT_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/Smart_Calc_QT_autogen/mocs_compilation.cpp.s
 .PHONY : Smart_Calc_QT_autogen/mocs_compilation.cpp.s
 
-add_x_value_in_string.o: add_x_value_in_string.c.o
-.PHONY : add_x_value_in_string.o
+calculator/add_x_value_in_string.o: calculator/add_x_value_in_string.c.o
+.PHONY : calculator/add_x_value_in_string.o
 
 # target to build an object file
-add_x_value_in_string.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/add_x_value_in_string.c.o
-.PHONY : add_x_value_in_string.c.o
+calculator/add_x_value_in_string.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/calculator/add_x_value_in_string.c.o
+.PHONY : calculator/add_x_value_in_string.c.o
 
-add_x_value_in_string.i: add_x_value_in_string.c.i
-.PHONY : add_x_value_in_string.i
+calculator/add_x_value_in_string.i: calculator/add_x_value_in_string.c.i
+.PHONY : calculator/add_x_value_in_string.i
 
 # target to preprocess a source file
-add_x_value_in_string.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/add_x_value_in_string.c.i
-.PHONY : add_x_value_in_string.c.i
+calculator/add_x_value_in_string.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/calculator/add_x_value_in_string.c.i
+.PHONY : calculator/add_x_value_in_string.c.i
 
-add_x_value_in_string.s: add_x_value_in_string.c.s
-.PHONY : add_x_value_in_string.s
+calculator/add_x_value_in_string.s: calculator/add_x_value_in_string.c.s
+.PHONY : calculator/add_x_value_in_string.s
 
 # target to generate assembly for a file
-add_x_value_in_string.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/add_x_value_in_string.c.s
-.PHONY : add_x_value_in_string.c.s
+calculator/add_x_value_in_string.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/calculator/add_x_value_in_string.c.s
+.PHONY : calculator/add_x_value_in_string.c.s
 
-calc_string.o: calc_string.c.o
-.PHONY : calc_string.o
+calculator/calc_string.o: calculator/calc_string.c.o
+.PHONY : calculator/calc_string.o
 
 # target to build an object file
-calc_string.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/calc_string.c.o
-.PHONY : calc_string.c.o
+calculator/calc_string.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/calculator/calc_string.c.o
+.PHONY : calculator/calc_string.c.o
 
-calc_string.i: calc_string.c.i
-.PHONY : calc_string.i
+calculator/calc_string.i: calculator/calc_string.c.i
+.PHONY : calculator/calc_string.i
 
 # target to preprocess a source file
-calc_string.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/calc_string.c.i
-.PHONY : calc_string.c.i
+calculator/calc_string.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/calculator/calc_string.c.i
+.PHONY : calculator/calc_string.c.i
 
-calc_string.s: calc_string.c.s
-.PHONY : calc_string.s
+calculator/calc_string.s: calculator/calc_string.c.s
+.PHONY : calculator/calc_string.s
 
 # target to generate assembly for a file
-calc_string.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/calc_string.c.s
-.PHONY : calc_string.c.s
+calculator/calc_string.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/calculator/calc_string.c.s
+.PHONY : calculator/calc_string.c.s
 
-credit_annuity_calc.o: credit_annuity_calc.c.o
-.PHONY : credit_annuity_calc.o
+calculator/read_string.o: calculator/read_string.c.o
+.PHONY : calculator/read_string.o
 
 # target to build an object file
-credit_annuity_calc.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/credit_annuity_calc.c.o
-.PHONY : credit_annuity_calc.c.o
+calculator/read_string.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/calculator/read_string.c.o
+.PHONY : calculator/read_string.c.o
 
-credit_annuity_calc.i: credit_annuity_calc.c.i
-.PHONY : credit_annuity_calc.i
+calculator/read_string.i: calculator/read_string.c.i
+.PHONY : calculator/read_string.i
 
 # target to preprocess a source file
-credit_annuity_calc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/credit_annuity_calc.c.i
-.PHONY : credit_annuity_calc.c.i
+calculator/read_string.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/calculator/read_string.c.i
+.PHONY : calculator/read_string.c.i
 
-credit_annuity_calc.s: credit_annuity_calc.c.s
-.PHONY : credit_annuity_calc.s
+calculator/read_string.s: calculator/read_string.c.s
+.PHONY : calculator/read_string.s
 
 # target to generate assembly for a file
-credit_annuity_calc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/credit_annuity_calc.c.s
-.PHONY : credit_annuity_calc.c.s
+calculator/read_string.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/calculator/read_string.c.s
+.PHONY : calculator/read_string.c.s
 
-credit_diff_calc.o: credit_diff_calc.c.o
-.PHONY : credit_diff_calc.o
+calculator/valid_string.o: calculator/valid_string.c.o
+.PHONY : calculator/valid_string.o
 
 # target to build an object file
-credit_diff_calc.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/credit_diff_calc.c.o
-.PHONY : credit_diff_calc.c.o
+calculator/valid_string.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/calculator/valid_string.c.o
+.PHONY : calculator/valid_string.c.o
 
-credit_diff_calc.i: credit_diff_calc.c.i
-.PHONY : credit_diff_calc.i
+calculator/valid_string.i: calculator/valid_string.c.i
+.PHONY : calculator/valid_string.i
 
 # target to preprocess a source file
-credit_diff_calc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/credit_diff_calc.c.i
-.PHONY : credit_diff_calc.c.i
+calculator/valid_string.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/calculator/valid_string.c.i
+.PHONY : calculator/valid_string.c.i
 
-credit_diff_calc.s: credit_diff_calc.c.s
-.PHONY : credit_diff_calc.s
+calculator/valid_string.s: calculator/valid_string.c.s
+.PHONY : calculator/valid_string.s
 
 # target to generate assembly for a file
-credit_diff_calc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/credit_diff_calc.c.s
-.PHONY : credit_diff_calc.c.s
+calculator/valid_string.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/calculator/valid_string.c.s
+.PHONY : calculator/valid_string.c.s
 
-dep_calc.o: dep_calc.c.o
-.PHONY : dep_calc.o
+credit/credit_annuity_calc.o: credit/credit_annuity_calc.c.o
+.PHONY : credit/credit_annuity_calc.o
 
 # target to build an object file
-dep_calc.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/dep_calc.c.o
-.PHONY : dep_calc.c.o
+credit/credit_annuity_calc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/credit/credit_annuity_calc.c.o
+.PHONY : credit/credit_annuity_calc.c.o
 
-dep_calc.i: dep_calc.c.i
-.PHONY : dep_calc.i
+credit/credit_annuity_calc.i: credit/credit_annuity_calc.c.i
+.PHONY : credit/credit_annuity_calc.i
 
 # target to preprocess a source file
-dep_calc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/dep_calc.c.i
-.PHONY : dep_calc.c.i
+credit/credit_annuity_calc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/credit/credit_annuity_calc.c.i
+.PHONY : credit/credit_annuity_calc.c.i
 
-dep_calc.s: dep_calc.c.s
-.PHONY : dep_calc.s
+credit/credit_annuity_calc.s: credit/credit_annuity_calc.c.s
+.PHONY : credit/credit_annuity_calc.s
 
 # target to generate assembly for a file
-dep_calc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/dep_calc.c.s
-.PHONY : dep_calc.c.s
+credit/credit_annuity_calc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/credit/credit_annuity_calc.c.s
+.PHONY : credit/credit_annuity_calc.c.s
 
-is_norm_dep_values.o: is_norm_dep_values.c.o
-.PHONY : is_norm_dep_values.o
+credit/credit_diff_calc.o: credit/credit_diff_calc.c.o
+.PHONY : credit/credit_diff_calc.o
 
 # target to build an object file
-is_norm_dep_values.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/is_norm_dep_values.c.o
-.PHONY : is_norm_dep_values.c.o
+credit/credit_diff_calc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/credit/credit_diff_calc.c.o
+.PHONY : credit/credit_diff_calc.c.o
 
-is_norm_dep_values.i: is_norm_dep_values.c.i
-.PHONY : is_norm_dep_values.i
+credit/credit_diff_calc.i: credit/credit_diff_calc.c.i
+.PHONY : credit/credit_diff_calc.i
 
 # target to preprocess a source file
-is_norm_dep_values.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/is_norm_dep_values.c.i
-.PHONY : is_norm_dep_values.c.i
+credit/credit_diff_calc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/credit/credit_diff_calc.c.i
+.PHONY : credit/credit_diff_calc.c.i
 
-is_norm_dep_values.s: is_norm_dep_values.c.s
-.PHONY : is_norm_dep_values.s
+credit/credit_diff_calc.s: credit/credit_diff_calc.c.s
+.PHONY : credit/credit_diff_calc.s
 
 # target to generate assembly for a file
-is_norm_dep_values.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/is_norm_dep_values.c.s
-.PHONY : is_norm_dep_values.c.s
+credit/credit_diff_calc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/credit/credit_diff_calc.c.s
+.PHONY : credit/credit_diff_calc.c.s
+
+deposit/dep_calc.o: deposit/dep_calc.c.o
+.PHONY : deposit/dep_calc.o
+
+# target to build an object file
+deposit/dep_calc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/deposit/dep_calc.c.o
+.PHONY : deposit/dep_calc.c.o
+
+deposit/dep_calc.i: deposit/dep_calc.c.i
+.PHONY : deposit/dep_calc.i
+
+# target to preprocess a source file
+deposit/dep_calc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/deposit/dep_calc.c.i
+.PHONY : deposit/dep_calc.c.i
+
+deposit/dep_calc.s: deposit/dep_calc.c.s
+.PHONY : deposit/dep_calc.s
+
+# target to generate assembly for a file
+deposit/dep_calc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/deposit/dep_calc.c.s
+.PHONY : deposit/dep_calc.c.s
+
+deposit/is_norm_dep_values.o: deposit/is_norm_dep_values.c.o
+.PHONY : deposit/is_norm_dep_values.o
+
+# target to build an object file
+deposit/is_norm_dep_values.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/deposit/is_norm_dep_values.c.o
+.PHONY : deposit/is_norm_dep_values.c.o
+
+deposit/is_norm_dep_values.i: deposit/is_norm_dep_values.c.i
+.PHONY : deposit/is_norm_dep_values.i
+
+# target to preprocess a source file
+deposit/is_norm_dep_values.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/deposit/is_norm_dep_values.c.i
+.PHONY : deposit/is_norm_dep_values.c.i
+
+deposit/is_norm_dep_values.s: deposit/is_norm_dep_values.c.s
+.PHONY : deposit/is_norm_dep_values.s
+
+# target to generate assembly for a file
+deposit/is_norm_dep_values.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/deposit/is_norm_dep_values.c.s
+.PHONY : deposit/is_norm_dep_values.c.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -382,54 +430,6 @@ qcustomplot.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/qcustomplot.cpp.s
 .PHONY : qcustomplot.cpp.s
 
-read_string.o: read_string.c.o
-.PHONY : read_string.o
-
-# target to build an object file
-read_string.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/read_string.c.o
-.PHONY : read_string.c.o
-
-read_string.i: read_string.c.i
-.PHONY : read_string.i
-
-# target to preprocess a source file
-read_string.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/read_string.c.i
-.PHONY : read_string.c.i
-
-read_string.s: read_string.c.s
-.PHONY : read_string.s
-
-# target to generate assembly for a file
-read_string.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/read_string.c.s
-.PHONY : read_string.c.s
-
-valid_string.o: valid_string.c.o
-.PHONY : valid_string.o
-
-# target to build an object file
-valid_string.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/valid_string.c.o
-.PHONY : valid_string.c.o
-
-valid_string.i: valid_string.c.i
-.PHONY : valid_string.i
-
-# target to preprocess a source file
-valid_string.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/valid_string.c.i
-.PHONY : valid_string.c.i
-
-valid_string.s: valid_string.c.s
-.PHONY : valid_string.s
-
-# target to generate assembly for a file
-valid_string.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Smart_Calc_QT.dir/build.make CMakeFiles/Smart_Calc_QT.dir/valid_string.c.s
-.PHONY : valid_string.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -443,24 +443,30 @@ help:
 	@echo "... Smart_Calc_QT_autogen/mocs_compilation.o"
 	@echo "... Smart_Calc_QT_autogen/mocs_compilation.i"
 	@echo "... Smart_Calc_QT_autogen/mocs_compilation.s"
-	@echo "... add_x_value_in_string.o"
-	@echo "... add_x_value_in_string.i"
-	@echo "... add_x_value_in_string.s"
-	@echo "... calc_string.o"
-	@echo "... calc_string.i"
-	@echo "... calc_string.s"
-	@echo "... credit_annuity_calc.o"
-	@echo "... credit_annuity_calc.i"
-	@echo "... credit_annuity_calc.s"
-	@echo "... credit_diff_calc.o"
-	@echo "... credit_diff_calc.i"
-	@echo "... credit_diff_calc.s"
-	@echo "... dep_calc.o"
-	@echo "... dep_calc.i"
-	@echo "... dep_calc.s"
-	@echo "... is_norm_dep_values.o"
-	@echo "... is_norm_dep_values.i"
-	@echo "... is_norm_dep_values.s"
+	@echo "... calculator/add_x_value_in_string.o"
+	@echo "... calculator/add_x_value_in_string.i"
+	@echo "... calculator/add_x_value_in_string.s"
+	@echo "... calculator/calc_string.o"
+	@echo "... calculator/calc_string.i"
+	@echo "... calculator/calc_string.s"
+	@echo "... calculator/read_string.o"
+	@echo "... calculator/read_string.i"
+	@echo "... calculator/read_string.s"
+	@echo "... calculator/valid_string.o"
+	@echo "... calculator/valid_string.i"
+	@echo "... calculator/valid_string.s"
+	@echo "... credit/credit_annuity_calc.o"
+	@echo "... credit/credit_annuity_calc.i"
+	@echo "... credit/credit_annuity_calc.s"
+	@echo "... credit/credit_diff_calc.o"
+	@echo "... credit/credit_diff_calc.i"
+	@echo "... credit/credit_diff_calc.s"
+	@echo "... deposit/dep_calc.o"
+	@echo "... deposit/dep_calc.i"
+	@echo "... deposit/dep_calc.s"
+	@echo "... deposit/is_norm_dep_values.o"
+	@echo "... deposit/is_norm_dep_values.i"
+	@echo "... deposit/is_norm_dep_values.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -470,12 +476,6 @@ help:
 	@echo "... qcustomplot.o"
 	@echo "... qcustomplot.i"
 	@echo "... qcustomplot.s"
-	@echo "... read_string.o"
-	@echo "... read_string.i"
-	@echo "... read_string.s"
-	@echo "... valid_string.o"
-	@echo "... valid_string.i"
-	@echo "... valid_string.s"
 .PHONY : help
 
 

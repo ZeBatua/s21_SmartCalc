@@ -1,4 +1,4 @@
-#include "calc.h"
+#include "../calc.h"
 
 int num_after_math_op(char *symbol);
 

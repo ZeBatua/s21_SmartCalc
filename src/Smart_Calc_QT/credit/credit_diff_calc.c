@@ -1,4 +1,4 @@
-#include "calc.h"
+#include "../calc.h"
 
 void credit_diff_calc(double balance_owed, int term, double percent, double *my_return) {
     double main_mounthly_payment = 0.0;

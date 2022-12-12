@@ -48,7 +48,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 38,
+				"line" : 42,
 				"parent" : 0
 			},
 			{
@@ -72,13 +72,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 61,
+				"line" : 65,
 				"parent" : 0
 			},
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 60,
+				"line" : 64,
 				"parent" : 0
 			},
 			{
@@ -386,7 +386,7 @@
 				0,
 				1,
 				2,
-				11
+				6
 			]
 		},
 		{
@@ -485,10 +485,10 @@
 			"language" : "C",
 			"sourceIndexes" : 
 			[
-				6,
-				7,
 				8,
 				9,
+				10,
+				11,
 				12,
 				13,
 				14,
@@ -611,9 +611,9 @@
 				1,
 				2,
 				6,
-				7,
 				8,
 				9,
+				10,
 				11,
 				12,
 				13,
@@ -627,7 +627,7 @@
 			[
 				3,
 				5,
-				10,
+				7,
 				16
 			]
 		},
@@ -672,35 +672,6 @@
 		},
 		{
 			"backtrace" : 4,
-			"path" : "calc.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 4,
-			"compileGroupIndex" : 1,
-			"path" : "read_string.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 4,
-			"compileGroupIndex" : 1,
-			"path" : "valid_string.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 4,
-			"compileGroupIndex" : 1,
-			"path" : "calc_string.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 4,
-			"compileGroupIndex" : 1,
-			"path" : "add_x_value_in_string.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 4,
 			"path" : "qcustomplot.h",
 			"sourceGroupIndex" : 1
 		},
@@ -712,26 +683,55 @@
 		},
 		{
 			"backtrace" : 4,
+			"path" : "calc.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
 			"compileGroupIndex" : 1,
-			"path" : "credit_annuity_calc.c",
+			"path" : "calculator/read_string.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 1,
-			"path" : "credit_diff_calc.c",
+			"path" : "calculator/valid_string.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 1,
-			"path" : "is_norm_dep_values.c",
+			"path" : "calculator/calc_string.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 1,
-			"path" : "dep_calc.c",
+			"path" : "calculator/add_x_value_in_string.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 1,
+			"path" : "credit/credit_annuity_calc.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 1,
+			"path" : "credit/credit_diff_calc.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 1,
+			"path" : "deposit/is_norm_dep_values.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 1,
+			"path" : "deposit/dep_calc.c",
 			"sourceGroupIndex" : 0
 		},
 		{

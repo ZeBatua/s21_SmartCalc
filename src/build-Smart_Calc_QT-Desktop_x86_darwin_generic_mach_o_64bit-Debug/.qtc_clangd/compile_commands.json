@@ -344,10 +344,10 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/calc.h"
+        "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/qcustomplot.h"
     ],
     "directory": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug/.qtc_clangd",
-    "file": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/calc.h"
+    "file": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/qcustomplot.h"
 },
 {
     "arguments": [
@@ -414,10 +414,10 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/qcustomplot.h"
+        "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/calc.h"
     ],
     "directory": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug/.qtc_clangd",
-    "file": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/qcustomplot.h"
+    "file": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/calc.h"
 },
 {
     "arguments": [
@@ -482,10 +482,10 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/read_string.c"
+        "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/calculator/read_string.c"
     ],
     "directory": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug/.qtc_clangd",
-    "file": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/read_string.c"
+    "file": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/calculator/read_string.c"
 },
 {
     "arguments": [
@@ -550,10 +550,10 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/valid_string.c"
+        "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/calculator/valid_string.c"
     ],
     "directory": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug/.qtc_clangd",
-    "file": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/valid_string.c"
+    "file": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/calculator/valid_string.c"
 },
 {
     "arguments": [
@@ -618,10 +618,10 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/calc_string.c"
+        "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/calculator/calc_string.c"
     ],
     "directory": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug/.qtc_clangd",
-    "file": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/calc_string.c"
+    "file": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/calculator/calc_string.c"
 },
 {
     "arguments": [
@@ -686,10 +686,10 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/add_x_value_in_string.c"
+        "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/calculator/add_x_value_in_string.c"
     ],
     "directory": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug/.qtc_clangd",
-    "file": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/add_x_value_in_string.c"
+    "file": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/calculator/add_x_value_in_string.c"
 },
 {
     "arguments": [
@@ -754,10 +754,10 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/credit_annuity_calc.c"
+        "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/credit/credit_annuity_calc.c"
     ],
     "directory": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug/.qtc_clangd",
-    "file": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/credit_annuity_calc.c"
+    "file": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/credit/credit_annuity_calc.c"
 },
 {
     "arguments": [
@@ -822,10 +822,10 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/credit_diff_calc.c"
+        "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/credit/credit_diff_calc.c"
     ],
     "directory": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug/.qtc_clangd",
-    "file": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/credit_diff_calc.c"
+    "file": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/credit/credit_diff_calc.c"
 },
 {
     "arguments": [
@@ -890,10 +890,10 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/is_norm_dep_values.c"
+        "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/deposit/is_norm_dep_values.c"
     ],
     "directory": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug/.qtc_clangd",
-    "file": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/is_norm_dep_values.c"
+    "file": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/deposit/is_norm_dep_values.c"
 },
 {
     "arguments": [
@@ -958,9 +958,9 @@
         "-Wno-unknown-pragmas",
         "-Wno-unknown-warning-option",
         "-Wno-documentation-unknown-command",
-        "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/dep_calc.c"
+        "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/deposit/dep_calc.c"
     ],
     "directory": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug/.qtc_clangd",
-    "file": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/dep_calc.c"
+    "file": "/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/deposit/dep_calc.c"
 }
 ]

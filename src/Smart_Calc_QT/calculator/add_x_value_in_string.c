@@ -1,4 +1,4 @@
-#include "calc.h"
+#include "../calc.h"
 
 void add_x_value_in_string(char *start_string, double x_value) {
   // printf("!!!size start = %d\n", sizeof(start_string));

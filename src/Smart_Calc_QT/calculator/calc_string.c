@@ -1,4 +1,4 @@
-#include "calc.h"
+#include "../calc.h"
 
 double calc_string(char *start_string, char *x_string) {
     char buf[256] = {'\0'};

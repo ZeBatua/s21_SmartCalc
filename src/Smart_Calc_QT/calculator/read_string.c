@@ -1,4 +1,4 @@
-#include "calc.h"
+#include "../calc.h"
 
 int is_math_operator(char symbol);
 double get_minus(char *start_string, int *string_position, num_stack **n_head, func_stack **f_head);

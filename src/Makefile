@@ -7,9 +7,15 @@ LDLIBS = -lgcov
 TFLAGS = -lcheck
 ARFLAGS := rcs
 OBJECTS = *.o
-SOURCES := Smart_Calc_QT/read_string.c \
-Smart_Calc_QT/valid_string.c \
-Smart_Calc_QT/add_x_value_in_string.c\
+SOURCES := Smart_Calc_QT/calculator/read_string.c \
+Smart_Calc_QT/calculator/valid_string.c \
+Smart_Calc_QT/calculator/add_x_value_in_string.c \
+Smart_Calc_QT/calculator/calc_string.c \
+Smart_Calc_QT/credit/credit_annuity_calc.c \
+Smart_Calc_QT/credit/credit_diff_calc.c \
+Smart_Calc_QT/deposit/is_norm_dep_values.c \
+Smart_Calc_QT/deposit/dep_calc.c
+
 
 VAR = $(shell pkg-config --cflags --libs check)
 
@@ -22,8 +28,10 @@ s21_calc.a: clean
 # nm s21_calc.a | grep "\.o"
 
 test: s21_calc.a
-	$(CC) $(ASAN) s21_calc.a test.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
-	./$@
+	@$(CC) $(ASAN) s21_calc.a Smart_Calc_QT/tests/calc_test.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
+	@./$@
+	@$(CC) $(ASAN) s21_calc.a Smart_Calc_QT/tests/credit_calc.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
+	@./$@
 
 stile_test: s21_calc.a
 	$(CC) $(ASAN) s21_calc.a  Smart_Calc_QT/stile_test.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
@@ -43,9 +51,10 @@ gcov_report: clean
 	gcovr --html-details -o report.html
 	open ./report.html
 
-check:
-	cppcheck *.c
-# clang-format -i -n functions/*.c
+check: 
+	cppcheck *.c 
+	cppcheck ./Smart_Calc_QT/*.c
+# clang-format -i -n functions/*.c # чекай сурсы
 # clang-format -i -n *.h
 # clang-format -i -n tests.c
 

@@ -434,32 +434,42 @@
 	"SOURCES" : 
 	[
 		[
-			"/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/add_x_value_in_string.c",
+			"/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/calculator/add_x_value_in_string.c",
 			"MU",
 			null
 		],
 		[
-			"/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/calc_string.c",
+			"/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/calculator/calc_string.c",
 			"MU",
 			null
 		],
 		[
-			"/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/credit_annuity_calc.c",
+			"/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/calculator/read_string.c",
 			"MU",
 			null
 		],
 		[
-			"/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/credit_diff_calc.c",
+			"/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/calculator/valid_string.c",
 			"MU",
 			null
 		],
 		[
-			"/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/dep_calc.c",
+			"/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/credit/credit_annuity_calc.c",
 			"MU",
 			null
 		],
 		[
-			"/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/is_norm_dep_values.c",
+			"/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/credit/credit_diff_calc.c",
+			"MU",
+			null
+		],
+		[
+			"/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/deposit/dep_calc.c",
+			"MU",
+			null
+		],
+		[
+			"/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/deposit/is_norm_dep_values.c",
 			"MU",
 			null
 		],
@@ -475,16 +485,6 @@
 		],
 		[
 			"/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/qcustomplot.cpp",
-			"MU",
-			null
-		],
-		[
-			"/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/read_string.c",
-			"MU",
-			null
-		],
-		[
-			"/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/valid_string.c",
 			"MU",
 			null
 		]

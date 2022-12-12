@@ -1,4 +1,4 @@
-#include "calc.h"
+#include "../calc.h"
 
 void credit_annuity_calc(double balance_owed, int term, double percent, double *my_return) {
     double mounthly_payment = 0.0, buf_balance_owed = balance_owed;
