@@ -106,7 +106,6 @@ public:
     QLineEdit *dep_tax;
     QLabel *form_23;
     QLineEdit *dep_rate;
-    QLabel *default_2;
     QLabel *form_17;
     QLineEdit *dep_withdrawals_list;
     QLabel *result_dep_tax_amount;
@@ -889,15 +888,6 @@ public:
 "	color: black;\n"
 "	border: 0px;\n"
 "}"));
-        default_2 = new QLabel(centralwidget);
-        default_2->setObjectName(QString::fromUtf8("default_2"));
-        default_2->setGeometry(QRect(1030, 273, 41, 16));
-        default_2->setFont(font5);
-        default_2->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	font: 14pt \"Avenir Next\";\n"
-"	color: black;\n"
-"	border: 0px;\n"
-"}"));
         form_17 = new QLabel(centralwidget);
         form_17->setObjectName(QString::fromUtf8("form_17"));
         form_17->setGeometry(QRect(710, 372, 101, 21));
@@ -955,10 +945,15 @@ public:
 "}"));
         form_26 = new QLabel(centralwidget);
         form_26->setObjectName(QString::fromUtf8("form_26"));
-        form_26->setGeometry(QRect(710, 352, 121, 16));
-        form_26->setFont(font5);
+        form_26->setGeometry(QRect(710, 352, 130, 16));
+        QFont font6;
+        font6.setFamilies({QString::fromUtf8("Avenir Next")});
+        font6.setPointSize(12);
+        font6.setBold(false);
+        font6.setItalic(false);
+        form_26->setFont(font6);
         form_26->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	font: 14pt \"Avenir Next\";\n"
+"	font: 12pt \"Avenir Next\";\n"
 "	color: black;\n"
 "	border: 0px;\n"
 "}"));
@@ -974,9 +969,9 @@ public:
         form_27 = new QLabel(centralwidget);
         form_27->setObjectName(QString::fromUtf8("form_27"));
         form_27->setGeometry(QRect(710, 389, 128, 16));
-        form_27->setFont(font5);
+        form_27->setFont(font6);
         form_27->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	font: 14pt \"Avenir Next\";\n"
+"	font: 12pt \"Avenir Next\";\n"
 "	color: black;\n"
 "	border: 0px;\n"
 "}"));
@@ -1181,14 +1176,13 @@ public:
         form_7->setText(QCoreApplication::translate("MainWindow", "X:", nullptr));
         form_18->setText(QCoreApplication::translate("MainWindow", "term:", nullptr));
         form_23->setText(QCoreApplication::translate("MainWindow", "mounthh", nullptr));
-        default_2->setText(QCoreApplication::translate("MainWindow", "def: 7.5", nullptr));
         form_17->setText(QCoreApplication::translate("MainWindow", "replenishments:", nullptr));
         result_dep_tax_amount->setText(QString());
         form_16->setText(QCoreApplication::translate("MainWindow", "total amount:", nullptr));
         form_24->setText(QCoreApplication::translate("MainWindow", "capitalization:", nullptr));
-        form_26->setText(QCoreApplication::translate("MainWindow", "mounth:sum - 02:4325", nullptr));
+        form_26->setText(QCoreApplication::translate("MainWindow", "mounth:sum - 02:5000", nullptr));
         form_15->setText(QCoreApplication::translate("MainWindow", "percents:", nullptr));
-        form_27->setText(QCoreApplication::translate("MainWindow", "mounth:sum - 10:4797", nullptr));
+        form_27->setText(QCoreApplication::translate("MainWindow", "mounth:sum - 05:1000", nullptr));
         form_21->setText(QCoreApplication::translate("MainWindow", "tax, %:", nullptr));
         capitalization_check->setStyleSheet(QCoreApplication::translate("MainWindow", "QLabel {\n"
 "	font: 14pt \"Avenir Next\";\n"

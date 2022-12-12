@@ -2209,34 +2209,6 @@
 }</string>
     </property>
    </widget>
-   <widget class="QLabel" name="default_2">
-    <property name="geometry">
-     <rect>
-      <x>1030</x>
-      <y>273</y>
-      <width>41</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Avenir Next</family>
-      <pointsize>14</pointsize>
-      <italic>false</italic>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QLabel {
-	font: 14pt &quot;Avenir Next&quot;;
-	color: black;
-	border: 0px;
-}</string>
-    </property>
-    <property name="text">
-     <string>def: 7.5</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="form_17">
     <property name="geometry">
      <rect>
@@ -2395,27 +2367,27 @@
      <rect>
       <x>710</x>
       <y>352</y>
-      <width>121</width>
+      <width>130</width>
       <height>16</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Avenir Next</family>
-      <pointsize>14</pointsize>
+      <pointsize>12</pointsize>
       <italic>false</italic>
       <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QLabel {
-	font: 14pt &quot;Avenir Next&quot;;
+	font: 12pt &quot;Avenir Next&quot;;
 	color: black;
 	border: 0px;
 }</string>
     </property>
     <property name="text">
-     <string>mounth:sum - 02:4325</string>
+     <string>mounth:sum - 02:5000</string>
     </property>
    </widget>
    <widget class="QLabel" name="form_15">
@@ -2458,20 +2430,20 @@
     <property name="font">
      <font>
       <family>Avenir Next</family>
-      <pointsize>14</pointsize>
+      <pointsize>12</pointsize>
       <italic>false</italic>
       <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QLabel {
-	font: 14pt &quot;Avenir Next&quot;;
+	font: 12pt &quot;Avenir Next&quot;;
 	color: black;
 	border: 0px;
 }</string>
     </property>
     <property name="text">
-     <string>mounth:sum - 10:4797</string>
+     <string>mounth:sum - 05:1000</string>
     </property>
    </widget>
    <widget class="QLabel" name="form_21">

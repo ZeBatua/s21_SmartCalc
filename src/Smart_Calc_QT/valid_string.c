@@ -3,13 +3,6 @@
 int num_after_math_op(char *symbol);
 
 int valid_string(char *input_string, char *input_x_string) {
-    // printf("\n--------------------------\n");
-    // printf("input_string = %d\n", sizeof(input_string));
-    // printf("input_string = %s\n", input_string);
-    // printf("input_x_string = %d\n", sizeof(input_x_string));
-    // printf("input_x_string = %s\n", input_x_string);
-    // printf("--------------------------\n\n");
-
     int status = 0;
     // for x 
     status = adapt_string(input_string);                               // cos -> c  // +mini valid string
