@@ -114,8 +114,8 @@ void MainWindow::on_pushButton_make_graph_clicked()
 
     QString qstr = ui->formula->text();
     QByteArray bytes = qstr.toLocal8Bit();
-    char common_string[256];
-    strlcpy(common_string, bytes.data(), 256);
+    char string_x[256];
+    strlcpy(string_x, bytes.data(), 256);
 
     QVector<double> X,Y;
     double x = 0.0, mx = 0.0, y = 0.0, my = 0.0;
@@ -130,27 +130,33 @@ void MainWindow::on_pushButton_make_graph_clicked()
         my = x1;
     }
 
-    while (x1 <= x2) {
-       X.push_back(x1);
-       std::string string_x = std::to_string(x1);
-       char *x_char = &string_x[0];
-       double y = calc_string(common_string, x_char);
+    char empty_string[256] = {'1'};
+    if (valid_string(string_x, empty_string)) {
+        while (x1 <= x2) {
+            X.push_back(x1);
+            std::string string = std::to_string(x1);
+            char *x_step = &string[0];
 
-       Y.push_back(y);
-       x1 += 0.1;
+            double y = calc_string(string_x, x_step);
+
+            Y.push_back(y);
+            x1 += 0.1;
+        }
+
+        ui->graph->xAxis->setRange(mx, x);
+        ui->graph->yAxis->setRange(my, y);
+
+        ui->graph->graph(0)->addData(X,Y);
+        ui->graph->graph(0)->setPen(QPen(QColor(177, 130, 73)));
+        ui->graph->replot();
+
+        X.clear();
+        Y.clear();
+
+        ui->graph->graph(0)->data()->clear();
+    } else {
+        ui->formula->setText(" invalid values");
     }
-
-    ui->graph->xAxis->setRange(mx, x);
-    ui->graph->yAxis->setRange(my, y);
-
-    ui->graph->graph(0)->addData(X,Y);
-    ui->graph->graph(0)->setPen(QPen(QColor(177, 130, 73)));
-    ui->graph->replot();
-
-    X.clear();
-    Y.clear();
-
-    ui->graph->graph(0)->data()->clear();
 }
 
 void MainWindow::on_credit_result_clicked() {
@@ -171,10 +177,8 @@ void MainWindow::on_credit_result_clicked() {
     } else {
         if (type == 0) {
             credit_annuity_calc(amount, term, rate, values);
-            cout << "type 1\n";
         } else if (type == 1) {
             credit_diff_calc(amount, term, rate, values);
-            cout << "type 2\n";
         }
         QString monthly_payment = QString::number(values[0], 'f', 6);
         QString overpayment = QString::number(values[1], 'f', 6);
