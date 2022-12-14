@@ -1,0 +1,4 @@
+/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/CMakeFiles/Smart_Calc_QT.dir
+/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/CMakeFiles/edit_cache.dir
+/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/CMakeFiles/rebuild_cache.dir
+/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/CMakeFiles/Smart_Calc_QT_autogen.dir

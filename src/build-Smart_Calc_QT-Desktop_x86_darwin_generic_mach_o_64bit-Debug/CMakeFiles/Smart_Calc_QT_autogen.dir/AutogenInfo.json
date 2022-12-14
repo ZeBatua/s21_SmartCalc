@@ -7,7 +7,7 @@
 	"CMAKE_LIST_FILES" : 
 	[
 		"/Users/thalassa/C7_SmartCalc_v1.0-0/src/Smart_Calc_QT/CMakeLists.txt",
-		"/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/package-manager/auto-setup.cmake",
+		"/opt/goinfre/thalassa/Qt Creator.app/Contents/Resources/package-manager/auto-setup.cmake",
 		"/Users/thalassa/C7_SmartCalc_v1.0-0/src/build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug/CMakeFiles/3.23.0/CMakeSystem.cmake",
 		"/Applications/CMake.app/Contents/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake",
 		"/Applications/CMake.app/Contents/share/cmake-3.23/Modules/Platform/Darwin-Initialize.cmake",

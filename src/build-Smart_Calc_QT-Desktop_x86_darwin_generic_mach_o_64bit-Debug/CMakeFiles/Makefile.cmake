@@ -48,7 +48,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.23.0/CMakeCCompiler.cmake"
   "CMakeFiles/3.23.0/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.23.0/CMakeSystem.cmake"
-  "/Volumes/Qt Creator/Qt Creator.app/Contents/Resources/package-manager/auto-setup.cmake"
+  "/opt/goinfre/thalassa/Qt Creator.app/Contents/Resources/package-manager/auto-setup.cmake"
   "/usr/local/lib/cmake/Qt6/FindCups.cmake"
   "/usr/local/lib/cmake/Qt6/FindWrapAtomic.cmake"
   "/usr/local/lib/cmake/Qt6/FindWrapOpenGL.cmake"

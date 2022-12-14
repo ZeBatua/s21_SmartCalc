@@ -1,47 +1,21 @@
 #include "calc.h"
 
 void main() {
-  // double my_return[3] = {0.0};
-  // double balance_owed = 200000.0, term = 24.0, percent = 12.0;
-  // credit_annuity_calc(balance_owed, term, percent, my_return);
-  // printf("mounthly_payment = %F\n", my_return[0]);
-  // printf("total_payment = %F\n", my_return[1]);
-  // printf("overpayment = %F\n\n", my_return[2]);
-
-  // credit_diff_calc(balance_owed, term, percent, my_return);
-  // printf("mounthly_payment = %F\n", my_return[0]);
-  // printf("total_payment = %F\n", my_return[1]);
-  // printf("overpayment = %F\n\n", my_return[2]);
-
-//   double amount = 100000;
-//   double rate = 10;
-//   double tax = 0;
-//   int term = 12;
-//   int type = 0;
-//   int capitalization = 1;
-//   char *withdrawals = "03:2000";
-//   char *replenishments = "02:5000"; // "01:1500 05:3000 07:8000 02:900";
-//   double my_return[256] = {0};
-//   if (is_norm_dep_values(amount, rate, tax, term, withdrawals, replenishments)) {
-//     dep_calc(amount, rate, tax, term, type, capitalization, withdrawals, replenishments, my_return);
-//     printf("!percents = %F\n", my_return[0]);
-//     printf("!tax_amount = %F\n", my_return[1]);
-//     printf("!total_amount = %F\n\n", my_return[2]);
-//   } else {
-//     printf("\n\nNOT NORMAL STRING!!!\n");
-//   }
-
-  double result = 0.0;
-  char common_string[256] = "9sqrt";
-  char x_string[256] = "";
-
-  if (valid_string(common_string, x_string)) {
-    result = calc_string(common_string, x_string);
+  double amount = 100000.0, rate = 7.0, tax = 4.25, term = 8.0, type = 0.0, capitalization = 0.0;
+  double percents = 0.0, tax_amount = 0.0, total_amount = 0.0;
+  char *replenishments = "02:5000"; // пополнение
+  char *withdrawals = "06:2000";
+  double my_return[256] = {0};
+  if (is_norm_dep_values(amount, rate, tax, term, withdrawals, replenishments)) {
+    dep_calc(amount, rate, tax, term, type, capitalization, withdrawals, replenishments, my_return);
+    double percents = my_return[0];
+    double tax_amount = my_return[1];
+    double total_amount = my_return[2];
+    printf("!percents = %F\n", my_return[0]);
+    printf("!tax_amount = %F\n", my_return[1]);
+    printf("!total_amount = %F\n\n", my_return[2]);
   } else {
-    printf("not valid\n");
+    printf("\n\nNOT NORMAL STRING!!!\n");
   }
-  printf("result %F\n", result);
-
-
 }
 

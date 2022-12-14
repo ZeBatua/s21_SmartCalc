@@ -1,7 +1,7 @@
 # ASAN := -fsanitize=address
 # CFLAGS := -std=c11 $(ASAN) -pedantic
 # CPPFLAGS := -Wall -Werror -Wextra
-CC = gcc -g
+CC = gcc
 GFLAGS = -coverage
 LDLIBS = -lgcov
 TFLAGS = -lcheck
@@ -14,7 +14,7 @@ Smart_Calc_QT/calculator/calc_string.c \
 Smart_Calc_QT/credit/credit_annuity_calc.c \
 Smart_Calc_QT/credit/credit_diff_calc.c \
 Smart_Calc_QT/deposit/is_norm_dep_values.c \
-Smart_Calc_QT/deposit/dep_calc.c
+Smart_Calc_QT/deposit/dep_calc.c \
 
 VAR = $(shell pkg-config --cflags --libs check)
 
@@ -27,9 +27,11 @@ s21_calc.a: clean
 # nm s21_calc.a | grep "\.o"
 
 test: s21_calc.a
-	@$(CC) $(ASAN) s21_calc.a Smart_Calc_QT/tests/calc_test.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
-	@./$@
-	@$(CC) $(ASAN) s21_calc.a Smart_Calc_QT/tests/credit_calc.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
+# @$(CC) $(ASAN) s21_calc.a Smart_Calc_QT/tests/test_calc_test.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
+# @./$@
+# @$(CC) $(ASAN) s21_calc.a Smart_Calc_QT/tests/test_credit_calc.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
+# @./$@
+	@$(CC) -g $(ASAN) s21_calc.a Smart_Calc_QT/tests/test_dep_calc.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
 	@./$@
 
 stile_test: s21_calc.a
@@ -37,8 +39,8 @@ stile_test: s21_calc.a
 	./$@
 
 main: s21_calc.a
-	gcc $(ASAN) -g s21_calc.a calc.c -o $@
-	@./$@
+	gcc Smart_Calc_QT/main.c $(SOURCES) -g -o main 
+	@./main
 
 gcov_report: test
 	gcovr .
@@ -59,13 +61,13 @@ clean:
 	@rm -rf s21_calc.a test *.html *.gcda *.gcno gcov_report *.info report *.o *.dSYM *.css
 
 install:
-	cd build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug && cmake .
-	cd build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug && make
-	cd build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug/Smart_Calc_QT.app/Contents/MacOS && ./Smart_Calc_QT
+	cd Smart_Calc_QT && cmake .
+	cd Smart_Calc_QT && make
+	cd Smart_Calc_QT/Smart_Calc_QT.app/Contents/MacOS && ./Smart_Calc_QT
 
 uninstall:
-	cd build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug && make clean
-	rm -rf build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug/CMakeCache.txt build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug/Calculator.app
+	cd Smart_Calc_QT && make clean
+	rm -rf Smart_Calc_QT/CMakeCache.txt Smart_Calc_QT/Calculator.app
 
 dist:
 	cd .. && tar -czf s21_SmartCalc_v1.0.tgz src
