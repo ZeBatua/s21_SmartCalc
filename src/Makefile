@@ -16,7 +16,6 @@ Smart_Calc_QT/credit/credit_diff_calc.c \
 Smart_Calc_QT/deposit/is_norm_dep_values.c \
 Smart_Calc_QT/deposit/dep_calc.c
 
-
 VAR = $(shell pkg-config --cflags --libs check)
 
 all: clean s21_calc.a
@@ -41,12 +40,7 @@ main: s21_calc.a
 	gcc $(ASAN) -g s21_calc.a calc.c -o $@
 	@./$@
 
-gcov_report: clean
-	$(CC) $(SOURCES) $(VAR) $(ASAN) $(CFLAGS) $(LDLIBS) $(GFLAGS) -c
-	ar rcs s21_calc.a $(OBJECTS)
-	ranlib s21_calc.a
-	$(CC) $(ASAN) $(LDLIBS) $(VAR) tests.c s21_calc.a -o test $(TFLAGS)
-	./test
+gcov_report: test
 	gcovr .
 	gcovr --html-details -o report.html
 	open ./report.html
@@ -61,13 +55,20 @@ check:
 leaks:
 	CK_FORK=no leaks --atExit -- ./test
 
-
 clean:
 	@rm -rf s21_calc.a test *.html *.gcda *.gcno gcov_report *.info report *.o *.dSYM *.css
 
+install:
+	cd build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug && cmake .
+	cd build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug && make
+	cd build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug/Smart_Calc_QT.app/Contents/MacOS && ./Smart_Calc_QT
+
+uninstall:
+	cd build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug && make clean
+	rm -rf build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug/CMakeCache.txt build-Smart_Calc_QT-Desktop_x86_darwin_generic_mach_o_64bit-Debug/Calculator.app
+
 dist:
 	cd .. && tar -czf s21_SmartCalc_v1.0.tgz src
-
 
 dvi: dvi_clean
 	makeinfo manual.texi --html
