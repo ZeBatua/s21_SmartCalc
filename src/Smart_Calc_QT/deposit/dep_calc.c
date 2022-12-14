@@ -45,7 +45,6 @@ void calc_percents_cap(const int term, const double rate, const double amount, c
         full_amount += rep_data[mounth_count] - with_data[mounth_count];
         if (fmod(mounth_count, k) == 0) {
                 percents += full_amount * (rate / 100.0) * days_in_mounth[number_mounth] / 365;
-                printf("percent = %F\n",(full_amount * (rate / 100.0) * days_in_mounth[number_mounth] / 365));
                 sum_percents += full_amount * (rate / 100.0) * days_in_mounth[number_mounth] / 365;
             if (fmod(mounth_count, 12) == 0 && full_amount - amount > tax * 1000000) {
                 full_amount += percents;
@@ -57,7 +56,6 @@ void calc_percents_cap(const int term, const double rate, const double amount, c
             percents = 0.0;
         } else {
             percents += (full_amount * (rate / 100.0) * days_in_mounth[number_mounth] / 365);
-            printf("percent = %F\n",(full_amount * (rate / 100.0) * days_in_mounth[number_mounth] / 365));
             interest_savings_status = 1;
             sum_percents += (full_amount * (rate / 100.0) * days_in_mounth[number_mounth] / 365);
 
@@ -66,9 +64,8 @@ void calc_percents_cap(const int term, const double rate, const double amount, c
         if (mounth_count == 12) mounth_count = 0;
 
     }
-    if (interest_savings_status == 1) {
-        full_amount += percents;
-    }
+    if (interest_savings_status == 1) full_amount += percents;
+    
     my_return[0] = sum_percents;
     my_return[1] = amount_of_taxes;
     my_return[2] = full_amount;

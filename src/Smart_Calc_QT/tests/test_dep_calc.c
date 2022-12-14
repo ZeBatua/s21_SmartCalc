@@ -93,11 +93,6 @@ START_TEST(dep_calc_3_no_cap) {
     double percents = my_return[0];
     double tax_amount = my_return[1];
     double total_amount = my_return[2];
-    printf("\n\n\npercents = %F\n", percents);
-    printf("tax_amount = %F\n", tax_amount);
-    printf("total_amount = %F\n\n\n", total_amount);
-
-
     ck_assert_double_eq_tol(percents, 23301.37, 2);
     ck_assert_double_eq_tol(tax_amount, 0.0, 2);
     ck_assert_double_eq_tol(total_amount, 100000, 2);
@@ -118,11 +113,6 @@ START_TEST(dep_calc_3_cap) {
     double percents = my_return[0];
     double tax_amount = my_return[1];
     double total_amount = my_return[2];
-    printf("\n\n\npercents = %F\n", percents);
-    printf("tax_amount = %F\n", tax_amount);
-    printf("total_amount = %F\n\n\n", total_amount);
-
-
     ck_assert_double_eq_tol(percents, 25990.1, 2);
     ck_assert_double_eq_tol(tax_amount, 0.0, 2);
     ck_assert_double_eq_tol(total_amount, 125990, 2);

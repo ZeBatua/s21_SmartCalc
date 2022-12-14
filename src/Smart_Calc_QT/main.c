@@ -1,7 +1,7 @@
 #include "calc.h"
 
 void main() {
-  double amount = 100000.0, rate = 7.0, tax = 4.25, term = 40.0, type = 2.0, capitalization = 1.0;
+  double amount = 100000.0, rate = 7.0, tax = 4.25, term = 90.0, type = 1.0, capitalization = 1.0;
   double percents = 0.0, tax_amount = 0.0, total_amount = 0.0;
   char *replenishments = ""; // пополнение
   char *withdrawals = "";
