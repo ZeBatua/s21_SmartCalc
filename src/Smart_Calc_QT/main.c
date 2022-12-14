@@ -1,10 +1,10 @@
 #include "calc.h"
 
 void main() {
-  double amount = 100000.0, rate = 7.0, tax = 4.25, term = 8.0, type = 0.0, capitalization = 0.0;
+  double amount = 100000.0, rate = 7.0, tax = 4.25, term = 40.0, type = 2.0, capitalization = 1.0;
   double percents = 0.0, tax_amount = 0.0, total_amount = 0.0;
-  char *replenishments = "02:5000"; // пополнение
-  char *withdrawals = "06:2000";
+  char *replenishments = ""; // пополнение
+  char *withdrawals = "";
   double my_return[256] = {0};
   if (is_norm_dep_values(amount, rate, tax, term, withdrawals, replenishments)) {
     dep_calc(amount, rate, tax, term, type, capitalization, withdrawals, replenishments, my_return);
