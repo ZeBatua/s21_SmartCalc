@@ -6,36 +6,41 @@
 
 START_TEST(addition_1) {
   char start_string[256] = {")1+2"};
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 0);
 }
 END_TEST
 
 START_TEST(addition_2) {
   char start_string[256] = {"0+10.5("};
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 0);
 }
 END_TEST
 
 START_TEST(addition_3) {
   char start_string[256] = {")))0+0((("};
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 0);
 }
 END_TEST
 
 START_TEST(addition_4) {
   char start_string[256] = {"0+0"};
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 1);
 }
 END_TEST
 
 START_TEST(addition_5) {
   char start_string[256] = {"-100+c21)"};
-  int string_status = valid_string(start_string);
-  ck_assert_int_eq(string_status, 1);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
+  ck_assert_int_eq(string_status, 0);
 }
 END_TEST
 
@@ -43,35 +48,40 @@ END_TEST
 
 START_TEST(subtraction_1) {
   char start_string[256] = {"10-5*c/3)"};
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 0);
 }
 END_TEST
 
 START_TEST(subtraction_2) {
   char start_string[256] = {"-0-100*(0)"};
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 1);
 }
 END_TEST
 
 START_TEST(subtraction_3) {
   char start_string[256] = {"32+-32"}; // !!!
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 1);
 }
 END_TEST
 
 START_TEST(subtraction_4) {
   char start_string[256] = {"999-99-500-25-*75-200-93-7-499"};
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 0);
 }
 END_TEST
 
 START_TEST(subtraction_5) {
   char start_string[256] = {"999-99-500+25-75-200+93-7-499+"};
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 0);
 }
 END_TEST
@@ -80,35 +90,40 @@ END_TEST
 
 START_TEST(multiplication_1) {
   char start_string[256] = {"10**5"};
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 0);
 }
 END_TEST
 
 START_TEST(multiplication_2) {
   char start_string[256] = {"-0***1000"};
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 0);
 }
 END_TEST
 
 START_TEST(multiplication_3) {
   char start_string[256] = {"32*2"};
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 1);
 }
 END_TEST
 
 START_TEST(multiplication_4) {
   char start_string[256] = {"2*2*2*8"};
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 1);
 }
 END_TEST
 
 START_TEST(multiplication_5) {
   char start_string[256] = {"-7*6"};
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 1);
 }
 END_TEST
@@ -117,35 +132,40 @@ END_TEST
 
 START_TEST(division_1) {
   char start_string[256] = {"10/+2"};
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 0);
 }
 END_TEST
 
 START_TEST(division_2) {
   char start_string[256] = {"0/456..7"};
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 0);
 }
 END_TEST
 
 START_TEST(division_3) {
   char start_string[256] = {".31/2"};
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 0);
 }
 END_TEST
 
 START_TEST(division_4) {
   char start_string[256] = {"100./2./2./5/5."};
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 1);
 }
 END_TEST
 
 START_TEST(division_5) {
   char start_string[256] = {"-999/9"};
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 1);
 }
 END_TEST
@@ -154,35 +174,40 @@ END_TEST
 
 START_TEST(power_1) {
   char start_string[256] = {"10^2)"};
-  int string_status = valid_string(start_string);
-  ck_assert_int_eq(string_status, 1);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
+  ck_assert_int_eq(string_status, 0);
 }
 END_TEST
 
 START_TEST(power_2) {
   char start_string[256] = {"1^.43"};
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 0);
 }
 END_TEST
 
 START_TEST(power_3) {
   char start_string[256] = {"3.^2"};
-  int string_status = valid_string(start_string);
-  ck_assert_int_eq(string_status, 0);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
+  ck_assert_int_eq(string_status, 1);
 }
 END_TEST
 
 START_TEST(power_4) {
   char start_string[256] = {"0^0)"};
-  int string_status = valid_string(start_string);
-  ck_assert_int_eq(string_status, 1);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
+  ck_assert_int_eq(string_status, 0);
 }
 END_TEST
 
 START_TEST(power_5) {
   char start_string[256] = {"-1^*3"};
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 0);
 }
 END_TEST
@@ -190,64 +215,73 @@ END_TEST
 //----------------------------------------------------------------------------------------------//
 
 START_TEST(cosine_1) {
-  char start_string[256] = {"c0-)"};  
-  int string_status = valid_string(start_string);
+  char start_string[256] = {"cos0-)"};  
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 0);
 }
 END_TEST
 
 START_TEST(cosine_2) {
-  char start_string[256] = {"c1+1.34)"};
-  int string_status = valid_string(start_string);
-  ck_assert_int_eq(string_status, 1);
+  char start_string[256] = {"cos1+1.34)"};
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
+  ck_assert_int_eq(string_status, 0);
 }
 END_TEST
 
 START_TEST(cosine_3) {
-  char start_string[256] = {"t-5)"}; // добавить проверку унарного минуса
-  int string_status = valid_string(start_string);
+  char start_string[256] = {"tan-5"}; // добавить проверку унарного минуса
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 1);
 }
 END_TEST
 
 START_TEST(cosine_4) {
   char start_string[256] = {"L5)"};  
-  int string_status = valid_string(start_string);
-  ck_assert_int_eq(string_status, 1);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
+  ck_assert_int_eq(string_status, 0);
 }
 END_TEST
 
 START_TEST(cosine_5) {
   char start_string[256] = {"c0.3.0)"};
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 0);
 }
 END_TEST
 
 START_TEST(mix_1) {
   char start_string[256] = {"((1+2)*((3+5)*4))"};  
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 1);
 }
 END_TEST
 
 START_TEST(mix_2) {
   char start_string[256] = {"(((1+2)))*3"};  
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 1);
 }
 END_TEST
 
 START_TEST(mix_3) {
   char start_string[256] = {"(((1+2)))*3"};  
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 1);
 }
 END_TEST
 
 START_TEST(mix_4) {
   char start_string[256] = {"(((1*(2)))-3)"};  
-  int string_status = valid_string(start_string);
+  char x_string[128] = {'\0'};
+  int string_status = valid_string(start_string, x_string);
   ck_assert_int_eq(string_status, 1);
 }
 END_TEST

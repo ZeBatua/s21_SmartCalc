@@ -31,7 +31,7 @@ double read_string(char *start_string, int *break_status) {
         else if (*break_status == 4 && !check_power_next_function(start_string, string_position)) break;
       }
       if (current_function  == '^') {
-        current_num = exec_expression_with_power(start_string, &string_position, peek_num(n_head));
+        current_num = exec_expression_with_power(start_string, &string_position, peek_num(n_head)); //// c1
         if (*break_status == 77 || *break_status == 4) {
           pop_num(&n_head);
           pop_function(&f_head);
@@ -43,10 +43,12 @@ double read_string(char *start_string, int *break_status) {
           push_num(&n_head, current_num);
         }
       }
-      if (is_lower_priority(previous_function, current_function, &start_string[string_position - 1])) {
-        current_function = pop_function(&f_head);
-        calc_current_values(&n_head, &f_head);
-        push_function(&f_head, current_function);
+      if (string_position != 1) { 
+        if (is_lower_priority(previous_function, current_function, &start_string[string_position - 1])) {
+          current_function = pop_function(&f_head);
+          calc_current_values(&n_head, &f_head);
+          push_function(&f_head, current_function);
+        }
       }
       if (peek_function(f_head) == '-') current_num = get_minus(start_string, &string_position, &n_head, &f_head);
       if (peek_function(f_head) == '/') current_num = get_div(start_string, &string_position, &n_head, &f_head);
@@ -371,12 +373,14 @@ double exec_expression_with_open_bracket(char *curent_string, int *string_positi
 
 int is_lower_priority(char previous_function, char current_function, char *string) {
   int status = 0;
-  if ((previous_function == '*' || previous_function == '/' || previous_function == '^') && (current_function == '-' || current_function == '+') ||
-      (is_math_operator(previous_function) && current_function != '(' && current_function != '-' && !is_math_operator(current_function)) ) {
-    status = 1;
-  }
-  if ((string - 1) != NULL) {
-    if (*string == '-' && (*(string - 1) == '*' || *(string - 1) == '/' || *(string - 1) == '%' || *(string - 1) == '^')) status = 0;
+  if (string != NULL) {
+    if ((previous_function == '*' || previous_function == '/' || previous_function == '^') && (current_function == '-' || current_function == '+') ||
+        (is_math_operator(previous_function) && current_function != '(' && current_function != '-' && !is_math_operator(current_function)) ) {
+      status = 1;
+    }
+    if ((string - 1) != NULL && string != NULL) {
+      if (*string == '-' && (*(string - 1) == '*' || *(string - 1) == '/' || *(string - 1) == '%' || *(string - 1) == '^')) status = 0;
+    }
   }
   return status;
 }

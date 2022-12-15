@@ -68,18 +68,26 @@ int check_non_empty_brackets(char *string) {
 int valid_binary_op_position(char *string) {
     int status = 0;
     size_t length_string = strlen(string);
-    
     if (is_binary_op(*string) && *string != '-') status = 1;  // проверка что первый знак не бинарный оператор (!-)
-    if (is_binary_op(string[length_string - 1])) status = 1;  // проверка что последний знак не бинарный оператор
+    if (length_string > 0) {
+        if (is_binary_op(string[length_string - 1])) status = 1;  // проверка что последний знак не бинарный оператор
+    }
     if (triple_binary_op(string)) status = 1;  // провекра наличия 3 операторов подряд
-
     for (size_t i = 0; length_string > i && status != 1; i++) {
-        if (is_open_op(string[i]) && is_binary_op(string[i + 1]) && string[i + 1] != '-') status = 1; // cos(*...) sin(/...)
-        if (string[i] == ')' && is_binary_op(string[i - 1])) status = 1; // .../) ...*/)
-        if (is_invalid_double_op(&string[i])) status = 1;  // проверка коректных 2 операторов подоряд
+        if (&string[i + 1] != NULL) {
+            if (is_open_op(string[i]) && is_binary_op(string[i + 1]) && string[i + 1] != '-') status = 1; // cos(*...) sin(/...)
+        }
+        if (&string[i - 1] != NULL) {
+            if (string[i] == ')' && is_binary_op(string[i - 1])) status = 1; // .../) ...*/)
+        }
+        if (i != length_string - 1) {
+            if (is_invalid_double_op(&string[i])) status = 1;  // проверка коректных 2 операторов подоряд
+            if (num_after_math_op(&string[i])) status = 1;
+        }
         if (binary_op_after_math_op(&string[i])) status = 1;  // проверка случаев вида cos(* sin(/
-        if (num_after_math_op(&string[i])) status = 1;
-        if (check_math_neighbor(&string[i])) status = 1;
+        if (i != 0) {
+            if (check_math_neighbor(&string[i])) status = 1;
+        }
     }
 
     return !!status;
@@ -216,22 +224,24 @@ void upgrade_string(char *input_string) {
     char new_string[256] = {'\0'};
     size_t string_length = strlen(input_string);
     for (size_t i = 0, j = 0; i < string_length; i++) {
-        if ((is_num(input_string[i]) || input_string[i] == 'x') && is_stuck_symbol(input_string[i + 1])) {    // 2cos -> 2*cos
-            new_string[j] = input_string[i];
-            new_string[j + 1] = '*';
-            new_string[j + 2] = input_string[i + 1];
-            j += 2;
-            i += 1;
-        } else if (input_string[i] == '-' && input_string[i + 1] == '-') {  // -- -> +
-            new_string[j] = '+';
-            i += 1;
-        } else {
-            new_string[j] = input_string[i];
+        if (&input_string[i + 1] != NULL) {
+            if ((is_num(input_string[i]) || input_string[i] == 'x') && is_stuck_symbol(input_string[i + 1])) {    // 2cos -> 2*cos
+                new_string[j] = input_string[i];
+                new_string[j + 1] = '*';
+                new_string[j + 2] = input_string[i + 1];
+                j += 2;
+                i += 1;
+            } else if (input_string[i] == '-' && input_string[i + 1] == '-') {  // -- -> +
+                new_string[j] = '+';
+                i += 1;
+            } else {
+                new_string[j] = input_string[i];
+            }
+            j++;
         }
-        j++;
     }
     char nothing = '\0';
-    memset(input_string, nothing, 256);
+    memset(input_string, nothing, string_length);
     strcpy(input_string, new_string);
 }
 
@@ -260,7 +270,7 @@ int adapt_string(char *string) {
     char new_string[256] = {'\0'};
 
     size_t string_length = strlen(string);
-    for (size_t i = 0, j = 0; i < string_length; i++) {
+    for (size_t i = 0, j = 0; i < string_length; i++, j++) {
         if (ez_skip(string[i])) {
             new_string[j] = string[i];
         } else if (string[i] == 'l' && string[i + 1] == 'n') { // ln
@@ -290,8 +300,6 @@ int adapt_string(char *string) {
         } else if (string[i] == 'm' && string[i + 1] == 'o' && string[i + 2] == 'd') { // mod
             new_string[j] = '%';
             i += 2;
-        } else if (string[i] == '^') { // ^
-            new_string[j] = '^';
         } else if (string[i] == 's' && string[i +  1] == 'q' && string[i + 2] == 'r' && string[i + 3] == 't') { // sqrt
             new_string[j] = 'q';
             i += 3;
@@ -301,11 +309,9 @@ int adapt_string(char *string) {
             valid_status = 1;
             break;
         }
-        
-        j++;
     }
     char nothing = '\0';
-    memset(string, nothing, 256);
+    memset(string, nothing, string_length);
     strcpy(string, new_string);
     return valid_status;
 }
@@ -315,7 +321,7 @@ int ez_skip(char symbol) {
     if (symbol == '0' || symbol == '1' || symbol == '2' || symbol == '3' || symbol == '4' || 
         symbol == '5' || symbol == '6' || symbol == '7' || symbol == '8' || symbol == '9' || 
         symbol == '.' || symbol == '+' || symbol == '-' || symbol == '*' || symbol == '/' || 
-        symbol == '(' || symbol == ')' || symbol == 'x') {
+        symbol == '(' || symbol == ')' || symbol == 'x' || symbol == '^') {
         status = 1;
     }
     return status;

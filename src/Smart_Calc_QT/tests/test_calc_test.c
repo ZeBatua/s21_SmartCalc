@@ -69,18 +69,18 @@ START_TEST(addition_4) {
 END_TEST
 
 START_TEST(addition_5) {
-  char start_string[256] = {"-100+50"};
+  char start_string[256] = {"-100*-5"};
   char x_string[256] = {""};
   double result = 0.0, x_result = 0.0;
   if (valid_string(start_string, x_string)) {
     int status = 0;
-    x_result = read_string(x_string, &status);
+    // x_result = read_string(x_string, &status);
     add_x_value_in_string(start_string, x_result);
     result = read_string(start_string, &status);    
   } else {
     printf("string: %s\nNOT VALID\n", start_string);
   }
-  ck_assert_double_eq_tol(result, -50.0, 7);
+  ck_assert_double_eq_tol(result, 500.0, 7);
 }
 END_TEST
 
@@ -885,8 +885,7 @@ int main(void) {
   tcase_add_test(tc1_1, mix_18);
   tcase_add_test(tc1_1, mix_19);
 
-
-  // tcase_add_test(tc1_1, empty);
+  tcase_add_test(tc1_1, empty);
 
   srunner_run_all(sr, CK_ENV);
   tc = srunner_ntests_failed(sr);
