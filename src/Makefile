@@ -27,17 +27,17 @@ s21_calc.a: clean
 # nm s21_calc.a | grep "\.o"
 
 test: s21_calc.a
-# @$(CC) $(ASAN) s21_calc.a Smart_Calc_QT/tests/test_calc_test.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
-# @./$@
+	@$(CC) $(ASAN) s21_calc.a Smart_Calc_QT/tests/test_calc_test.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
+	@./$@
 # @$(CC) $(ASAN) s21_calc.a Smart_Calc_QT/tests/test_credit_calc.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
 # @./$@
 # @$(CC) $(ASAN) s21_calc.a Smart_Calc_QT/tests/test_dep_calc.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
 # @./$@
-	@$(CC) $(ASAN) s21_calc.a  Smart_Calc_QT/tests/test_stile_test.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
-	@./$@
+# @$(CC) $(ASAN) s21_calc.a  Smart_Calc_QT/tests/test_stile_test.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
+# @./$@
 
 main: s21_calc.a
-	gcc $(ASAN) Smart_Calc_QT/main.c $(SOURCES) -g -o main 
+	@gcc $(ASAN) Smart_Calc_QT/main.c $(SOURCES) -g -o main 
 	@./main
 
 gcov_report: test

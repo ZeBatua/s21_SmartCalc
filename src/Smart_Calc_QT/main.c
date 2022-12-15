@@ -17,20 +17,19 @@ void main() {
   // } else {
   //   printf("\n\nNOT NORMAL STRING!!!\n");
   // }
-  // char start_string[256] = {"-100+50"};
-  // char x_string[256] = {""};
-  // double result = 0.0, x_result = 0.0;
-  // if (valid_string(start_string, x_string)) {
-  //   int status = 0;
-  //   // x_result = read_string(x_string, &status);
-  //   // add_x_value_in_string(start_string, x_result);
-  //   result = read_string(start_string, &status);    
-  // } else {
-  //   printf("string: %s\nNOT VALID\n", start_string);
-  // }
-  char start_string[256] = {"t-5"}; 
-  char x_string[128] = {'\0'};
-  int string_status = valid_string(start_string, x_string);
+  char start_string[256] = {"99()"};
+  char x_string[256] = {""};
+  double result = 0.0, x_result = 0.0;
+  if (valid_string(start_string, x_string)) {
+    int status = 0;
+    x_result = read_string(x_string, &status);
+    add_x_value_in_string(start_string, x_result);
+    result = read_string(start_string, &status);
+    printf("res = %F\n", result);
+  } else {
+    printf("string: %s\nNOT VALID\n", start_string);
+  }
+
 
 //   char str[14] = "qwertyu";
 //   int i = 0;

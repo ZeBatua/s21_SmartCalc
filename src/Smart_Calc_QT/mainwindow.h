@@ -29,6 +29,7 @@ private:
 
 private slots:
     void write_string();
+    void write_string_num();
     void equals_clicked();
     void all_clean();
     void on_pushButton_make_graph_clicked();

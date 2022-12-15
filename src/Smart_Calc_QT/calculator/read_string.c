@@ -103,10 +103,13 @@ void calc_current_values(num_stack **num_head, func_stack **function_head) {
   double second_value = 0.0;
   first_value = pop_num(num_head);
   char current_function = '\0', last_function = '\0';;
-  current_function = pop_function(function_head);
+  current_function = pop_function(function_head); // 
+  // 33.(3) == 33.0 * 3
+
   OPS chtoto = {"(",   ")",   "+",   "-",   "*",   "/",   "^",
                 "%",   "U",   "u",   "c",   "s",   "t",   "C",
                 "S",   "T",   "q",   "l",   "L"};
+
   while (current_function != '\0') {
     if (current_function == ')' || current_function == ')') {
       current_function = pop_function(function_head);

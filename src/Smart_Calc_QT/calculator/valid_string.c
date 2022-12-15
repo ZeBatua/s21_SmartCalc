@@ -32,7 +32,7 @@ int check_valid_brackets(char *string) {
     for (size_t i = 0; length_string > i; i++) {
         if (string[i] == '(') {
             bracket_count += 1;
-            if (check_non_empty_brackets(string + 1)){
+            if (check_non_empty_brackets(&string[i + 1])){
                 bracket_count = 10;
                 break;
             }
@@ -206,7 +206,7 @@ int is_num(char symbol) {
 int enough_arguements(char *string) {
     int status = 0;
     int length_string = strlen(string);
-    int find_num = 0;
+    int find_num = 0, find_func = 0;
     for (int i = 0; i < length_string; i++) {
         if (string[i] == '^' && find_num == 0) {
             status = 1;
@@ -214,9 +214,13 @@ int enough_arguements(char *string) {
         }
         if (is_num(string[i]) || string[i] == 'x') {
             find_num = 1;
+            find_func = 0;
+        }
+        if (is_math_operator(string[i])) {
+            find_func = 1;
         }
     }
-
+    if (find_func == 1) status = 1;
     return status;
 }
 
@@ -225,7 +229,7 @@ void upgrade_string(char *input_string) {
     size_t string_length = strlen(input_string);
     for (size_t i = 0, j = 0; i < string_length; i++) {
         if (&input_string[i + 1] != NULL) {
-            if ((is_num(input_string[i]) || input_string[i] == 'x') && is_stuck_symbol(input_string[i + 1])) {    // 2cos -> 2*cos
+            if ((is_num(input_string[i]) || input_string[i] == '.' || input_string[i] == 'x') && is_stuck_symbol(input_string[i + 1])) {    // 2cos -> 2*cos
                 new_string[j] = input_string[i];
                 new_string[j + 1] = '*';
                 new_string[j + 2] = input_string[i + 1];

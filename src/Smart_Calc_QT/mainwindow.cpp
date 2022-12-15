@@ -13,16 +13,16 @@ MainWindow::MainWindow(QWidget *parent)
     this->resize(700,580);
     ui->setupUi(this);
 
-    connect(ui->Button_0, SIGNAL(clicked()), this, SLOT(write_string()));
-    connect(ui->Button_1, SIGNAL(clicked()), this, SLOT(write_string()));
-    connect(ui->Button_2, SIGNAL(clicked()), this, SLOT(write_string()));
-    connect(ui->Button_3, SIGNAL(clicked()), this, SLOT(write_string()));
-    connect(ui->Button_4, SIGNAL(clicked()), this, SLOT(write_string()));
-    connect(ui->Button_5, SIGNAL(clicked()), this, SLOT(write_string()));
-    connect(ui->Button_6, SIGNAL(clicked()), this, SLOT(write_string()));
-    connect(ui->Button_7, SIGNAL(clicked()), this, SLOT(write_string()));
-    connect(ui->Button_8, SIGNAL(clicked()), this, SLOT(write_string()));
-    connect(ui->Button_9, SIGNAL(clicked()), this, SLOT(write_string()));
+    connect(ui->Button_0, SIGNAL(clicked()), this, SLOT(write_string_num()));
+    connect(ui->Button_1, SIGNAL(clicked()), this, SLOT(write_string_num()));
+    connect(ui->Button_2, SIGNAL(clicked()), this, SLOT(write_string_num()));
+    connect(ui->Button_3, SIGNAL(clicked()), this, SLOT(write_string_num()));
+    connect(ui->Button_4, SIGNAL(clicked()), this, SLOT(write_string_num()));
+    connect(ui->Button_5, SIGNAL(clicked()), this, SLOT(write_string_num()));
+    connect(ui->Button_6, SIGNAL(clicked()), this, SLOT(write_string_num()));
+    connect(ui->Button_7, SIGNAL(clicked()), this, SLOT(write_string_num()));
+    connect(ui->Button_8, SIGNAL(clicked()), this, SLOT(write_string_num()));
+    connect(ui->Button_9, SIGNAL(clicked()), this, SLOT(write_string_num()));
 
     connect(ui->dot, SIGNAL(clicked()), this, SLOT(write_string()));
     connect(ui->value_x, SIGNAL(clicked()), this, SLOT(write_string()));
@@ -59,8 +59,23 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::write_string()
+{;
+    if (clean_board == 1) clean_board = 0;
+    if (clean_board == 2)
+    {
+        ui->result_number->setText("");
+        clean_board = 0;
+    }
+
+    QPushButton *button = (QPushButton *)sender();
+    QString string;
+    string = (ui->result_number->text() + button->text());
+    ui->result_number->setText(string);
+}
+
+void MainWindow::write_string_num()
 {
-    if (clean_board == 1)
+    if (clean_board == 1 || clean_board == 2)
     {
         ui->result_number->setText("");
         clean_board = 0;
@@ -72,6 +87,7 @@ void MainWindow::write_string()
 }
 
 
+
 void MainWindow::all_clean()
 {
     ui->result_number->setText("");
@@ -80,8 +96,7 @@ void MainWindow::all_clean()
 
 void MainWindow::equals_clicked()
 {
-    clean_board = 0;
-
+    clean_board = 1;
     QString qstr = ui->result_number->text();
     QByteArray bytes = qstr.toLocal8Bit();
     char common_string[256];
@@ -102,8 +117,9 @@ void MainWindow::equals_clicked()
         cout << "NOT valid!!!\n";
         QString new_label = "Error";
         ui->result_number->setText(new_label);
+        clean_board = 2;
     }
-    clean_board = 1;
+
 }
 
 void MainWindow::on_pushButton_make_graph_clicked()
