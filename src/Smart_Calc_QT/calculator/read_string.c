@@ -9,10 +9,10 @@ int is_needed_to_calc_now(char function);
 double read_string(char *start_string, int *break_status) {
   num_stack *n_head = NULL;
   func_stack *f_head = NULL;
-  double current_num = 0.0, buf_current_num = 0.0;
+  double current_num = 0.0;
   char current_function = '\0', previous_function = '\0';
-  int string_position = 0, end_string_status = 0;
-  size_t size = strlen(start_string);
+  int string_position = 0;
+  int size = strlen(start_string);
   while (string_position < size) {
     if (get_num(start_string, &string_position, &current_num)) {
       push_num(&n_head, current_num);
@@ -59,8 +59,8 @@ double read_string(char *start_string, int *break_status) {
       }
       if (peek_function(f_head) == '-') current_num = get_minus(start_string, &string_position, &n_head, &f_head);
       if (peek_function(f_head) == '/') current_num = get_div(start_string, &string_position, &n_head, &f_head);
-    } 
-    if (strlen(start_string) == string_position || current_function == ')') {
+    }
+    if ((int)strlen(start_string) == string_position || current_function == ')') {
       calc_current_values(&n_head, &f_head);
       if ((current_function == ')') && (*break_status != 0)) break;
     }
@@ -73,7 +73,6 @@ double read_string(char *start_string, int *break_status) {
 
 int check_power_next_function(char *part_string, int string_position) {
   int status = 0;
-  char power = '^';
   int skip_status = 0;
   for (; status == 0 && &part_string[string_position] != NULL; string_position++) {
     if (part_string[string_position] == '^') {
@@ -109,7 +108,7 @@ void calc_current_values(num_stack **num_head, func_stack **function_head) {
   double first_value = 0.0;
   double second_value = 0.0;
   first_value = pop_num(num_head);
-  char current_function = '\0', last_function = '\0';;
+  char current_function = '\0';
   current_function = pop_function(function_head); // 
   // 33.(3) == 33.0 * 3
 
@@ -203,7 +202,6 @@ int is_math_operator(char symbol) {
 }
 
 int push_function(func_stack **head, char current_function) {
-  char previous_function = '\0';
   int priority = 0;
   func_stack *tmp = malloc(sizeof(func_stack));
   if (tmp == NULL) exit(STACK_OVERFLOW);
@@ -348,11 +346,9 @@ int is_unary_minus(char *curent_string, int string_position) {
 }
 
 char s21_strchr_2(char *string, char symbol) {
-  int check = 0;
   int i = 0;
   for (; i < 11; i++) {
     if (string[i] == symbol) {
-      check = 1;
       return string[i];
     }
   }
@@ -360,9 +356,7 @@ char s21_strchr_2(char *string, char symbol) {
 }
 
 char s21_strchr(char string, char symbol) {
-  int check = 0;
   if (string == symbol) {
-    check = 1;
     return string;
   }
   return '\0';
@@ -413,7 +407,7 @@ double exec_expression_with_open_bracket(char *curent_string, int *string_positi
 int is_lower_priority(char previous_function, char current_function, char *string) {
   int status = 0;
   if (string != NULL) {
-    if ((previous_function == '*' || previous_function == '/' || previous_function == '^') && (current_function == '-' || current_function == '+') ||
+    if (((previous_function == '*' || previous_function == '/' || previous_function == '^') && (current_function == '-' || current_function == '+')) ||
         (is_math_operator(previous_function) && current_function != '(' && current_function != '-' && !is_math_operator(current_function)) ) {
       status = 1;
     }

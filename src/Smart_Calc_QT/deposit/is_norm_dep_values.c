@@ -15,14 +15,12 @@ int is_norm_dep_values(double amount, double rate, double tax, int term, char *w
 int valid_operation(char *operation) {
     int status = 0;
     int find_Fnum_status = 0;
-    int find_Snum_status = 0;
     int find_colon_status = 0;
     int dot_status = 0;
-    for (int i = 0; i < strlen(operation) && status == 0; i++) {
+    for (int i = 0; i < (int)strlen(operation) && status == 0; i++) {
         if (operation[i] == ' ' && find_colon_status == 1 && find_Fnum_status == 1) {
             find_colon_status = 0;
             find_Fnum_status = 0;
-            find_Snum_status = 0;
             dot_status = 0;
         } else if (operation[i] == ' ' && find_colon_status != 1 && find_Fnum_status != 1) {
             continue;
@@ -34,7 +32,6 @@ int valid_operation(char *operation) {
         } else if (operation[i] == ':' && find_colon_status != 1) {
             find_Fnum_status = 0;
             find_colon_status = 1;
-            find_Snum_status = 1;
         } else if (operation[i] == ':' && find_colon_status == 1) {
             status = 1;
             break;
@@ -48,7 +45,6 @@ int valid_operation(char *operation) {
             status = 1;
             break;
         }
-        // printf("\n\nAUUUUUUU!!!\n");
     }
 
     return status;

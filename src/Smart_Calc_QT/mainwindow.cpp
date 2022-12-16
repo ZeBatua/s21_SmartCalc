@@ -10,7 +10,6 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-    this->resize(700,580);
     ui->setupUi(this);
 
     connect(ui->Button_0, SIGNAL(clicked()), this, SLOT(write_string_num()));
@@ -124,7 +123,6 @@ void MainWindow::equals_clicked()
 
 void MainWindow::on_pushButton_make_graph_clicked()
 {
-    cout << "privet\n";
     double x1 = std::atof(ui->value_graph_1->text().toLocal8Bit().data());
     double x2 = std::atof(ui->value_graph_2->text().toLocal8Bit().data());
 
@@ -152,7 +150,6 @@ void MainWindow::on_pushButton_make_graph_clicked()
             X.push_back(x1);
             std::string string = std::to_string(x1);
             char *x_step = &string[0];
-
             double y = calc_string(string_x, x_step);
 
             Y.push_back(y);

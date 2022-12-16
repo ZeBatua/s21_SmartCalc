@@ -1,6 +1,6 @@
 ASAN := -fsanitize=address
-# CFLAGS := -std=c11 $(ASAN) -pedantic
-# CPPFLAGS := -Wall -Werror -Wextra
+CFLAGS := -std=c11 $(ASAN) -pedantic
+CPPFLAGS := -Wall -Werror -Wextra
 CC = gcc -g
 GFLAGS = -coverage
 LDLIBS = -lgcov
@@ -24,17 +24,16 @@ s21_calc.a: clean
 	@$(CC) $(CFLAGS) $(CPPFLAGS) $(SOURCES) $(ASAN) -c
 	@ar rcs s21_calc.a $(OBJECTS)
 	@rm *.o
-# nm s21_calc.a | grep "\.o"
 
 test: s21_calc.a
 	@$(CC) $(ASAN) s21_calc.a Smart_Calc_QT/tests/test_calc_test.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
 	@./$@
-# @$(CC) $(ASAN) s21_calc.a Smart_Calc_QT/tests/test_credit_calc.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
-# @./$@
-# @$(CC) $(ASAN) s21_calc.a Smart_Calc_QT/tests/test_dep_calc.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
-# @./$@
-# @$(CC) $(ASAN) s21_calc.a  Smart_Calc_QT/tests/test_stile_test.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
-# @./$@
+	@$(CC) $(ASAN) s21_calc.a Smart_Calc_QT/tests/test_credit_calc.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
+	@./$@
+	@$(CC) $(ASAN) s21_calc.a Smart_Calc_QT/tests/test_dep_calc.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
+	@./$@
+	@$(CC) $(ASAN) s21_calc.a  Smart_Calc_QT/tests/test_stile_test.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
+	@./$@
 
 main: s21_calc.a
 	@gcc $(ASAN) Smart_Calc_QT/main.c $(SOURCES) -g -o main 
@@ -46,7 +45,7 @@ gcov_report: test
 	open ./report.html
 
 check: 
-	cppcheck *.c 
+	cppcheck *.c
 	cppcheck ./Smart_Calc_QT/*.c
 # clang-format -i -n functions/*.c # чекай сурсы
 # clang-format -i -n *.h

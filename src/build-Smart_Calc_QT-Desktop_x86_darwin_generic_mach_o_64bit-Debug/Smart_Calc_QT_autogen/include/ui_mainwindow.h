@@ -27,7 +27,6 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QLabel *result_number;
     QPushButton *all_clean;
     QPushButton *div;
     QPushButton *Button_8;
@@ -68,6 +67,7 @@ public:
     QLabel *form_3;
     QLineEdit *value_graph_1;
     QCustomPlot *graph;
+    QFrame *line_10;
     QLineEdit *formula;
     QLabel *xgraph;
     QLabel *xgraph_5;
@@ -117,7 +117,6 @@ public:
     QLabel *form_27;
     QLabel *form_21;
     QRadioButton *capitalization_check;
-    QPushButton *dep_result;
     QLabel *form_25;
     QComboBox *box_dep_period;
     QLabel *form_14;
@@ -126,43 +125,35 @@ public:
     QLabel *result_dep_percents;
     QLabel *form_19;
     QLabel *form_20;
+    QLabel *form_28;
+    QLineEdit *result_number;
+    QFrame *line_9;
+    QFrame *line_11;
+    QFrame *line_12;
+    QFrame *line_13;
+    QFrame *line_14;
+    QFrame *line_16;
+    QFrame *line_17;
+    QFrame *line_15;
+    QPushButton *dep_result;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(1210, 520);
+        MainWindow->setMinimumSize(QSize(1210, 520));
+        MainWindow->setMaximumSize(QSize(1210, 520));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        result_number = new QLabel(centralwidget);
-        result_number->setObjectName(QString::fromUtf8("result_number"));
-        result_number->setGeometry(QRect(10, 50, 301, 61));
-        QFont font;
-        font.setFamilies({QString::fromUtf8("Avenir Next")});
-        font.setPointSize(16);
-        font.setBold(false);
-        font.setItalic(false);
-        result_number->setFont(font);
-        result_number->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	font: 16pt \"Avenir Next\";\n"
-"	color: black;\n"
-"	border: 0px;\n"
-"	\n"
-"	background-color: rgb(255, 255, 255);\n"
-"\n"
-"}"));
-        result_number->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-        result_number->setWordWrap(false);
-        result_number->setMargin(0);
-        result_number->setIndent(25);
         all_clean = new QPushButton(centralwidget);
         all_clean->setObjectName(QString::fromUtf8("all_clean"));
         all_clean->setGeometry(QRect(190, 190, 121, 50));
-        QFont font1;
-        font1.setFamilies({QString::fromUtf8("Avenir Next")});
-        font1.setPointSize(20);
-        font1.setBold(false);
-        all_clean->setFont(font1);
+        QFont font;
+        font.setFamilies({QString::fromUtf8("Avenir Next")});
+        font.setPointSize(20);
+        font.setBold(false);
+        all_clean->setFont(font);
         all_clean->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -172,10 +163,10 @@ public:
         div = new QPushButton(centralwidget);
         div->setObjectName(QString::fromUtf8("div"));
         div->setGeometry(QRect(250, 230, 61, 71));
-        QFont font2;
-        font2.setFamilies({QString::fromUtf8("Avenir Next")});
-        font2.setPointSize(20);
-        div->setFont(font2);
+        QFont font1;
+        font1.setFamilies({QString::fromUtf8("Avenir Next")});
+        font1.setPointSize(20);
+        div->setFont(font1);
         div->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -184,7 +175,7 @@ public:
         Button_8 = new QPushButton(centralwidget);
         Button_8->setObjectName(QString::fromUtf8("Button_8"));
         Button_8->setGeometry(QRect(70, 230, 61, 70));
-        Button_8->setFont(font2);
+        Button_8->setFont(font1);
         Button_8->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -193,7 +184,7 @@ public:
         Button_9 = new QPushButton(centralwidget);
         Button_9->setObjectName(QString::fromUtf8("Button_9"));
         Button_9->setGeometry(QRect(130, 230, 61, 70));
-        Button_9->setFont(font2);
+        Button_9->setFont(font1);
         Button_9->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -202,7 +193,7 @@ public:
         Button_7 = new QPushButton(centralwidget);
         Button_7->setObjectName(QString::fromUtf8("Button_7"));
         Button_7->setGeometry(QRect(10, 230, 61, 70));
-        Button_7->setFont(font2);
+        Button_7->setFont(font1);
         Button_7->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -211,7 +202,7 @@ public:
         mul = new QPushButton(centralwidget);
         mul->setObjectName(QString::fromUtf8("mul"));
         mul->setGeometry(QRect(190, 230, 61, 70));
-        mul->setFont(font2);
+        mul->setFont(font1);
         mul->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -220,7 +211,7 @@ public:
         Button_5 = new QPushButton(centralwidget);
         Button_5->setObjectName(QString::fromUtf8("Button_5"));
         Button_5->setGeometry(QRect(70, 290, 61, 69));
-        Button_5->setFont(font2);
+        Button_5->setFont(font1);
         Button_5->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -229,7 +220,7 @@ public:
         Button_6 = new QPushButton(centralwidget);
         Button_6->setObjectName(QString::fromUtf8("Button_6"));
         Button_6->setGeometry(QRect(130, 290, 61, 69));
-        Button_6->setFont(font2);
+        Button_6->setFont(font1);
         Button_6->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -238,7 +229,7 @@ public:
         Button_4 = new QPushButton(centralwidget);
         Button_4->setObjectName(QString::fromUtf8("Button_4"));
         Button_4->setGeometry(QRect(10, 290, 61, 69));
-        Button_4->setFont(font2);
+        Button_4->setFont(font1);
         Button_4->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -247,7 +238,7 @@ public:
         sub = new QPushButton(centralwidget);
         sub->setObjectName(QString::fromUtf8("sub"));
         sub->setGeometry(QRect(190, 290, 61, 69));
-        sub->setFont(font2);
+        sub->setFont(font1);
         sub->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -256,7 +247,7 @@ public:
         Button_2 = new QPushButton(centralwidget);
         Button_2->setObjectName(QString::fromUtf8("Button_2"));
         Button_2->setGeometry(QRect(70, 349, 61, 71));
-        Button_2->setFont(font2);
+        Button_2->setFont(font1);
         Button_2->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -265,7 +256,7 @@ public:
         Button_3 = new QPushButton(centralwidget);
         Button_3->setObjectName(QString::fromUtf8("Button_3"));
         Button_3->setGeometry(QRect(130, 349, 61, 71));
-        Button_3->setFont(font2);
+        Button_3->setFont(font1);
         Button_3->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -274,7 +265,7 @@ public:
         Button_1 = new QPushButton(centralwidget);
         Button_1->setObjectName(QString::fromUtf8("Button_1"));
         Button_1->setGeometry(QRect(10, 349, 61, 71));
-        Button_1->setFont(font2);
+        Button_1->setFont(font1);
         Button_1->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -283,7 +274,7 @@ public:
         add = new QPushButton(centralwidget);
         add->setObjectName(QString::fromUtf8("add"));
         add->setGeometry(QRect(190, 349, 61, 71));
-        add->setFont(font2);
+        add->setFont(font1);
         add->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -292,7 +283,7 @@ public:
         dot = new QPushButton(centralwidget);
         dot->setObjectName(QString::fromUtf8("dot"));
         dot->setGeometry(QRect(190, 410, 61, 50));
-        dot->setFont(font1);
+        dot->setFont(font);
         dot->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -301,7 +292,7 @@ public:
         Button_0 = new QPushButton(centralwidget);
         Button_0->setObjectName(QString::fromUtf8("Button_0"));
         Button_0->setGeometry(QRect(10, 410, 181, 50));
-        Button_0->setFont(font2);
+        Button_0->setFont(font1);
         Button_0->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -310,7 +301,7 @@ public:
         equals = new QPushButton(centralwidget);
         equals->setObjectName(QString::fromUtf8("equals"));
         equals->setGeometry(QRect(250, 349, 61, 111));
-        equals->setFont(font2);
+        equals->setFont(font1);
         equals->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -319,7 +310,7 @@ public:
         lg = new QPushButton(centralwidget);
         lg->setObjectName(QString::fromUtf8("lg"));
         lg->setGeometry(QRect(10, 160, 61, 40));
-        lg->setFont(font1);
+        lg->setFont(font);
         lg->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -329,7 +320,7 @@ public:
         acos = new QPushButton(centralwidget);
         acos->setObjectName(QString::fromUtf8("acos"));
         acos->setGeometry(QRect(130, 160, 61, 40));
-        acos->setFont(font1);
+        acos->setFont(font);
         acos->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -339,7 +330,7 @@ public:
         asin = new QPushButton(centralwidget);
         asin->setObjectName(QString::fromUtf8("asin"));
         asin->setGeometry(QRect(70, 160, 61, 40));
-        asin->setFont(font1);
+        asin->setFont(font);
         asin->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -349,7 +340,7 @@ public:
         ln = new QPushButton(centralwidget);
         ln->setObjectName(QString::fromUtf8("ln"));
         ln->setGeometry(QRect(10, 130, 61, 40));
-        ln->setFont(font1);
+        ln->setFont(font);
         ln->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -359,7 +350,7 @@ public:
         cos = new QPushButton(centralwidget);
         cos->setObjectName(QString::fromUtf8("cos"));
         cos->setGeometry(QRect(130, 130, 61, 40));
-        cos->setFont(font1);
+        cos->setFont(font);
         cos->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -369,7 +360,7 @@ public:
         sin = new QPushButton(centralwidget);
         sin->setObjectName(QString::fromUtf8("sin"));
         sin->setGeometry(QRect(70, 130, 61, 40));
-        sin->setFont(font1);
+        sin->setFont(font);
         sin->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -379,7 +370,7 @@ public:
         atan = new QPushButton(centralwidget);
         atan->setObjectName(QString::fromUtf8("atan"));
         atan->setGeometry(QRect(190, 160, 61, 40));
-        atan->setFont(font1);
+        atan->setFont(font);
         atan->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -389,7 +380,7 @@ public:
         tan = new QPushButton(centralwidget);
         tan->setObjectName(QString::fromUtf8("tan"));
         tan->setGeometry(QRect(190, 130, 61, 40));
-        tan->setFont(font1);
+        tan->setFont(font);
         tan->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -399,7 +390,7 @@ public:
         mod = new QPushButton(centralwidget);
         mod->setObjectName(QString::fromUtf8("mod"));
         mod->setGeometry(QRect(250, 160, 61, 40));
-        mod->setFont(font1);
+        mod->setFont(font);
         mod->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -409,7 +400,7 @@ public:
         sqrt = new QPushButton(centralwidget);
         sqrt->setObjectName(QString::fromUtf8("sqrt"));
         sqrt->setGeometry(QRect(250, 130, 61, 40));
-        sqrt->setFont(font1);
+        sqrt->setFont(font);
         sqrt->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -419,7 +410,7 @@ public:
         close_bracket = new QPushButton(centralwidget);
         close_bracket->setObjectName(QString::fromUtf8("close_bracket"));
         close_bracket->setGeometry(QRect(70, 190, 61, 50));
-        close_bracket->setFont(font1);
+        close_bracket->setFont(font);
         close_bracket->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -429,7 +420,7 @@ public:
         open_bracket = new QPushButton(centralwidget);
         open_bracket->setObjectName(QString::fromUtf8("open_bracket"));
         open_bracket->setGeometry(QRect(10, 190, 61, 50));
-        open_bracket->setFont(font1);
+        open_bracket->setFont(font);
         open_bracket->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -439,7 +430,7 @@ public:
         value_x = new QPushButton(centralwidget);
         value_x->setObjectName(QString::fromUtf8("value_x"));
         value_x->setGeometry(QRect(250, 290, 61, 69));
-        value_x->setFont(font1);
+        value_x->setFont(font);
         value_x->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -448,7 +439,7 @@ public:
         power = new QPushButton(centralwidget);
         power->setObjectName(QString::fromUtf8("power"));
         power->setGeometry(QRect(130, 190, 61, 50));
-        power->setFont(font1);
+        power->setFont(font);
         power->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -457,14 +448,19 @@ public:
         power->setIconSize(QSize(16, 16));
         result_number_2 = new QLineEdit(centralwidget);
         result_number_2->setObjectName(QString::fromUtf8("result_number_2"));
-        result_number_2->setGeometry(QRect(110, 460, 191, 41));
-        QFont font3;
-        font3.setFamilies({QString::fromUtf8("Avenir Next")});
-        result_number_2->setFont(font3);
+        result_number_2->setGeometry(QRect(50, 470, 261, 31));
+        QFont font2;
+        font2.setFamilies({QString::fromUtf8("Avenir Next")});
+        result_number_2->setFont(font2);
         xgraph_6 = new QLabel(centralwidget);
         xgraph_6->setObjectName(QString::fromUtf8("xgraph_6"));
-        xgraph_6->setGeometry(QRect(535, 366, 30, 31));
-        xgraph_6->setFont(font);
+        xgraph_6->setGeometry(QRect(533, 366, 30, 31));
+        QFont font3;
+        font3.setFamilies({QString::fromUtf8("Avenir Next")});
+        font3.setPointSize(16);
+        font3.setBold(false);
+        font3.setItalic(false);
+        xgraph_6->setFont(font3);
         xgraph_6->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -472,7 +468,7 @@ public:
 "}"));
         axis_y = new QLineEdit(centralwidget);
         axis_y->setObjectName(QString::fromUtf8("axis_y"));
-        axis_y->setGeometry(QRect(558, 367, 109, 26));
+        axis_y->setGeometry(QRect(560, 367, 109, 26));
         QFont font4;
         font4.setFamilies({QString::fromUtf8("Avenir")});
         axis_y->setFont(font4);
@@ -493,7 +489,7 @@ public:
         form_2 = new QLabel(centralwidget);
         form_2->setObjectName(QString::fromUtf8("form_2"));
         form_2->setGeometry(QRect(356, 330, 60, 31));
-        form_2->setFont(font);
+        form_2->setFont(font3);
         form_2->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -502,7 +498,7 @@ public:
         form = new QLabel(centralwidget);
         form->setObjectName(QString::fromUtf8("form"));
         form->setGeometry(QRect(356, 403, 67, 31));
-        form->setFont(font);
+        form->setFont(font3);
         form->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -510,8 +506,8 @@ public:
 "}"));
         form_3 = new QLabel(centralwidget);
         form_3->setObjectName(QString::fromUtf8("form_3"));
-        form_3->setGeometry(QRect(535, 330, 30, 31));
-        form_3->setFont(font);
+        form_3->setGeometry(QRect(533, 330, 30, 31));
+        form_3->setFont(font3);
         form_3->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -519,7 +515,7 @@ public:
 "}"));
         value_graph_1 = new QLineEdit(centralwidget);
         value_graph_1->setObjectName(QString::fromUtf8("value_graph_1"));
-        value_graph_1->setGeometry(QRect(419, 440, 119, 26));
+        value_graph_1->setGeometry(QRect(422, 440, 119, 26));
         value_graph_1->setFont(font4);
         value_graph_1->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
@@ -528,18 +524,25 @@ public:
 "}"));
         graph = new QCustomPlot(centralwidget);
         graph->setObjectName(QString::fromUtf8("graph"));
-        graph->setGeometry(QRect(360, 50, 310, 271));
+        graph->setGeometry(QRect(360, 50, 310, 270));
         graph->setFont(font4);
         graph->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
-"	border: 0px;\n"
+"	border: 2px;\n"
 "	\n"
 "	background-color: rgb(255, 255, 255);\n"
 "}"));
+        line_10 = new QFrame(graph);
+        line_10->setObjectName(QString::fromUtf8("line_10"));
+        line_10->setGeometry(QRect(302, 0, 16, 271));
+        line_10->setFont(font4);
+        line_10->setLineWidth(2);
+        line_10->setFrameShape(QFrame::VLine);
+        line_10->setFrameShadow(QFrame::Sunken);
         formula = new QLineEdit(centralwidget);
         formula->setObjectName(QString::fromUtf8("formula"));
-        formula->setGeometry(QRect(419, 403, 249, 26));
+        formula->setGeometry(QRect(420, 403, 249, 26));
         formula->setFont(font4);
         formula->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
@@ -548,8 +551,8 @@ public:
 "}"));
         xgraph = new QLabel(centralwidget);
         xgraph->setObjectName(QString::fromUtf8("xgraph"));
-        xgraph->setGeometry(QRect(356, 438, 50, 31));
-        xgraph->setFont(font);
+        xgraph->setGeometry(QRect(356, 437, 50, 31));
+        xgraph->setFont(font3);
         xgraph->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -558,7 +561,7 @@ public:
         xgraph_5 = new QLabel(centralwidget);
         xgraph_5->setObjectName(QString::fromUtf8("xgraph_5"));
         xgraph_5->setGeometry(QRect(356, 366, 60, 31));
-        xgraph_5->setFont(font);
+        xgraph_5->setFont(font3);
         xgraph_5->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -566,7 +569,7 @@ public:
 "}"));
         value_graph_2 = new QLineEdit(centralwidget);
         value_graph_2->setObjectName(QString::fromUtf8("value_graph_2"));
-        value_graph_2->setGeometry(QRect(548, 440, 119, 26));
+        value_graph_2->setGeometry(QRect(551, 440, 119, 26));
         value_graph_2->setFont(font4);
         value_graph_2->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
@@ -575,7 +578,7 @@ public:
 "}"));
         axis_x = new QLineEdit(centralwidget);
         axis_x->setObjectName(QString::fromUtf8("axis_x"));
-        axis_x->setGeometry(QRect(559, 330, 109, 26));
+        axis_x->setGeometry(QRect(560, 330, 109, 26));
         axis_x->setFont(font4);
         axis_x->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
@@ -584,8 +587,8 @@ public:
 "}"));
         xgraph_7 = new QLabel(centralwidget);
         xgraph_7->setObjectName(QString::fromUtf8("xgraph_7"));
-        xgraph_7->setGeometry(QRect(537, 438, 20, 31));
-        xgraph_7->setFont(font);
+        xgraph_7->setGeometry(QRect(540, 438, 20, 31));
+        xgraph_7->setFont(font3);
         xgraph_7->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -603,7 +606,7 @@ public:
 "}"));
         pushButton_make_graph = new QPushButton(centralwidget);
         pushButton_make_graph->setObjectName(QString::fromUtf8("pushButton_make_graph"));
-        pushButton_make_graph->setGeometry(QRect(360, 480, 311, 26));
+        pushButton_make_graph->setGeometry(QRect(360, 480, 311, 31));
         pushButton_make_graph->setFont(font4);
         pushButton_make_graph->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
@@ -623,7 +626,7 @@ public:
         form_4 = new QLabel(centralwidget);
         form_4->setObjectName(QString::fromUtf8("form_4"));
         form_4->setGeometry(QRect(700, 51, 60, 21));
-        form_4->setFont(font);
+        form_4->setFont(font3);
         form_4->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -639,7 +642,7 @@ public:
         form_11 = new QLabel(centralwidget);
         form_11->setObjectName(QString::fromUtf8("form_11"));
         form_11->setGeometry(QRect(700, 140, 110, 21));
-        form_11->setFont(font);
+        form_11->setFont(font3);
         form_11->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -647,8 +650,11 @@ public:
 "}"));
         credit_result = new QPushButton(centralwidget);
         credit_result->setObjectName(QString::fromUtf8("credit_result"));
-        credit_result->setGeometry(QRect(1110, 174, 89, 26));
-        credit_result->setFont(font4);
+        credit_result->setGeometry(QRect(1110, 170, 89, 31));
+        QFont font5;
+        font5.setFamilies({QString::fromUtf8("Avenir")});
+        font5.setBold(false);
+        credit_result->setFont(font5);
         credit_result->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -658,7 +664,7 @@ public:
         xgraph_8 = new QLabel(centralwidget);
         xgraph_8->setObjectName(QString::fromUtf8("xgraph_8"));
         xgraph_8->setGeometry(QRect(700, 8, 209, 30));
-        xgraph_8->setFont(font);
+        xgraph_8->setFont(font3);
         xgraph_8->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -679,7 +685,7 @@ public:
         form_9 = new QLabel(centralwidget);
         form_9->setObjectName(QString::fromUtf8("form_9"));
         form_9->setGeometry(QRect(700, 100, 130, 21));
-        form_9->setFont(font);
+        form_9->setFont(font3);
         form_9->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -688,7 +694,7 @@ public:
         result_cr_overpayment = new QLabel(centralwidget);
         result_cr_overpayment->setObjectName(QString::fromUtf8("result_cr_overpayment"));
         result_cr_overpayment->setGeometry(QRect(853, 137, 230, 26));
-        result_cr_overpayment->setFont(font);
+        result_cr_overpayment->setFont(font3);
         result_cr_overpayment->setMouseTracking(false);
         result_cr_overpayment->setTabletTracking(false);
         result_cr_overpayment->setStyleSheet(QString::fromUtf8("QLabel {\n"
@@ -700,7 +706,7 @@ public:
         result_cr_total = new QLabel(centralwidget);
         result_cr_total->setObjectName(QString::fromUtf8("result_cr_total"));
         result_cr_total->setGeometry(QRect(853, 174, 230, 26));
-        result_cr_total->setFont(font);
+        result_cr_total->setFont(font3);
         result_cr_total->setMouseTracking(false);
         result_cr_total->setTabletTracking(false);
         result_cr_total->setStyleSheet(QString::fromUtf8("QLabel {\n"
@@ -721,7 +727,7 @@ public:
         form_5 = new QLabel(centralwidget);
         form_5->setObjectName(QString::fromUtf8("form_5"));
         form_5->setGeometry(QRect(1030, 50, 50, 21));
-        form_5->setFont(font);
+        form_5->setFont(font3);
         form_5->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -730,7 +736,7 @@ public:
         result_cr_monthly_pay = new QLabel(centralwidget);
         result_cr_monthly_pay->setObjectName(QString::fromUtf8("result_cr_monthly_pay"));
         result_cr_monthly_pay->setGeometry(QRect(853, 100, 230, 26));
-        result_cr_monthly_pay->setFont(font);
+        result_cr_monthly_pay->setFont(font3);
         result_cr_monthly_pay->setMouseTracking(false);
         result_cr_monthly_pay->setTabletTracking(false);
         result_cr_monthly_pay->setStyleSheet(QString::fromUtf8("QLabel {\n"
@@ -742,7 +748,7 @@ public:
         form_6 = new QLabel(centralwidget);
         form_6->setObjectName(QString::fromUtf8("form_6"));
         form_6->setGeometry(QRect(874, 51, 60, 21));
-        form_6->setFont(font);
+        form_6->setFont(font3);
         form_6->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -760,7 +766,7 @@ public:
         form_10 = new QLabel(centralwidget);
         form_10->setObjectName(QString::fromUtf8("form_10"));
         form_10->setGeometry(QRect(700, 180, 110, 21));
-        form_10->setFont(font);
+        form_10->setFont(font3);
         form_10->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -768,7 +774,7 @@ public:
 "}"));
         line_6 = new QFrame(centralwidget);
         line_6->setObjectName(QString::fromUtf8("line_6"));
-        line_6->setGeometry(QRect(320, -10, 40, 611));
+        line_6->setGeometry(QRect(320, -10, 51, 611));
         line_6->setFont(font4);
         line_6->setLineWidth(2);
         line_6->setFrameShape(QFrame::VLine);
@@ -790,7 +796,7 @@ public:
         xgraph_9 = new QLabel(centralwidget);
         xgraph_9->setObjectName(QString::fromUtf8("xgraph_9"));
         xgraph_9->setGeometry(QRect(10, 8, 100, 30));
-        xgraph_9->setFont(font);
+        xgraph_9->setFont(font3);
         xgraph_9->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -799,8 +805,8 @@ public:
         xgraph_9->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         xgraph_4 = new QLabel(centralwidget);
         xgraph_4->setObjectName(QString::fromUtf8("xgraph_4"));
-        xgraph_4->setGeometry(QRect(350, 8, 109, 30));
-        xgraph_4->setFont(font);
+        xgraph_4->setGeometry(QRect(350, 8, 61, 30));
+        xgraph_4->setFont(font3);
         xgraph_4->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -817,7 +823,7 @@ public:
         xgraph_10 = new QLabel(centralwidget);
         xgraph_10->setObjectName(QString::fromUtf8("xgraph_10"));
         xgraph_10->setGeometry(QRect(700, 218, 200, 30));
-        xgraph_10->setFont(font);
+        xgraph_10->setFont(font3);
         xgraph_10->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -826,8 +832,8 @@ public:
         xgraph_10->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         form_7 = new QLabel(centralwidget);
         form_7->setObjectName(QString::fromUtf8("form_7"));
-        form_7->setGeometry(QRect(40, 460, 60, 41));
-        form_7->setFont(font);
+        form_7->setGeometry(QRect(20, 469, 60, 31));
+        form_7->setFont(font3);
         form_7->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -836,12 +842,12 @@ public:
         form_18 = new QLabel(centralwidget);
         form_18->setObjectName(QString::fromUtf8("form_18"));
         form_18->setGeometry(QRect(710, 292, 41, 21));
-        QFont font5;
-        font5.setFamilies({QString::fromUtf8("Avenir Next")});
-        font5.setPointSize(14);
-        font5.setBold(false);
-        font5.setItalic(false);
-        form_18->setFont(font5);
+        QFont font6;
+        font6.setFamilies({QString::fromUtf8("Avenir Next")});
+        font6.setPointSize(14);
+        font6.setBold(false);
+        font6.setItalic(false);
+        form_18->setFont(font6);
         form_18->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 14pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -874,7 +880,7 @@ public:
         form_23 = new QLabel(centralwidget);
         form_23->setObjectName(QString::fromUtf8("form_23"));
         form_23->setGeometry(QRect(710, 310, 51, 16));
-        form_23->setFont(font5);
+        form_23->setFont(font6);
         form_23->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 14pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -891,7 +897,7 @@ public:
         form_17 = new QLabel(centralwidget);
         form_17->setObjectName(QString::fromUtf8("form_17"));
         form_17->setGeometry(QRect(710, 372, 101, 21));
-        form_17->setFont(font5);
+        form_17->setFont(font6);
         form_17->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 14pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -907,8 +913,8 @@ public:
 "}"));
         result_dep_tax_amount = new QLabel(centralwidget);
         result_dep_tax_amount->setObjectName(QString::fromUtf8("result_dep_tax_amount"));
-        result_dep_tax_amount->setGeometry(QRect(840, 451, 221, 26));
-        result_dep_tax_amount->setFont(font5);
+        result_dep_tax_amount->setGeometry(QRect(840, 445, 221, 26));
+        result_dep_tax_amount->setFont(font6);
         result_dep_tax_amount->setMouseTracking(false);
         result_dep_tax_amount->setTabletTracking(false);
         result_dep_tax_amount->setStyleSheet(QString::fromUtf8("QLabel {\n"
@@ -919,8 +925,8 @@ public:
 "}"));
         form_16 = new QLabel(centralwidget);
         form_16->setObjectName(QString::fromUtf8("form_16"));
-        form_16->setGeometry(QRect(710, 492, 91, 21));
-        form_16->setFont(font5);
+        form_16->setGeometry(QRect(710, 484, 91, 21));
+        form_16->setFont(font6);
         form_16->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 14pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -929,7 +935,7 @@ public:
         form_24 = new QLabel(centralwidget);
         form_24->setObjectName(QString::fromUtf8("form_24"));
         form_24->setGeometry(QRect(1030, 298, 91, 21));
-        form_24->setFont(font5);
+        form_24->setFont(font6);
         form_24->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 14pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -946,12 +952,12 @@ public:
         form_26 = new QLabel(centralwidget);
         form_26->setObjectName(QString::fromUtf8("form_26"));
         form_26->setGeometry(QRect(710, 352, 130, 16));
-        QFont font6;
-        font6.setFamilies({QString::fromUtf8("Avenir Next")});
-        font6.setPointSize(12);
-        font6.setBold(false);
-        font6.setItalic(false);
-        form_26->setFont(font6);
+        QFont font7;
+        font7.setFamilies({QString::fromUtf8("Avenir Next")});
+        font7.setPointSize(12);
+        font7.setBold(false);
+        font7.setItalic(false);
+        form_26->setFont(font7);
         form_26->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 12pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -959,8 +965,8 @@ public:
 "}"));
         form_15 = new QLabel(centralwidget);
         form_15->setObjectName(QString::fromUtf8("form_15"));
-        form_15->setGeometry(QRect(710, 417, 61, 21));
-        form_15->setFont(font5);
+        form_15->setGeometry(QRect(710, 413, 61, 21));
+        form_15->setFont(font6);
         form_15->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 14pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -969,7 +975,7 @@ public:
         form_27 = new QLabel(centralwidget);
         form_27->setObjectName(QString::fromUtf8("form_27"));
         form_27->setGeometry(QRect(710, 389, 128, 16));
-        form_27->setFont(font6);
+        form_27->setFont(font7);
         form_27->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 12pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -978,7 +984,7 @@ public:
         form_21 = new QLabel(centralwidget);
         form_21->setObjectName(QString::fromUtf8("form_21"));
         form_21->setGeometry(QRect(1030, 255, 51, 21));
-        form_21->setFont(font5);
+        form_21->setFont(font6);
         form_21->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 14pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -987,19 +993,10 @@ public:
         capitalization_check = new QRadioButton(centralwidget);
         capitalization_check->setObjectName(QString::fromUtf8("capitalization_check"));
         capitalization_check->setGeometry(QRect(1140, 299, 16, 20));
-        dep_result = new QPushButton(centralwidget);
-        dep_result->setObjectName(QString::fromUtf8("dep_result"));
-        dep_result->setGeometry(QRect(1080, 488, 80, 26));
-        dep_result->setStyleSheet(QString::fromUtf8("QLabel {\n"
-"	font: 14pt \"Avenir Next\";\n"
-"	color: black;\n"
-"	border: 0px;\n"
-"}"));
-        dep_result->setIconSize(QSize(40, 40));
         form_25 = new QLabel(centralwidget);
         form_25->setObjectName(QString::fromUtf8("form_25"));
         form_25->setGeometry(QRect(710, 333, 81, 21));
-        form_25->setFont(font5);
+        form_25->setFont(font6);
         form_25->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 14pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -1018,8 +1015,8 @@ public:
 "}"));
         form_14 = new QLabel(centralwidget);
         form_14->setObjectName(QString::fromUtf8("form_14"));
-        form_14->setGeometry(QRect(710, 455, 81, 21));
-        form_14->setFont(font5);
+        form_14->setGeometry(QRect(710, 450, 81, 21));
+        form_14->setFont(font6);
         form_14->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 14pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -1027,8 +1024,8 @@ public:
 "}"));
         result_dep_total_amount = new QLabel(centralwidget);
         result_dep_total_amount->setObjectName(QString::fromUtf8("result_dep_total_amount"));
-        result_dep_total_amount->setGeometry(QRect(840, 488, 221, 26));
-        result_dep_total_amount->setFont(font5);
+        result_dep_total_amount->setGeometry(QRect(840, 480, 221, 26));
+        result_dep_total_amount->setFont(font6);
         result_dep_total_amount->setMouseTracking(false);
         result_dep_total_amount->setTabletTracking(false);
         result_dep_total_amount->setStyleSheet(QString::fromUtf8("QLabel {\n"
@@ -1040,7 +1037,7 @@ public:
         form_22 = new QLabel(centralwidget);
         form_22->setObjectName(QString::fromUtf8("form_22"));
         form_22->setGeometry(QRect(870, 260, 54, 21));
-        form_22->setFont(font5);
+        form_22->setFont(font6);
         form_22->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 14pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -1048,8 +1045,8 @@ public:
 "}"));
         result_dep_percents = new QLabel(centralwidget);
         result_dep_percents->setObjectName(QString::fromUtf8("result_dep_percents"));
-        result_dep_percents->setGeometry(QRect(840, 414, 221, 26));
-        result_dep_percents->setFont(font5);
+        result_dep_percents->setGeometry(QRect(840, 410, 221, 26));
+        result_dep_percents->setFont(font6);
         result_dep_percents->setMouseTracking(false);
         result_dep_percents->setTabletTracking(false);
         result_dep_percents->setStyleSheet(QString::fromUtf8("QLabel {\n"
@@ -1061,7 +1058,7 @@ public:
         form_19 = new QLabel(centralwidget);
         form_19->setObjectName(QString::fromUtf8("form_19"));
         form_19->setGeometry(QRect(870, 298, 51, 21));
-        form_19->setFont(font5);
+        form_19->setFont(font6);
         form_19->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 14pt \"Avenir Next\";\n"
 "	color: black;\n"
@@ -1070,12 +1067,111 @@ public:
         form_20 = new QLabel(centralwidget);
         form_20->setObjectName(QString::fromUtf8("form_20"));
         form_20->setGeometry(QRect(710, 260, 54, 21));
-        form_20->setFont(font5);
+        form_20->setFont(font6);
         form_20->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 14pt \"Avenir Next\";\n"
 "	color: black;\n"
 "	border: 0px;\n"
 "}"));
+        form_28 = new QLabel(centralwidget);
+        form_28->setObjectName(QString::fromUtf8("form_28"));
+        form_28->setGeometry(QRect(1030, 270, 40, 16));
+        QFont font8;
+        font8.setFamilies({QString::fromUtf8("Avenir Next")});
+        font8.setPointSize(10);
+        font8.setBold(false);
+        font8.setItalic(false);
+        form_28->setFont(font8);
+        form_28->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	font: 10pt \"Avenir Next\";\n"
+"	color: black;\n"
+"	border: 0px;\n"
+"}"));
+        result_number = new QLineEdit(centralwidget);
+        result_number->setObjectName(QString::fromUtf8("result_number"));
+        result_number->setGeometry(QRect(10, 65, 301, 71));
+        result_number->setFont(font2);
+        result_number->setToolTipDuration(-1);
+        result_number->setLayoutDirection(Qt::RightToLeft);
+        result_number->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	font: 20pt \"Avenir Next\";\n"
+"    background-color: red;\n"
+"    border-style: outset;\n"
+"    border-width: 2px;\n"
+"    border-radius: 10px;\n"
+"    border-color: beige;\n"
+"    font: bold 14px;\n"
+"    min-width: 10em;\n"
+"    padding: 6px;\n"
+"}"));
+        result_number->setMaxLength(256);
+        result_number->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        line_9 = new QFrame(centralwidget);
+        line_9->setObjectName(QString::fromUtf8("line_9"));
+        line_9->setGeometry(QRect(345, 50, 31, 270));
+        line_9->setFont(font4);
+        line_9->setLineWidth(2);
+        line_9->setFrameShape(QFrame::VLine);
+        line_9->setFrameShadow(QFrame::Sunken);
+        line_11 = new QFrame(centralwidget);
+        line_11->setObjectName(QString::fromUtf8("line_11"));
+        line_11->setGeometry(QRect(358, 314, 310, 20));
+        line_11->setFont(font4);
+        line_11->setLineWidth(2);
+        line_11->setFrameShape(QFrame::HLine);
+        line_11->setFrameShadow(QFrame::Sunken);
+        line_12 = new QFrame(centralwidget);
+        line_12->setObjectName(QString::fromUtf8("line_12"));
+        line_12->setGeometry(QRect(358, 40, 311, 21));
+        line_12->setFont(font4);
+        line_12->setLineWidth(2);
+        line_12->setFrameShape(QFrame::HLine);
+        line_12->setFrameShadow(QFrame::Sunken);
+        line_13 = new QFrame(centralwidget);
+        line_13->setObjectName(QString::fromUtf8("line_13"));
+        line_13->setGeometry(QRect(50, 490, 261, 20));
+        line_13->setFont(font4);
+        line_13->setLineWidth(2);
+        line_13->setFrameShape(QFrame::HLine);
+        line_13->setFrameShadow(QFrame::Sunken);
+        line_14 = new QFrame(centralwidget);
+        line_14->setObjectName(QString::fromUtf8("line_14"));
+        line_14->setGeometry(QRect(50, 460, 261, 20));
+        line_14->setFont(font4);
+        line_14->setLineWidth(2);
+        line_14->setFrameShape(QFrame::HLine);
+        line_14->setFrameShadow(QFrame::Sunken);
+        line_16 = new QFrame(centralwidget);
+        line_16->setObjectName(QString::fromUtf8("line_16"));
+        line_16->setGeometry(QRect(42, 468, 16, 31));
+        line_16->setFont(font4);
+        line_16->setLineWidth(2);
+        line_16->setFrameShape(QFrame::VLine);
+        line_16->setFrameShadow(QFrame::Sunken);
+        line_17 = new QFrame(centralwidget);
+        line_17->setObjectName(QString::fromUtf8("line_17"));
+        line_17->setGeometry(QRect(303, 468, 16, 31));
+        line_17->setFont(font4);
+        line_17->setLineWidth(2);
+        line_17->setFrameShape(QFrame::VLine);
+        line_17->setFrameShadow(QFrame::Sunken);
+        line_15 = new QFrame(centralwidget);
+        line_15->setObjectName(QString::fromUtf8("line_15"));
+        line_15->setGeometry(QRect(0, 40, 311, 21));
+        line_15->setFont(font4);
+        line_15->setLineWidth(2);
+        line_15->setFrameShape(QFrame::HLine);
+        line_15->setFrameShadow(QFrame::Sunken);
+        dep_result = new QPushButton(centralwidget);
+        dep_result->setObjectName(QString::fromUtf8("dep_result"));
+        dep_result->setGeometry(QRect(1090, 470, 89, 31));
+        dep_result->setFont(font5);
+        dep_result->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"	font: 16pt \"Avenir Next\";\n"
+"	color: black;\n"
+"	border: 0px;\n"
+"}"));
+        dep_result->setIconSize(QSize(40, 40));
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
@@ -1086,7 +1182,6 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        result_number->setText(QString());
         all_clean->setText(QCoreApplication::translate("MainWindow", "AC", nullptr));
         div->setText(QCoreApplication::translate("MainWindow", "/", nullptr));
         Button_8->setText(QCoreApplication::translate("MainWindow", "8", nullptr));
@@ -1123,14 +1218,19 @@ public:
 "	color: black;\n"
 "	border: 0px;\n"
 "}", nullptr));
-        xgraph_6->setText(QCoreApplication::translate("MainWindow", "Y:", nullptr));
+        xgraph_6->setText(QCoreApplication::translate("MainWindow", "+Y:", nullptr));
         form_2->setText(QCoreApplication::translate("MainWindow", "axis  -X:", nullptr));
         form->setText(QCoreApplication::translate("MainWindow", "formula:", nullptr));
-        form_3->setText(QCoreApplication::translate("MainWindow", "X:", nullptr));
+        form_3->setText(QCoreApplication::translate("MainWindow", "+X:", nullptr));
+        line_10->setStyleSheet(QCoreApplication::translate("MainWindow", "QLabel {\n"
+"	font: 16pt \"Avenir Next\";\n"
+"	color: black;\n"
+"	border: 0px;\n"
+"}", nullptr));
         xgraph->setText(QCoreApplication::translate("MainWindow", "value:", nullptr));
         xgraph_5->setText(QCoreApplication::translate("MainWindow", "axis  -Y:", nullptr));
         xgraph_7->setText(QCoreApplication::translate("MainWindow", ";", nullptr));
-        pushButton_make_graph->setText(QCoreApplication::translate("MainWindow", ">", nullptr));
+        pushButton_make_graph->setText(QCoreApplication::translate("MainWindow", "make graph", nullptr));
         form_4->setText(QCoreApplication::translate("MainWindow", "amount:", nullptr));
         line_4->setStyleSheet(QCoreApplication::translate("MainWindow", "QLabel {\n"
 "	font: 16pt \"Avenir Next\";\n"
@@ -1173,16 +1273,16 @@ public:
 "	border: 0px;\n"
 "}", nullptr));
         xgraph_10->setText(QCoreApplication::translate("MainWindow", "Deposit Calculator", nullptr));
-        form_7->setText(QCoreApplication::translate("MainWindow", "X value:", nullptr));
+        form_7->setText(QCoreApplication::translate("MainWindow", "X = ", nullptr));
         form_18->setText(QCoreApplication::translate("MainWindow", "term:", nullptr));
         form_23->setText(QCoreApplication::translate("MainWindow", "mounthh", nullptr));
         form_17->setText(QCoreApplication::translate("MainWindow", "replenishments:", nullptr));
         result_dep_tax_amount->setText(QString());
         form_16->setText(QCoreApplication::translate("MainWindow", "total amount:", nullptr));
         form_24->setText(QCoreApplication::translate("MainWindow", "capitalization:", nullptr));
-        form_26->setText(QCoreApplication::translate("MainWindow", "mounth:sum - 02:5000", nullptr));
+        form_26->setText(QCoreApplication::translate("MainWindow", "mounth: sum - 02:500", nullptr));
         form_15->setText(QCoreApplication::translate("MainWindow", "percents:", nullptr));
-        form_27->setText(QCoreApplication::translate("MainWindow", "mounth:sum - 05:1000", nullptr));
+        form_27->setText(QCoreApplication::translate("MainWindow", "mounth: sum - 05:100", nullptr));
         form_21->setText(QCoreApplication::translate("MainWindow", "tax, %:", nullptr));
         capitalization_check->setStyleSheet(QCoreApplication::translate("MainWindow", "QLabel {\n"
 "	font: 14pt \"Avenir Next\";\n"
@@ -1190,7 +1290,6 @@ public:
 "	border: 0px;\n"
 "}", nullptr));
         capitalization_check->setText(QString());
-        dep_result->setText(QCoreApplication::translate("MainWindow", "result", nullptr));
         form_25->setText(QCoreApplication::translate("MainWindow", "withdrawals:", nullptr));
         box_dep_period->setItemText(0, QCoreApplication::translate("MainWindow", "monthly", nullptr));
         box_dep_period->setItemText(1, QCoreApplication::translate("MainWindow", "quarterly", nullptr));
@@ -1202,6 +1301,48 @@ public:
         result_dep_percents->setText(QString());
         form_19->setText(QCoreApplication::translate("MainWindow", "period:", nullptr));
         form_20->setText(QCoreApplication::translate("MainWindow", "amount:", nullptr));
+        form_28->setText(QCoreApplication::translate("MainWindow", "def 4.25", nullptr));
+        line_9->setStyleSheet(QCoreApplication::translate("MainWindow", "QLabel {\n"
+"	font: 16pt \"Avenir Next\";\n"
+"	color: black;\n"
+"	border: 0px;\n"
+"}", nullptr));
+        line_11->setStyleSheet(QCoreApplication::translate("MainWindow", "QLabel {\n"
+"	font: 16pt \"Avenir Next\";\n"
+"	color: black;\n"
+"	border: 0px;\n"
+"}", nullptr));
+        line_12->setStyleSheet(QCoreApplication::translate("MainWindow", "QLabel {\n"
+"	font: 16pt \"Avenir Next\";\n"
+"	color: black;\n"
+"	border: 0px;\n"
+"}", nullptr));
+        line_13->setStyleSheet(QCoreApplication::translate("MainWindow", "QLabel {\n"
+"	font: 16pt \"Avenir Next\";\n"
+"	color: black;\n"
+"	border: 0px;\n"
+"}", nullptr));
+        line_14->setStyleSheet(QCoreApplication::translate("MainWindow", "QLabel {\n"
+"	font: 16pt \"Avenir Next\";\n"
+"	color: black;\n"
+"	border: 0px;\n"
+"}", nullptr));
+        line_16->setStyleSheet(QCoreApplication::translate("MainWindow", "QLabel {\n"
+"	font: 16pt \"Avenir Next\";\n"
+"	color: black;\n"
+"	border: 0px;\n"
+"}", nullptr));
+        line_17->setStyleSheet(QCoreApplication::translate("MainWindow", "QLabel {\n"
+"	font: 16pt \"Avenir Next\";\n"
+"	color: black;\n"
+"	border: 0px;\n"
+"}", nullptr));
+        line_15->setStyleSheet(QCoreApplication::translate("MainWindow", "QLabel {\n"
+"	font: 16pt \"Avenir Next\";\n"
+"	color: black;\n"
+"	border: 0px;\n"
+"}", nullptr));
+        dep_result->setText(QCoreApplication::translate("MainWindow", "result", nullptr));
     } // retranslateUi
 
 };

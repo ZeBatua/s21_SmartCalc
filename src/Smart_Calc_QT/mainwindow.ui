@@ -10,53 +10,22 @@
     <height>520</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>1210</width>
+    <height>520</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1210</width>
+    <height>520</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="result_number">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>50</y>
-      <width>301</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Avenir Next</family>
-      <pointsize>16</pointsize>
-      <italic>false</italic>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QLabel {
-	font: 16pt &quot;Avenir Next&quot;;
-	color: black;
-	border: 0px;
-	
-	background-color: rgb(255, 255, 255);
-
-}</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-    </property>
-    <property name="wordWrap">
-     <bool>false</bool>
-    </property>
-    <property name="margin">
-     <number>0</number>
-    </property>
-    <property name="indent">
-     <number>25</number>
-    </property>
-   </widget>
    <widget class="QPushButton" name="all_clean">
     <property name="geometry">
      <rect>
@@ -966,10 +935,10 @@
    <widget class="QLineEdit" name="result_number_2">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>460</y>
-      <width>191</width>
-      <height>41</height>
+      <x>50</x>
+      <y>470</y>
+      <width>261</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -988,7 +957,7 @@
    <widget class="QLabel" name="xgraph_6">
     <property name="geometry">
      <rect>
-      <x>535</x>
+      <x>533</x>
       <y>366</y>
       <width>30</width>
       <height>31</height>
@@ -1010,13 +979,13 @@
 }</string>
     </property>
     <property name="text">
-     <string>Y:</string>
+     <string>+Y:</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="axis_y">
     <property name="geometry">
      <rect>
-      <x>558</x>
+      <x>560</x>
       <y>367</y>
       <width>109</width>
       <height>26</height>
@@ -1116,7 +1085,7 @@
    <widget class="QLabel" name="form_3">
     <property name="geometry">
      <rect>
-      <x>535</x>
+      <x>533</x>
       <y>330</y>
       <width>30</width>
       <height>31</height>
@@ -1138,13 +1107,13 @@
 }</string>
     </property>
     <property name="text">
-     <string>X:</string>
+     <string>+X:</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="value_graph_1">
     <property name="geometry">
      <rect>
-      <x>419</x>
+      <x>422</x>
       <y>440</y>
       <width>119</width>
       <height>26</height>
@@ -1169,7 +1138,7 @@
       <x>360</x>
       <y>50</y>
       <width>310</width>
-      <height>271</height>
+      <height>270</height>
      </rect>
     </property>
     <property name="font">
@@ -1181,16 +1150,44 @@
      <string notr="true">QLabel {
 	font: 16pt &quot;Avenir Next&quot;;
 	color: black;
-	border: 0px;
+	border: 2px;
 	
 	background-color: rgb(255, 255, 255);
 }</string>
     </property>
+    <widget class="Line" name="line_10">
+     <property name="geometry">
+      <rect>
+       <x>302</x>
+       <y>0</y>
+       <width>16</width>
+       <height>271</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Avenir</family>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string>QLabel {
+	font: 16pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+     </property>
+     <property name="lineWidth">
+      <number>2</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+    </widget>
    </widget>
    <widget class="QLineEdit" name="formula">
     <property name="geometry">
      <rect>
-      <x>419</x>
+      <x>420</x>
       <y>403</y>
       <width>249</width>
       <height>26</height>
@@ -1213,7 +1210,7 @@
     <property name="geometry">
      <rect>
       <x>356</x>
-      <y>438</y>
+      <y>437</y>
       <width>50</width>
       <height>31</height>
      </rect>
@@ -1268,7 +1265,7 @@
    <widget class="QLineEdit" name="value_graph_2">
     <property name="geometry">
      <rect>
-      <x>548</x>
+      <x>551</x>
       <y>440</y>
       <width>119</width>
       <height>26</height>
@@ -1290,7 +1287,7 @@
    <widget class="QLineEdit" name="axis_x">
     <property name="geometry">
      <rect>
-      <x>559</x>
+      <x>560</x>
       <y>330</y>
       <width>109</width>
       <height>26</height>
@@ -1312,7 +1309,7 @@
    <widget class="QLabel" name="xgraph_7">
     <property name="geometry">
      <rect>
-      <x>537</x>
+      <x>540</x>
       <y>438</y>
       <width>20</width>
       <height>31</height>
@@ -1366,7 +1363,7 @@
       <x>360</x>
       <y>480</y>
       <width>311</width>
-      <height>26</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -1382,7 +1379,7 @@
 }</string>
     </property>
     <property name="text">
-     <string>&gt;</string>
+     <string>make graph</string>
     </property>
     <property name="iconSize">
      <size>
@@ -1501,14 +1498,15 @@
     <property name="geometry">
      <rect>
       <x>1110</x>
-      <y>174</y>
+      <y>170</y>
       <width>89</width>
-      <height>26</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Avenir</family>
+      <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
@@ -1857,7 +1855,7 @@
      <rect>
       <x>320</x>
       <y>-10</y>
-      <width>40</width>
+      <width>51</width>
       <height>611</height>
      </rect>
     </property>
@@ -1972,7 +1970,7 @@
      <rect>
       <x>350</x>
       <y>8</y>
-      <width>109</width>
+      <width>61</width>
       <height>30</height>
      </rect>
     </property>
@@ -2060,10 +2058,10 @@
    <widget class="QLabel" name="form_7">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>460</y>
+      <x>20</x>
+      <y>469</y>
       <width>60</width>
-      <height>41</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -2082,7 +2080,7 @@
 }</string>
     </property>
     <property name="text">
-     <string>X value:</string>
+     <string>X = </string>
     </property>
    </widget>
    <widget class="QLabel" name="form_18">
@@ -2258,7 +2256,7 @@
     <property name="geometry">
      <rect>
       <x>840</x>
-      <y>451</y>
+      <y>445</y>
       <width>221</width>
       <height>26</height>
      </rect>
@@ -2293,7 +2291,7 @@
     <property name="geometry">
      <rect>
       <x>710</x>
-      <y>492</y>
+      <y>484</y>
       <width>91</width>
       <height>21</height>
      </rect>
@@ -2387,14 +2385,14 @@
 }</string>
     </property>
     <property name="text">
-     <string>mounth:sum - 02:5000</string>
+     <string>mounth: sum - 02:500</string>
     </property>
    </widget>
    <widget class="QLabel" name="form_15">
     <property name="geometry">
      <rect>
       <x>710</x>
-      <y>417</y>
+      <y>413</y>
       <width>61</width>
       <height>21</height>
      </rect>
@@ -2443,7 +2441,7 @@
 }</string>
     </property>
     <property name="text">
-     <string>mounth:sum - 05:1000</string>
+     <string>mounth: sum - 05:100</string>
     </property>
    </widget>
    <widget class="QLabel" name="form_21">
@@ -2492,32 +2490,6 @@
     </property>
     <property name="text">
      <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="dep_result">
-    <property name="geometry">
-     <rect>
-      <x>1080</x>
-      <y>488</y>
-      <width>80</width>
-      <height>26</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QLabel {
-	font: 14pt &quot;Avenir Next&quot;;
-	color: black;
-	border: 0px;
-}</string>
-    </property>
-    <property name="text">
-     <string>result</string>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>40</width>
-      <height>40</height>
-     </size>
     </property>
    </widget>
    <widget class="QLabel" name="form_25">
@@ -2584,7 +2556,7 @@
     <property name="geometry">
      <rect>
       <x>710</x>
-      <y>455</y>
+      <y>450</y>
       <width>81</width>
       <height>21</height>
      </rect>
@@ -2612,7 +2584,7 @@
     <property name="geometry">
      <rect>
       <x>840</x>
-      <y>488</y>
+      <y>480</y>
       <width>221</width>
       <height>26</height>
      </rect>
@@ -2675,7 +2647,7 @@
     <property name="geometry">
      <rect>
       <x>840</x>
-      <y>414</y>
+      <y>410</y>
       <width>221</width>
       <height>26</height>
      </rect>
@@ -2760,6 +2732,330 @@
     </property>
     <property name="text">
      <string>amount:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="form_28">
+    <property name="geometry">
+     <rect>
+      <x>1030</x>
+      <y>270</y>
+      <width>40</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir Next</family>
+      <pointsize>10</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 10pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="text">
+     <string>def 4.25</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="result_number">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>65</y>
+      <width>301</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir Next</family>
+     </font>
+    </property>
+    <property name="toolTipDuration">
+     <number>-1</number>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 20pt &quot;Avenir Next&quot;;
+    background-color: red;
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+    font: bold 14px;
+    min-width: 10em;
+    padding: 6px;
+}</string>
+    </property>
+    <property name="maxLength">
+     <number>256</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="Line" name="line_9">
+    <property name="geometry">
+     <rect>
+      <x>345</x>
+      <y>50</y>
+      <width>31</width>
+      <height>270</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string>QLabel {
+	font: 16pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="lineWidth">
+     <number>2</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_11">
+    <property name="geometry">
+     <rect>
+      <x>358</x>
+      <y>314</y>
+      <width>310</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string>QLabel {
+	font: 16pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="lineWidth">
+     <number>2</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_12">
+    <property name="geometry">
+     <rect>
+      <x>358</x>
+      <y>40</y>
+      <width>311</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string>QLabel {
+	font: 16pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="lineWidth">
+     <number>2</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_13">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>490</y>
+      <width>261</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string>QLabel {
+	font: 16pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="lineWidth">
+     <number>2</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_14">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>460</y>
+      <width>261</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string>QLabel {
+	font: 16pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="lineWidth">
+     <number>2</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_16">
+    <property name="geometry">
+     <rect>
+      <x>42</x>
+      <y>468</y>
+      <width>16</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string>QLabel {
+	font: 16pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="lineWidth">
+     <number>2</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_17">
+    <property name="geometry">
+     <rect>
+      <x>303</x>
+      <y>468</y>
+      <width>16</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string>QLabel {
+	font: 16pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="lineWidth">
+     <number>2</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_15">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>40</y>
+      <width>311</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string>QLabel {
+	font: 16pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="lineWidth">
+     <number>2</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="dep_result">
+    <property name="geometry">
+     <rect>
+      <x>1090</x>
+      <y>470</y>
+      <width>89</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir</family>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	font: 16pt &quot;Avenir Next&quot;;
+	color: black;
+	border: 0px;
+}</string>
+    </property>
+    <property name="text">
+     <string>result</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>40</width>
+      <height>40</height>
+     </size>
     </property>
    </widget>
   </widget>

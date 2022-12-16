@@ -8,7 +8,6 @@ void calc_percents_cap(const int term, const double rate, const double amount, c
 void calc_percents(const int term, const double rate, const double amount, const double tax, const double *rep_data, const double *with_data, double *my_return);
 
 void dep_calc(const double amount, const double rate, const double tax, const int term, const int type, const int capitalization, char *withdrawals, char *replenishments, double *my_return) {
-    double percents = 0.0, full_amount = amount;
     double rep_data[256] = {0};
     double with_data[256] = {0};
     get_mass_operations(replenishments, rep_data);
@@ -20,12 +19,13 @@ void dep_calc(const double amount, const double rate, const double tax, const in
         if (type == 1) calc_percents_cap(term, rate, amount, tax, 3, rep_data, with_data, my_return);
         if (type == 2) calc_percents_cap(term, rate, amount, tax, 12, rep_data, with_data, my_return);
     }
+    amount_of_taxes = 0.0;
 }
 
 void get_mass_operations(char *operation, double *mass_data) {
     int string_position = 0;
     double current_mounth = 0.0, current_data = 0.0;
-    while (string_position < strlen(operation)) {
+    while (string_position < (int)strlen(operation)) {
         while (operation[string_position] == ' ') {
             string_position++; 
         }
