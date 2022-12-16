@@ -16,12 +16,13 @@ START_TEST(addition_1) {
   } else {
     printf("string: %s\nNOT VALID\n", start_string);
   }
-  ck_assert_double_eq_tol(result, 3.0, 7);
+  ck_assert_double_eq_tol(result, 2769.16, 7);
 }
 END_TEST
 
 START_TEST(addition_2) {
-  char start_string[256] = {"0+10.5"};
+  // char start_string[256] = {"10+21*cos(123)-0.213123+1231-2222-cos1*76+ln12+2^3^2"};
+  char start_string[256] = {"21*cos123-100"};
   char x_string[256] = {""};
   double result = 0.0, x_result = 0.0;
   if (valid_string(start_string, x_string)) {
@@ -32,7 +33,9 @@ START_TEST(addition_2) {
   } else {
     printf("string: %s\nNOT VALID\n", start_string);
   }
-  ck_assert_double_eq_tol(result, 10.5, 7);
+  
+  // ck_assert_double_eq_tol(result, -526.43, 7);
+  ck_assert_double_eq_tol(result, -118.64, 7);
 }
 END_TEST
 
@@ -415,7 +418,7 @@ END_TEST
 //----------------------------------------------------------------------------------------------//
 
 START_TEST(cosine_1) {
-  char start_string[256] = {"cos0"};  
+  char start_string[256] = {"cos0-100"};  
   char x_string[256] = {""};
   double result = 0.0, x_result = 0.0;
   if (valid_string(start_string, x_string)) {
@@ -426,7 +429,7 @@ START_TEST(cosine_1) {
   } else {
     printf("string: %s\nNOT VALID\n", start_string);
   }
-  ck_assert_double_eq_tol(result, cos(0), 7);
+  ck_assert_double_eq_tol(result, cos(0) - 100, 7);
 }
 END_TEST
 
@@ -830,60 +833,60 @@ int main(void) {
   suite_add_tcase(s1, tc1_1);
 
   tcase_add_test(tc1_1, addition_1);
-  // tcase_add_test(tc1_1, addition_2);
-  // tcase_add_test(tc1_1, addition_3);
-  // tcase_add_test(tc1_1, addition_4);
-  // tcase_add_test(tc1_1, addition_5);
+  tcase_add_test(tc1_1, addition_2);
+  tcase_add_test(tc1_1, addition_3);
+  tcase_add_test(tc1_1, addition_4);
+  tcase_add_test(tc1_1, addition_5);
 
-  // tcase_add_test(tc1_1, subtraction_1);
-  // tcase_add_test(tc1_1, subtraction_2);
-  // tcase_add_test(tc1_1, subtraction_3);
-  // tcase_add_test(tc1_1, subtraction_4);
-  // tcase_add_test(tc1_1, subtraction_5);
+  tcase_add_test(tc1_1, subtraction_1);
+  tcase_add_test(tc1_1, subtraction_2);
+  tcase_add_test(tc1_1, subtraction_3);
+  tcase_add_test(tc1_1, subtraction_4);
+  tcase_add_test(tc1_1, subtraction_5);
 
-  // tcase_add_test(tc1_1, multiplication_1);
-  // tcase_add_test(tc1_1, multiplication_2);
-  // tcase_add_test(tc1_1, multiplication_3);
-  // tcase_add_test(tc1_1, multiplication_4);
-  // tcase_add_test(tc1_1, multiplication_5);
+  tcase_add_test(tc1_1, multiplication_1);
+  tcase_add_test(tc1_1, multiplication_2);
+  tcase_add_test(tc1_1, multiplication_3);
+  tcase_add_test(tc1_1, multiplication_4);
+  tcase_add_test(tc1_1, multiplication_5);
 
-  // tcase_add_test(tc1_1, division_1);
-  // tcase_add_test(tc1_1, division_2);
-  // tcase_add_test(tc1_1, division_3);
-  // tcase_add_test(tc1_1, division_4);
-  // tcase_add_test(tc1_1, division_5);
+  tcase_add_test(tc1_1, division_1);
+  tcase_add_test(tc1_1, division_2);
+  tcase_add_test(tc1_1, division_3);
+  tcase_add_test(tc1_1, division_4);
+  tcase_add_test(tc1_1, division_5);
 
-  // tcase_add_test(tc1_1, power_1);
-  // tcase_add_test(tc1_1, power_2);
-  // tcase_add_test(tc1_1, power_3);
-  // tcase_add_test(tc1_1, power_4);
-  // tcase_add_test(tc1_1, power_5);
+  tcase_add_test(tc1_1, power_1);
+  tcase_add_test(tc1_1, power_2);
+  tcase_add_test(tc1_1, power_3);
+  tcase_add_test(tc1_1, power_4);
+  tcase_add_test(tc1_1, power_5);
 
-  // tcase_add_test(tc1_1, cosine_1);
-  // tcase_add_test(tc1_1, cosine_2);
-  // tcase_add_test(tc1_1, cosine_3);
-  // tcase_add_test(tc1_1, cosine_4);
-  // tcase_add_test(tc1_1, cosine_5);
+  tcase_add_test(tc1_1, cosine_1);
+  tcase_add_test(tc1_1, cosine_2);
+  tcase_add_test(tc1_1, cosine_3);
+  tcase_add_test(tc1_1, cosine_4);
+  tcase_add_test(tc1_1, cosine_5);
 
-  // tcase_add_test(tc1_1, mix_1);
-  // tcase_add_test(tc1_1, mix_2);
-  // tcase_add_test(tc1_1, mix_3);
-  // tcase_add_test(tc1_1, mix_4);
-  // tcase_add_test(tc1_1, mix_5);
-  // tcase_add_test(tc1_1, mix_6);
-  // tcase_add_test(tc1_1, mix_7);
-  // tcase_add_test(tc1_1, mix_8);
-  // tcase_add_test(tc1_1, mix_9);
-  // tcase_add_test(tc1_1, mix_10);
-  // tcase_add_test(tc1_1, mix_11);
-  // tcase_add_test(tc1_1, mix_12);
-  // tcase_add_test(tc1_1, mix_13);
-  // tcase_add_test(tc1_1, mix_14);
-  // tcase_add_test(tc1_1, mix_15);
-  // tcase_add_test(tc1_1, mix_16);
-  // tcase_add_test(tc1_1, mix_17);
-  // tcase_add_test(tc1_1, mix_18);
-  // tcase_add_test(tc1_1, mix_19);
+  tcase_add_test(tc1_1, mix_1);
+  tcase_add_test(tc1_1, mix_2);
+  tcase_add_test(tc1_1, mix_3);
+  tcase_add_test(tc1_1, mix_4);
+  tcase_add_test(tc1_1, mix_5);
+  tcase_add_test(tc1_1, mix_6);
+  tcase_add_test(tc1_1, mix_7);
+  tcase_add_test(tc1_1, mix_8);
+  tcase_add_test(tc1_1, mix_9);
+  tcase_add_test(tc1_1, mix_10);
+  tcase_add_test(tc1_1, mix_11);
+  tcase_add_test(tc1_1, mix_12);
+  tcase_add_test(tc1_1, mix_13);
+  tcase_add_test(tc1_1, mix_14);
+  tcase_add_test(tc1_1, mix_15);
+  tcase_add_test(tc1_1, mix_16);
+  tcase_add_test(tc1_1, mix_17);
+  tcase_add_test(tc1_1, mix_18);
+  tcase_add_test(tc1_1, mix_19);
 
   tcase_add_test(tc1_1, empty);
 

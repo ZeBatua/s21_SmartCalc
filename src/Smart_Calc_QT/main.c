@@ -1,5 +1,10 @@
 #include "calc.h"
 
+ // график пробелы не жрет
+ // x+x крашится
+
+
+
 void main() {
   // double amount = 100000.0, rate = 7.0, tax = 4.25, term = 90.0, type = 1.0, capitalization = 1.0;
   // double percents = 0.0, tax_amount = 0.0, total_amount = 0.0;
@@ -17,18 +22,22 @@ void main() {
   // } else {
   //   printf("\n\nNOT NORMAL STRING!!!\n");
   // }
-  char start_string[256] = {"99()"};
+
+
+  // char start_string[256] = {"cos1-cos1*2+2^3"};
+  char start_string[256] = {"2*cos(0)"};
   char x_string[256] = {""};
   double result = 0.0, x_result = 0.0;
   if (valid_string(start_string, x_string)) {
     int status = 0;
-    x_result = read_string(x_string, &status);
-    add_x_value_in_string(start_string, x_result);
+    // x_result = read_string(x_string, &status);
+    // add_x_value_in_string(start_string, x_result);
     result = read_string(start_string, &status);
-    printf("res = %F\n", result);
+    printf("value = %F\n", result);
   } else {
     printf("string: %s\nNOT VALID\n", start_string);
   }
+  // ck_assert_double_eq_tol(result, -499.0, 7);
 
 
 //   char str[14] = "qwertyu";

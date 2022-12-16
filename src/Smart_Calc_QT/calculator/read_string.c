@@ -3,6 +3,8 @@
 int is_math_operator(char symbol);
 double get_minus(char *start_string, int *string_position, num_stack **n_head, func_stack **f_head);
 double get_div(char *start_string, int *string_position, num_stack **n_head, func_stack **f_head);
+double second_calc_value(double second_value, func_stack **f_head);
+int is_needed_to_calc_now(char function);
 
 double read_string(char *start_string, int *break_status) {
   num_stack *n_head = NULL;
@@ -18,12 +20,17 @@ double read_string(char *start_string, int *break_status) {
       else if (*break_status == 4 && !check_power_next_function(start_string, string_position)) break;
       if (*break_status == 77 && check_power_next_function(start_string, string_position)) continue;
       else if (*break_status == 77 && !check_power_next_function(start_string, string_position)) break;
+      if (*break_status == 3 && is_needed_to_calc_now(current_function)) {
+        calc_current_values(&n_head, &f_head);
+        break;
+      }
     } else if (get_function(start_string, &string_position, &current_function)) {
       previous_function = peek_function(f_head);
       push_function(&f_head, current_function);
       if (current_function == '(') {
         current_num = exec_expression_with_open_bracket(start_string, &string_position);
-        current_function = pop_function(&f_head);
+        pop_function(&f_head);
+        current_function = peek_function(f_head);
         push_num(&n_head, current_num);
         if (*break_status == 77 && check_power_next_function(start_string, string_position)) continue;
         else if (*break_status == 77 && !check_power_next_function(start_string, string_position)) break;
@@ -53,7 +60,7 @@ double read_string(char *start_string, int *break_status) {
       if (peek_function(f_head) == '-') current_num = get_minus(start_string, &string_position, &n_head, &f_head);
       if (peek_function(f_head) == '/') current_num = get_div(start_string, &string_position, &n_head, &f_head);
     } 
-    if ( strlen(start_string) == string_position || current_function == ')' ) {
+    if (strlen(start_string) == string_position || current_function == ')') {
       calc_current_values(&n_head, &f_head);
       if ((current_function == ')') && (*break_status != 0)) break;
     }
@@ -117,21 +124,27 @@ void calc_current_values(num_stack **num_head, func_stack **function_head) {
     }
     if (s21_strcmp(current_function, chtoto.addition)) {
       second_value = pop_num(num_head);
+      second_value = second_calc_value(second_value, function_head);
       push_num(num_head, first_value + second_value);
     } else if (s21_strcmp(current_function, chtoto.subtraction)) {
       second_value =  pop_num(num_head);
+      second_value = second_calc_value(second_value, function_head);
       push_num(num_head, second_value - first_value);
     } else if (s21_strcmp(current_function, chtoto.multiplication)) {
       second_value = pop_num(num_head);
+      second_value = second_calc_value(second_value, function_head);
       push_num(num_head, first_value * second_value);
     } else if (s21_strcmp(current_function, chtoto.division)) {
       second_value = pop_num(num_head);
+      second_value = second_calc_value(second_value, function_head);
       push_num(num_head, second_value / first_value);
     } else if (s21_strcmp(current_function, chtoto.modulus)) {
       second_value = pop_num(num_head);
+      second_value = second_calc_value(second_value, function_head);
       push_num(num_head, fmod(second_value, first_value));
     } else if (s21_strcmp(current_function, chtoto.power)) {
       second_value = pop_num(num_head);
+      second_value = second_calc_value(second_value, function_head);
       push_num(num_head, pow(second_value, first_value));
     } else if (s21_strcmp(current_function, chtoto.cosine)) {
       push_num(num_head, cos(first_value));
@@ -156,6 +169,29 @@ void calc_current_values(num_stack **num_head, func_stack **function_head) {
     first_value = pop_num(num_head);
   }
   push_num(num_head, first_value);
+}
+
+double second_calc_value(double second_value, func_stack **f_head) {
+  char function = '\0';
+  if (is_needed_to_calc_now(function = peek_function(*f_head))) {
+    num_stack *n_tmp_head = NULL;
+    func_stack *f_tmp_head = NULL;
+    push_function(&f_tmp_head, function);
+    push_num(&n_tmp_head, second_value);
+    calc_current_values(&n_tmp_head, &f_tmp_head);
+    second_value = pop_num(&n_tmp_head);
+
+    pop_function(f_head);
+  }
+  return second_value;
+}
+
+int is_needed_to_calc_now(char function) {
+  int status = 0;
+  if (function == 'c' || function == 'C' || function == 's' || function == 'S' || function == 't' || function == 'T' || function == 'l' || function == 'L' || function == 'q') {
+    status = 1;
+  }
+  return status;
 }
 
 int is_math_operator(char symbol) {
@@ -383,6 +419,9 @@ int is_lower_priority(char previous_function, char current_function, char *strin
     }
     if ((string - 1) != NULL && string != NULL) {
       if (*string == '-' && (*(string - 1) == '*' || *(string - 1) == '/' || *(string - 1) == '%' || *(string - 1) == '^')) status = 0;
+    }
+    if ((!is_needed_to_calc_now(current_function) && is_needed_to_calc_now(previous_function)) && !is_needed_to_calc_now(*(string - 1))) {
+      status = 1;
     }
   }
   return status;
