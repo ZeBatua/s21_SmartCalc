@@ -1,61 +1,60 @@
-ASAN := -fsanitize=address
-CFLAGS := -std=c11 $(ASAN) -pedantic
+ASAN := -g -fsanitize=address
+CFLAGS := -std=c11 -pedantic
 CPPFLAGS := -Wall -Werror -Wextra
-CC = gcc -g
-GFLAGS = -coverage
-LDLIBS = -lgcov
+CC = gcc
+GFLAGS = --coverage
 TFLAGS = -lcheck
 ARFLAGS := rcs
 OBJECTS = *.o
 SOURCES := Smart_Calc_QT/calculator/read_string.c \
 Smart_Calc_QT/calculator/valid_string.c \
 Smart_Calc_QT/calculator/add_x_value_in_string.c \
-Smart_Calc_QT/calculator/calc_string.c \
 Smart_Calc_QT/credit/credit_annuity_calc.c \
 Smart_Calc_QT/credit/credit_diff_calc.c \
 Smart_Calc_QT/deposit/is_norm_dep_values.c \
 Smart_Calc_QT/deposit/dep_calc.c \
 
-VAR = $(shell pkg-config --cflags --libs check)
+SOURCES_TEST := Smart_Calc_QT/tests/test_calc_test.c
+
+# VAR = $(shell pkg-config --cflags --libs check)
 
 all: clean s21_calc.a
 
 s21_calc.a: clean
-	@$(CC) $(CFLAGS) $(CPPFLAGS) $(SOURCES) $(ASAN) -c
+	@$(CC) $(CPPFLAGS) $(SOURCES) $(ASAN) -c
 	@ar rcs s21_calc.a $(OBJECTS)
 	@rm *.o
 
 test: s21_calc.a
-	@$(CC) $(ASAN) s21_calc.a Smart_Calc_QT/tests/test_calc_test.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
-	@./$@
-	@$(CC) $(ASAN) s21_calc.a Smart_Calc_QT/tests/test_credit_calc.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
-	@./$@
-	@$(CC) $(ASAN) s21_calc.a Smart_Calc_QT/tests/test_dep_calc.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
-	@./$@
-	@$(CC) $(ASAN) s21_calc.a  Smart_Calc_QT/tests/test_stile_test.c $(CFLAGS) $(TFLAGS) $(VAR) -o $@
+	@$(CC) $(CPPFLAGS) $(ASAN) $(GFLAGS) s21_calc.a $(SOURCES_TEST) $(TFLAGS) $(VAR) -o $@
 	@./$@
 
 main: s21_calc.a
 	@gcc $(ASAN) Smart_Calc_QT/main.c $(SOURCES) -g -o main 
 	@./main
 
-gcov_report: test
-	gcovr .
-	gcovr --html-details -o report.html
-	open ./report.html
+gcov_report: clean
+	@$(CC) $(CPPFLAGS) $(SOURCES) $(GFLAGS) $(ASAN) -c
+	@ar rcs s21_calc.a $(OBJECTS)
+	@rm *.o
+	@$(CC) $(CPPFLAGS) $(ASAN) $(GFLAGS) s21_calc.a $(SOURCES_TEST) $(TFLAGS) $(VAR) -o test
+	@./test
+	gcovr -r . --html --html-details -o report.html
+	./test
+# rm *.gcda *.gcno *.a *.o
+	open report.html
 
 check: 
-	cppcheck *.c
-	cppcheck ./Smart_Calc_QT/*.c
-# clang-format -i -n functions/*.c # чекай сурсы
-# clang-format -i -n *.h
-# clang-format -i -n tests.c
+	cppcheck $(SOURCES) $(SOURCES_TEST)
+	cppcheck Smart_Calc_QT/*.h
+	clang-format -i $(SOURCES) $(SOURCES_TEST)
+	clang-format -i Smart_Calc_QT/*.h
 
 leaks:
 	CK_FORK=no leaks --atExit -- ./test
 
 clean:
-	@rm -rf s21_calc.a test *.html *.gcda *.gcno gcov_report *.info report *.o *.dSYM *.css
+	rm -rf s21_calc.a test *.html *.gcda *.gcno gcov_report *.info report *.o *.dSYM *.css
 
 install:
 	cd Smart_Calc_QT && cmake .

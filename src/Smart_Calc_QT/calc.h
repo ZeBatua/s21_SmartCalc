@@ -44,7 +44,6 @@ typedef struct operations {
   char *decimal_logarithm;
 } OPS;
 
-
 double read_string(char *start_string, int *break_status);
 void calc_current_values(num_stack **num_head, func_stack **function_head);
 
@@ -60,7 +59,6 @@ char peek_function(const func_stack *head);
 int get_num(char *part_string, int *string_position, double *value);
 int get_function(char *part_string, int *string_position, char *function);
 
-char s21_strchr(char string, char symbol);
 char s21_strchr_2(char *string, char symbol);
 int s21_strcmp(char current_function, char *struct_function);
 
@@ -70,22 +68,24 @@ void printFuncStack(func_stack *head);
 double exec_expression_with_minus(char *curent_string, int *string_position);
 double exec_expression_with_division(char *curent_string, int *string_position);
 
-
 int is_unary_minus(char *curent_string, int string_position);
 
 int check_power_next_function(char *part_string, int string_position);
-double exec_expression_with_power(char *curent_string, int *string_position, double current_num);
-double exec_expression_with_open_bracket(char *curent_string, int *string_position);
-int is_lower_priority(char previous_function, char current_function, char *string);
-
+double exec_expression_with_power(char *curent_string, int *string_position,
+                                  double current_num);
+double exec_expression_with_open_bracket(char *curent_string,
+                                         int *string_position);
+int is_lower_priority(char previous_function, char current_function,
+                      char *string);
 
 int valid_string(char *input_string, char *input_x_string);
 int adapt_string(char *string);
 
 int is_math_operator(char symbol);
-double get_minus(char *start_string, int *string_position, num_stack **n_head, func_stack **f_head);
-double get_div(char *start_string, int *string_position, num_stack **n_head, func_stack **f_head);
-
+double get_minus(char *start_string, int *string_position, num_stack **n_head,
+                 func_stack **f_head);
+double get_div(char *start_string, int *string_position, num_stack **n_head,
+               func_stack **f_head);
 
 // valid_string
 int check_valid_brackets(char *string);
@@ -105,16 +105,18 @@ int is_stuck_symbol(char symbol);
 int x_in_input_x_string(char *string);
 int ez_skip(char symbol);
 
-
 double calc_string(char *start_string, char *x_string);
 void add_x_value_in_string(char *start_string, double x_value);
 
-void credit_annuity_calc(double balance_owed, int term, double percent, double *my_return);
-void credit_diff_calc(double balance_owed, int term, double percent, double *my_return);
+void credit_annuity_calc(double balance_owed, int term, double percent,
+                         double *my_return);
+void credit_diff_calc(double balance_owed, int term, double percent,
+                      double *my_return);
 
-int is_norm_dep_values(double amount, double rate, double tax, int term, char *withdrawals, char *replenishments);
-void dep_calc(const double amount, const double rate, const double tax, const int term, const int type, const int capitalization, char *withdrawals, char *replenishments, double *my_return);
-
-
+int is_norm_dep_values(double amount, double rate, double tax, int term,
+                       char *withdrawals, char *replenishments);
+void dep_calc(const double amount, const double rate, const double tax,
+              const int term, const int type, const int capitalization,
+              char *withdrawals, char *replenishments, double *my_return);
 
 #endif  // SRC_SOURCE_CALC_H_
