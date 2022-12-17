@@ -35,5 +35,9 @@ private slots:
     void on_pushButton_make_graph_clicked();
     void on_credit_result_clicked();
     void on_dep_result_clicked();
+    void on_open_bonus_clicked();
+    void on_close_bonus_clicked();
+    void on_clean_all_dep_clicked();
+    void on_clean_all_credit_clicked();
 };
 #endif // MAINWINDOW_H

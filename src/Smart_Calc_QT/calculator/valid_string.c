@@ -275,6 +275,7 @@ int adapt_string(char *string) {
 
     size_t string_length = strlen(string);
     for (size_t i = 0, j = 0; i < string_length; i++, j++) {
+        printf("current char %c\n", string[i]);
         if (ez_skip(string[i])) {
             new_string[j] = string[i];
         } else if (string[i] == 'l' && string[i + 1] == 'n') { // ln
@@ -308,6 +309,7 @@ int adapt_string(char *string) {
             new_string[j] = 'q';
             i += 3;
         } else if (string[i] == ' ') { 
+            j--;
             continue;
         } else {
             valid_status = 1;

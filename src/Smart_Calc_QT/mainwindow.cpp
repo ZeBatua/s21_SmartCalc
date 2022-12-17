@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+    this->resize(1045,485);
     ui->setupUi(this);
 
     connect(ui->Button_0, SIGNAL(clicked()), this, SLOT(write_string_num()));
@@ -208,8 +209,10 @@ void MainWindow::on_dep_result_clicked() {
     double rate = std::atof(ui->dep_rate->text().toLocal8Bit().data());
     double tax = std::atof(ui->dep_tax->text().toLocal8Bit().data());
     int term = std::atof(ui->dep_term->text().toLocal8Bit().data());
-    int type = ui->box_type_credit->currentIndex();
     int capitalization = ui->capitalization_check->isChecked();
+    int type = 0;
+    if (ui->box_dep_period->currentIndex() == 1) type = 1;
+    if (ui->box_dep_period->currentIndex() == 2) type = 2;
 
     QString qstr = ui->dep_withdrawals_list->text();
     QByteArray bytes = qstr.toLocal8Bit();
@@ -237,26 +240,44 @@ void MainWindow::on_dep_result_clicked() {
     }
 }
 
+void MainWindow::on_open_bonus_clicked()
+{
+    if (ui->open_bonus->text() == "open credit/deposit calculator") {
+        this->resize(1045,745);
+        ui->open_bonus->setText("close credit/deposit calculator");
+    } else {
+        ui->open_bonus->setText("open credit/deposit calculator");
+        this->resize(1045,485);
+    }
+}
+
+void MainWindow::on_close_bonus_clicked()
+{
+    this->resize(1045,485);
+}
 
 
+void MainWindow::on_clean_all_dep_clicked()
+{
+    ui->result_dep_percents->setText("");
+    ui->result_dep_tax_amount->setText("");
+    ui->result_dep_total_amount->setText("");
+    ui->dep_amount->setText("");
+    ui->dep_rate->setText("");
+    ui->dep_term->setText("");
+    ui->dep_tax->setText("");
+    ui->dep_replenishments_list->setText("");
+    ui->dep_withdrawals_list->setText("");
+
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void MainWindow::on_clean_all_credit_clicked()
+{
+    ui->cr_amount->setText("");
+    ui->cr_rate->setText("");
+    ui->cr_term->setText("");
+    ui->result_cr_monthly_pay->setText("");
+    ui->result_cr_overpayment->setText("");
+    ui->result_cr_total->setText("");
+}
