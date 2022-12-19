@@ -984,6 +984,7 @@ public:
         box_dep_period->addItem(QString());
         box_dep_period->setObjectName(QString::fromUtf8("box_dep_period"));
         box_dep_period->setGeometry(QRect(917, 568, 101, 26));
+        box_dep_period->setFont(font4);
         box_dep_period->setStyleSheet(QString::fromUtf8("QLabel {\n"
 "	font: 14pt \"Avenir Next\";\n"
 "	color: black;\n"

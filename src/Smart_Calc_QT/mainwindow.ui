@@ -2445,6 +2445,11 @@
       <height>26</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Avenir</family>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">QLabel {
 	font: 14pt &quot;Avenir Next&quot;;

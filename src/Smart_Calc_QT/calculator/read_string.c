@@ -371,6 +371,8 @@ int is_unary_minus(char *curent_string, int string_position) {
              curent_string[string_position - 1] == 'L' ||
              curent_string[string_position - 1] == '*' ||
              curent_string[string_position - 1] == '/' ||
+             curent_string[string_position - 1] == '+' ||
+             curent_string[string_position - 1] == '-' ||
              curent_string[string_position - 1] == '^' ||
              curent_string[string_position - 1] == '%' ||
              curent_string[string_position - 1] == '(') {
