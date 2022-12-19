@@ -373,7 +373,8 @@ int num_after_math_op(char *symbol) {
   if (symbol + 1 != NULL) {
     if (is_math_operator(*symbol) &&
         (!is_num(*(symbol + 1)) && *(symbol + 1) != '-' &&
-         *(symbol + 1) != 'x' && *(symbol + 1) != '('))
+         *(symbol + 1) != 'x' && *(symbol + 1) != '(' &&
+         is_math_operator(*(symbol + 1)) != 1))
       status = 1;
   }
   return status;

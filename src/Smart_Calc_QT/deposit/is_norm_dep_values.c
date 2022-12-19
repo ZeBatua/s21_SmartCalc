@@ -5,7 +5,7 @@ int valid_operation(char *operation);
 int is_norm_dep_values(double amount, double rate, double tax, int term,
                        char *withdrawals, char *replenishments) {
   int status = 0;
-  if (amount * rate * term <= 0) status = 1;
+  if (amount <= 0 || rate <= 0 || term <= 0) status = 1;
   if (tax < 0) status = 1;
   if (status == 0) status = valid_operation(withdrawals);
   if (status == 0) status = valid_operation(replenishments);

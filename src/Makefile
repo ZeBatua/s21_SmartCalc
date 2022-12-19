@@ -1,4 +1,4 @@
-ASAN := -g -fsanitize=address
+# ASAN := -g -fsanitize=address
 CFLAGS := -std=c11 -pedantic
 CPPFLAGS := -Wall -Werror -Wextra
 CC = gcc
@@ -41,7 +41,6 @@ gcov_report: clean
 	@./test
 	gcovr -r . --html --html-details -o report.html
 	./test
-# rm *.gcda *.gcno *.a *.o
 	open report.html
 
 check: 

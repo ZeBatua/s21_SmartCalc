@@ -25,7 +25,7 @@ void main() {
 
 
   // char start_string[256] = {"1-cos1*2+2^3"};
-  char start_string[256] = {"33 **3"};
+  char start_string[256] = {"sincos3"};
   char x_string[256] = {""};
   double result = 0.0, x_result = 0.0;
   if (valid_string(start_string, x_string)) {

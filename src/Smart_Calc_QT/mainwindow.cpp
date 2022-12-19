@@ -170,7 +170,8 @@ void MainWindow::on_credit_result_clicked() {
   if (ui->box_type_credit->currentIndex() == 2) type = 2;
   cout << ui->box_type_credit->currentIndex() << endl;
 
-  if (!amount || !rate || !term) {
+
+  if (amount <= 0 || rate <= 0 || term <= 0) {
     ui->result_cr_monthly_pay->setText(" invalid values");
     ui->result_cr_overpayment->setText(" invalid values");
     ui->result_cr_total->setText(" invalid values");
